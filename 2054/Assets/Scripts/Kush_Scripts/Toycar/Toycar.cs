@@ -126,7 +126,7 @@ public class Toycar : MonoBehaviour
         {
             var position = curWaypoint.position;
             position.y = toycarTrans.position.y;
-            toycarTrans.position = Vector3.MoveTowards(toycarTrans.position, position, (speed/10) * Time.deltaTime);
+            toycarTrans.position = Vector3.MoveTowards(toycarTrans.position, position, (speed/100) * Time.deltaTime);
 
             yield return null;
             //yield return new WaitForSeconds(.5f);

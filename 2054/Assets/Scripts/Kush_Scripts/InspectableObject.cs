@@ -73,8 +73,12 @@ public class InspectableObject : MonoBehaviour
             rotationY = -delta.x * MouseLookAround.instance.rotationSpeed * Time.deltaTime;
 
             objectMesh.Rotate(Vector3.up, rotationY, Space.World);
-            objectMesh.Rotate(Vector3.right, rotationX, Space.Self);
+            objectMesh.Rotate(Vector3.right, -rotationX, Space.Self);
 
+            lastMousePosition = Input.mousePosition;
+        }
+        else if(Input.GetMouseButtonUp(0))
+        {
             lastMousePosition = Input.mousePosition;
         }
     }

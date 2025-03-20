@@ -22,12 +22,15 @@ public class PlayerBehaviour : MonoBehaviour
     // Internal Variables
     PlayerMovement movementComponent;
 
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+        else Destroy(this);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        if (instance == null)   instance = this;
-        else                    Destroy(this);
-
         movementComponent = GetComponent<PlayerMovement>();
     }
 

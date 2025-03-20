@@ -21,6 +21,8 @@ public class MouseLookAround : MonoBehaviour
     private float xRotation = 0;
     private Camera cam;
 
+    public Camera GetCam() { return cam; }
+
     private void Awake()
     {
         if (instance == null)
