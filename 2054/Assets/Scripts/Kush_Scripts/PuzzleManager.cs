@@ -1,5 +1,7 @@
+using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PuzzleManager : MonoBehaviour
@@ -18,7 +20,14 @@ public class PuzzleManager : MonoBehaviour
         TOTAL
     };
 
+    [Header("Prefabs and Gameobjects")]
+    [SerializeField] private GameObject[] puzzlePrefabs;
+    [SerializeField] private GameObject curPuzzleParent;
+    [SerializeField] private Transform puzzleSpawnPoint;
+
     [Header("Puzzle Properties")]
+    [SerializeField] private int totalPuzzles = 2;
+    [SerializeField] private int curPuzzleID = 1;
     public PuzzleType curPuzzleType;
     [SerializeField] bool puzzleSolved = false;
     [SerializeField] int totalPieces = 3;
@@ -49,6 +58,7 @@ public class PuzzleManager : MonoBehaviour
         if (solved >= totalPieces)
         {
             puzzleSolved = true;
+            solved = 0;
             return true;
         }
         return false;
@@ -57,7 +67,11 @@ public class PuzzleManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Setting up the manager (this should be replaced by a function)
+        SetupPuzzle();
+    }
+
+    void SetupPuzzle()
+    {
         //clearing
         canShowInventory = false;
         inventory = false;
@@ -67,18 +81,25 @@ public class PuzzleManager : MonoBehaviour
         piecesGO.Clear();
 
         //assigning
-        curPuzzleType = PuzzleType.JIGSAW;
-        totalPieces = 3;
-        piecesGO = new List<GameObject>(totalPieces);
-        piecesTargetPoint = new List<GameObject>(totalPieces);
-        piecesWaypoint = new List<GameObject>(totalPieces);
+        curPuzzleType = (PuzzleType)(curPuzzleID - 1);
+        if (curPuzzleID == 1) //Jigsaw Puzzle
+        {
+            curPuzzleParent = Instantiate(puzzlePrefabs[0], puzzleSpawnPoint.position, puzzlePrefabs[0].transform.rotation);
+            totalPieces = 3;
+        }
+        else if (curPuzzleID == 2) {  //2054 Puzzle
+            curPuzzleParent = Instantiate(puzzlePrefabs[1], puzzleSpawnPoint.position, puzzlePrefabs[1].transform.rotation);
+            totalPieces = 4;
+        }
 
         var waypoints = FindObjectsByType<PuzzleWaypoints>(FindObjectsSortMode.None);
-        foreach (var waypoint in waypoints) {
+        foreach (var waypoint in waypoints)
+        {
             piecesWaypoint.Add(waypoint.gameObject);
         }
         var targetPoints = FindObjectsByType<PuzzleTargetPoints>(FindObjectsSortMode.None);
-        foreach (var targetpoint in targetPoints) { 
+        foreach (var targetpoint in targetPoints)
+        {
             piecesTargetPoint.Add(targetpoint.gameObject);
             targetpoint.GetComponentInChildren<MeshRenderer>().enabled = false;
         }
@@ -112,10 +133,43 @@ public class PuzzleManager : MonoBehaviour
 
         if (puzzleSolved)
         {
+            puzzleSolved = false;
+
             if (PlayerBehaviour.instance.currentPlayerState != PlayerBehaviour.PlayerState.EXPLORING)
                 PlayerBehaviour.instance.currentPlayerState = PlayerBehaviour.PlayerState.EXPLORING;
             MouseLookAround.instance.SetMouseLock();
+
+            //do memory here
+            //debug lines
+            Canvas puzzleCanvas;
+            puzzleCanvas = curPuzzleParent.GetComponentInChildren<Canvas>();
+            if (puzzleCanvas)
+            {
+                puzzleCanvas.GetComponentInChildren<TextMeshProUGUI>().text += "\nShow " +
+                    ((PuzzleType)(curPuzzleID - 1)).ToString() + " memory";
+            }
+
+            if (curPuzzleID < totalPuzzles) {
+                SwitchPuzzle();
+            }
         }
+    }
+
+    void SwitchPuzzle()
+    {
+        curPuzzleID++;
+
+        // add some delay based on memory length
+        Destroy(curPuzzleParent);
+
+        StartCoroutine(DelayedSpawn());
+
+    }
+
+    IEnumerator DelayedSpawn()
+    {
+        yield return new WaitForEndOfFrame();
+        SetupPuzzle();
     }
 
     void SolvePuzzle()
@@ -130,7 +184,7 @@ public class PuzzleManager : MonoBehaviour
     {
         int i = 0;
         foreach (var piece in piecesGO) {
-            if (piece != null) {
+            if (piece != null && piecesWaypoint[i % piecesWaypoint.Count] != null) {
                 piece.transform.position = piecesWaypoint[i % piecesWaypoint.Count].transform.position + new Vector3(0, piece.transform.localScale.y/2, 0);
                 i++;
                 piece.SetActive(true);
@@ -138,7 +192,8 @@ public class PuzzleManager : MonoBehaviour
         }
         foreach(var target in piecesTargetPoint)
         {
-            target.GetComponentInChildren<MeshRenderer>().enabled = true;
+            if(target)
+                target.GetComponentInChildren<MeshRenderer>().enabled = true;
         }
         inventory = true;
     }
