@@ -10,6 +10,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         EXPLORING,
         INSPECTING,
+        PLAYING_WITH_CAR,
         SOLVING_PUZZLE,
         TOTAL,
     };
