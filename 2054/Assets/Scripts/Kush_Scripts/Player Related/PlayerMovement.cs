@@ -6,10 +6,10 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Character Controller")]
     //no need to pass anything, will be setup in start.
-    [SerializeField] private CharacterController characterController; 
+    public CharacterController characterController; 
 
     [Header("Movement Variables")]
-    [SerializeField] private float speed = 10f;
+    [SerializeField] public float speed = 10f;
     [SerializeField] private bool isGround = true;
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private float jumpHeight = 3f;

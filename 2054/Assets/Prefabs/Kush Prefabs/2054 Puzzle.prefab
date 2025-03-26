@@ -413,7 +413,7 @@ Transform:
   m_GameObject: {fileID: 2067038213747063699}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.52, z: 0}
+  m_LocalPosition: {x: 0, y: -0.144, z: 0}
   m_LocalScale: {x: 5.8981323, y: 1.2700694, z: 0.6912124}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1427,7 +1427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2475896984034308203}
   m_Layer: 0
-  m_Name: SolvedPicture
+  m_Name: TargetPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1442,7 +1442,7 @@ Transform:
   m_GameObject: {fileID: 7604106358360831189}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.52, z: 0.2937}
+  m_LocalPosition: {x: 0, y: -0.144, z: 0.2937}
   m_LocalScale: {x: 0.58981323, y: 0.6350347, z: 0.23040412}
   m_ConstrainProportionsScale: 0
   m_Children:
