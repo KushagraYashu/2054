@@ -42,6 +42,10 @@ public class PuzzleManager : MonoBehaviour
     bool inventory = false;
     bool solving = false;
 
+    [Header("Waypoints")]
+    public List<Transform> waypointsFrom2054To = new();
+
+
     // internal variables
     bool dragginAnObject = false;
     int solved = 0;
@@ -84,11 +88,13 @@ public class PuzzleManager : MonoBehaviour
         curPuzzleType = (PuzzleType)(curPuzzleID - 1);
         if (curPuzzleID == 1) //Jigsaw Puzzle
         {
-            curPuzzleParent = Instantiate(puzzlePrefabs[0], puzzleSpawnPoint.position, puzzlePrefabs[0].transform.rotation);
+            curPuzzleParent = Instantiate(puzzlePrefabs[0], puzzleSpawnPoint);
+            curPuzzleParent.transform.parent = GameObject.FindGameObjectWithTag("ToddlerRoomParent").transform;
             totalPieces = 3;
         }
         else if (curPuzzleID == 2) {  //2054 Puzzle
-            curPuzzleParent = Instantiate(puzzlePrefabs[1], puzzleSpawnPoint.position, puzzlePrefabs[1].transform.rotation);
+            curPuzzleParent = Instantiate(puzzlePrefabs[1], puzzleSpawnPoint);
+            curPuzzleParent.transform.parent = GameObject.FindGameObjectWithTag("ToddlerRoomParent").transform;
             totalPieces = 4;
         }
 
@@ -120,6 +126,7 @@ public class PuzzleManager : MonoBehaviour
     {
         if (canShowInventory && Input.GetKeyDown(KeyCode.E)) { 
             ShowInventory();
+            canShowInventory = false;
         }
 
         if (inventory && Input.GetKeyDown(KeyCode.E) && !solving)
@@ -152,6 +159,17 @@ public class PuzzleManager : MonoBehaviour
             if (curPuzzleID < totalPuzzles) {
                 SwitchPuzzle();
             }
+            else
+            {
+                //guidance thing here (this can be timebased)
+                GuidanceSystem.instance.StartSteps(waypointsFrom2054To);
+            }
+        }
+
+        //DEBUG INPUT, REMOVE LATER
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.F))
+        {
+            GuidanceSystem.instance.StartSteps(waypointsFrom2054To);
         }
     }
 
@@ -168,7 +186,7 @@ public class PuzzleManager : MonoBehaviour
 
     IEnumerator DelayedSpawn()
     {
-        yield return new WaitForEndOfFrame();
+        yield return new WaitForSeconds(2f);
         SetupPuzzle();
     }
 
@@ -185,7 +203,7 @@ public class PuzzleManager : MonoBehaviour
         int i = 0;
         foreach (var piece in piecesGO) {
             if (piece != null && piecesWaypoint[i % piecesWaypoint.Count] != null) {
-                piece.transform.position = piecesWaypoint[i % piecesWaypoint.Count].transform.position + new Vector3(0, piece.transform.localScale.y/2, 0);
+                piece.transform.position = piecesWaypoint[i % piecesWaypoint.Count].transform.position;
                 i++;
                 piece.SetActive(true);
             }

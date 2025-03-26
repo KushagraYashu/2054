@@ -48,4 +48,9 @@ public class PlayerBehaviour : MonoBehaviour
                 break;
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other.transform.name);
+    }
 }

@@ -85,7 +85,7 @@ public class PuzzlePiece : MonoBehaviour
         if (Vector3.Distance(this.transform.position, targetPoint.transform.position) <= PuzzleManager.instance.solveThreshold)
         {
             targetPoint.GetComponentInChildren<MeshRenderer>().enabled = false;
-            transform.position = targetPoint.position + new Vector3(0, this.transform.localScale.y / 2, 0);
+            transform.position = targetPoint.position;
             issolving = false;
             isDragging = false;
             solved = true;
