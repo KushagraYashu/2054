@@ -157,23 +157,81 @@ public class PuzzleManager : MonoBehaviour
             }
 
             if (curPuzzleID < totalPuzzles) {
-                SwitchPuzzle();
+                //DO JIGSAW MEMORY HERE
+
+                StartCoroutine(ShowJigsawMemory());
             }
             else
             {
                 //THIS IS AFTER 2054 Puzzle (final memory and aging for toddler should go here)
 
-                //guidance thing here (this can be timebased)
-                PlayerBehaviour.instance.AgePlayer();
-                GuidanceSystem.instance.StartSteps(waypointsFrom2054To);
+                StartCoroutine(Show2054Memory());
             }
         }
 
         //DEBUG INPUT, REMOVE LATER
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.F))
         {
-            GuidanceSystem.instance.StartSteps(waypointsFrom2054To);
+            StartCoroutine (ShowJigsawMemory());
         }
+    }
+
+    IEnumerator Show2054Memory()
+    {
+        //fade in
+
+        //freeze player
+        FreezePlayer();
+
+        StartCoroutine(ImageFade.instance.Fade(0, 1, 2, "Show 2054 Memory"));
+        yield return new WaitForSeconds(2f);
+
+        //play memory animation here
+        //yield return new WaitForSeconds(animationDuration);
+        //remove this line later (its for testing delay)
+        yield return new WaitForSeconds(2f);
+        StartCoroutine(ImageFade.instance.Fade(1, 1, .1f, "Aging Player"));
+        yield return new WaitForSeconds(2f);
+
+
+        //aging and guidance system (guidance should be based on time)
+        PlayerBehaviour.instance.AgePlayer();
+        GuidanceSystem.instance.StartSteps(waypointsFrom2054To);
+
+        //fade out
+        StartCoroutine(ImageFade.instance.Fade(1, 0, 2));
+        yield return new WaitForSeconds(2f);
+
+        //unfreeze player
+        UnfreezePlayer();
+    }
+
+    IEnumerator ShowJigsawMemory()
+    {
+        //fade in
+
+        //freeze player
+        FreezePlayer();
+
+        StartCoroutine(ImageFade.instance.Fade(0, 1, 2, "Show Jigsaw Memory"));
+        yield return new WaitForSeconds(2f);
+
+        //play memory animation here
+        //yield return new WaitForSeconds(animationDuration);
+                        //remove this line later (its for testing delay)
+                        yield return new WaitForSeconds(2f);
+
+        
+
+        //switch puzzle now
+        SwitchPuzzle();
+
+        //fade out
+        StartCoroutine(ImageFade.instance.Fade(1, 0, 2));
+        yield return new WaitForSeconds(2f);
+
+        //unfreeze player
+        UnfreezePlayer();
     }
 
     void SwitchPuzzle()
@@ -217,5 +275,23 @@ public class PuzzleManager : MonoBehaviour
                 target.GetComponentInChildren<MeshRenderer>().enabled = true;
         }
         inventory = true;
+    }
+
+    /// <summary>
+    ///freeze player for either memory or aging, this function uses PlayerState.TOTAL (also freezes mouse)
+    /// </summary>
+    void FreezePlayer()
+    {
+        PlayerBehaviour.instance.currentPlayerState = PlayerBehaviour.PlayerState.TOTAL; //TOTAL makes player stop moving, hence applied total
+        MouseLookAround.instance.lookAllowed = false;
+    }
+
+    /// <summary>
+    /// unfreeze player for exploring, (also unfreezes mouse)
+    /// </summary>
+    void UnfreezePlayer()
+    {
+        PlayerBehaviour.instance.currentPlayerState = PlayerBehaviour.PlayerState.EXPLORING;
+        MouseLookAround.instance.lookAllowed = true;
     }
 }
