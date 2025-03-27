@@ -6,11 +6,26 @@ public class RoomManager : MonoBehaviour
 {
     public static RoomManager instance;
 
+    [Header("Rooms (Mesh Parents)")]
+    [SerializeField] private List<GameObject> rooms = new();
+
+    public enum Room
+    {
+        Toddler,
+        Child,
+        Teen,
+        Adult,
+        TOTAL
+    };
+
+    [Header("Room")]
+    public Room currentRoomType = Room.Toddler;
+
+
     [Header("Jerry Prefab")]
     public GameObject jerryPrefab;
 
-    [Header("Rooms (Mesh Parents)")]
-    [SerializeField] private List<GameObject> rooms = new();
+    
 
     private void Awake()
     {
@@ -25,6 +40,8 @@ public class RoomManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rooms[(int)currentRoomType].SetActive(true);
+
         jerryGO = GameObject.FindGameObjectWithTag("Jerry");
         if (jerryGO == null)
             SpawnJerry();
@@ -38,9 +55,30 @@ public class RoomManager : MonoBehaviour
         jerryGO = Instantiate(jerryPrefab, spawnPoint.position, jerryPrefab.transform.rotation);
     }
 
+    void UpdateRoom()
+    {
+        foreach (var room in rooms)
+        {
+            room.SetActive(false);
+        }
+        rooms[(int)currentRoomType].SetActive(true);
+
+        SpawnJerry();
+    }
+
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void AgeRoom()
+    {
+        if (currentRoomType + 1 < Room.TOTAL)
+        {
+            currentRoomType += 1;
+            UpdateRoom();
+        }
+        else Debug.LogError("Some issue with room enum and room type");
     }
 }

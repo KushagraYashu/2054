@@ -27,13 +27,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4007946900081758726}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.6906794, y: 0.30554435, z: 0.15153219, w: 0.6376854}
+  m_LocalRotation: {x: -0.6906791, y: 0.30554748, z: 0.15153353, w: 0.63768387}
   m_LocalPosition: {x: -1.9347925, y: 8.356179, z: -16.052883}
   m_LocalScale: {x: 4.5675135, y: 4.567512, z: 4.567513}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -103.227, y: -52.023987, z: 90}
 --- !u!33 &1904817578669745239
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -108,9 +108,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 3.5
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -119,22 +119,58 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
+      value: 0.99079895
+      inSlope: -3.5014045
+      outSlope: -3.5014045
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.11830169
+      value: 0.4372406
+      inSlope: -1.640123
+      outSlope: -1.640123
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.8256399
+    - serializedVersion: 3
+      time: 0.21971858
+      value: 0.26234436
+      inSlope: -0.83245546
+      outSlope: -0.83245546
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.47548324
+      value: 0.07824707
+      inSlope: -0.27289772
+      outSlope: -0.27289772
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.6272505
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.80291474
+      value: 0.027618408
+      inSlope: -0.14799683
+      outSlope: -0.14799683
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 1
+      time: 0.9875126
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: -0.24545076
+      outSlope: -0.24545076
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 1
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4

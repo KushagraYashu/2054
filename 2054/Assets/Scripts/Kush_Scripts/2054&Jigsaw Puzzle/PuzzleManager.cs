@@ -71,10 +71,10 @@ public class PuzzleManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetupPuzzle();
+        if(RoomManager.instance.currentRoomType == RoomManager.Room.Toddler) SetupPuzzleJigsaw2054();
     }
 
-    void SetupPuzzle()
+    void SetupPuzzleJigsaw2054()
     {
         //clearing
         canShowInventory = false;
@@ -161,7 +161,10 @@ public class PuzzleManager : MonoBehaviour
             }
             else
             {
+                //THIS IS AFTER 2054 Puzzle (final memory and aging for toddler should go here)
+
                 //guidance thing here (this can be timebased)
+                PlayerBehaviour.instance.AgePlayer();
                 GuidanceSystem.instance.StartSteps(waypointsFrom2054To);
             }
         }
@@ -187,7 +190,7 @@ public class PuzzleManager : MonoBehaviour
     IEnumerator DelayedSpawn()
     {
         yield return new WaitForSeconds(2f);
-        SetupPuzzle();
+        SetupPuzzleJigsaw2054();
     }
 
     void SolvePuzzle()

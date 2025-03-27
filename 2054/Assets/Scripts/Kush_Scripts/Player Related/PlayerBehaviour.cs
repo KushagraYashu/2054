@@ -22,7 +22,8 @@ public class PlayerBehaviour : MonoBehaviour
         Toddler,
         Child,
         Teenager,
-        Adult
+        Adult,
+        TOTAL
     }
 
     [Header("Player Age")]
@@ -49,6 +50,8 @@ public class PlayerBehaviour : MonoBehaviour
         heights[1] = 1.26f;  //child
         heights[2] = 1.62f;  //teen
         heights[3] = 1.80f;  //adult
+
+        SetPlayerHeight();
     }
 
     // Update is called once per frame
@@ -65,7 +68,26 @@ public class PlayerBehaviour : MonoBehaviour
                 break;
         }
 
+        
+    }
+
+    void SetPlayerHeight()
+    {
         transform.localScale = new Vector3(1, heights[(int)playerAge], 1);
         movementComponent.speed = 10 * (float)(1 - (1.8 - heights[(int)playerAge]) / 1.8);
+    }
+
+    public void AgePlayer()
+    {
+        if(playerAge + 1 < PlayerAge.TOTAL)
+        {
+            playerAge += 1;
+            SetPlayerHeight();
+            RoomManager.instance.AgeRoom();
+        }
+        else
+        {
+            //Win condition
+        }
     }
 }
