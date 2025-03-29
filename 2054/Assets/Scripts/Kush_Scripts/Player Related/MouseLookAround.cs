@@ -85,7 +85,7 @@ public class MouseLookAround : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X") * sensitivity;
         float mouseY = Input.GetAxis("Mouse Y") * sensitivity;
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -60, 60);
+        xRotation = Mathf.Clamp(xRotation, -90, 90);
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerTrans.Rotate(Vector3.up, mouseX);
