@@ -1,0 +1,15 @@
+Event	ID	Name			Wwise Object Path	Notes
+	317282339	Weather			\Default Work Unit\Weather	
+
+State Group	ID	Name			Wwise Object Path	Notes
+	317282339	Weather			\Default Work Unit\Weather	
+
+State	ID	Name	State Group			Notes
+	748895195	None	Weather			
+	3205863813	Indoor_Rain	Weather			
+	4103860031	Indoors	Weather			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	54265631	Inside house	C:\Users\jabhi\OneDrive - Abertay University\Documents\GitHub\2054\2054\2054_WwiseProject\.cache\Mac\SFX\Inside house_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Weather\Inside house		34752096
+	520861626	Indoor_Rain	C:\Users\jabhi\OneDrive - Abertay University\Documents\GitHub\2054\2054\2054_WwiseProject\.cache\Mac\SFX\Indoor_Rain_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Weather\Indoor_Rain		34752096
+

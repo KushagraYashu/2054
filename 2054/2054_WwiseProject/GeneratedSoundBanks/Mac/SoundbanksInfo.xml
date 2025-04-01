@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Mac" BasePlatform="Mac" SchemaVersion="16" SoundBankVersion="150">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Mac</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{56D23BC9-DA62-149D-D4D2-339C68191E35}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+			<StateGroups>
+				<StateGroup Id="317282339" Name="Weather">
+					<States>
+						<State Id="748895195" Name="None"/>
+						<State Id="3205863813" Name="Indoor_Rain"/>
+						<State Id="4103860031" Name="Indoors"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
+		</SoundBank>
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{A8AD8750-B76A-3B82-505C-6E1D92CE42E8}">
+			<ShortName>Main</ShortName>
+			<Path>Main.bnk</Path>
+			<Media>
+				<File Id="54265631" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Inside house.wav</ShortName>
+					<CachePath>SFX/Inside house_818F3B66.wem</CachePath>
+				</File>
+				<File Id="520861626" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Indoor_Rain.wav</ShortName>
+					<CachePath>SFX/Indoor_Rain_818F3B66.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="317282339" Name="Weather" DurationType="OneShot" DurationMin="181" DurationMax="181">
+					<MediaRefs>
+						<MediaRef Id="54265631"/>
+						<MediaRef Id="520861626"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{C6437E22-0AC2-9AFA-B4DD-D5A9E2476796}</FileHash>
+</SoundBanksInfo>

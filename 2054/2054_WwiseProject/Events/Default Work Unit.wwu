@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" SchemaVersion="119">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Weather" ID="{D1316BA2-11CE-45A0-AAAB-AC9BF4549E69}">
+					<ChildrenList>
+						<Action Name="" ID="{C830CF50-6DD1-4616-A712-F8BA0B2F14D2}" ShortID="426935001">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Indoor_Rain" ID="{30EECB60-7E60-47A2-8E23-A91CD0181CD3}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{46A24A7F-815C-42B6-890C-A2F7F69D43D0}" ShortID="257990802">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Inside house" ID="{312CF63D-B04D-4D72-8AE3-BC8607C5E131}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
