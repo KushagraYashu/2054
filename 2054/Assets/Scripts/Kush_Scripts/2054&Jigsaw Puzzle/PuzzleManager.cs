@@ -126,7 +126,6 @@ public class PuzzleManager : MonoBehaviour
     {
         if (canShowInventory && Input.GetKeyDown(KeyCode.E)) { 
             ShowInventory();
-            canShowInventory = false;
         }
 
         if (inventory && Input.GetKeyDown(KeyCode.E) && !solving)
@@ -262,18 +261,27 @@ public class PuzzleManager : MonoBehaviour
     void ShowInventory()
     {
         int i = 0;
+        
         foreach (var piece in piecesGO) {
-            if (piece != null && piecesWaypoint[i % piecesWaypoint.Count] != null) {
+            if (piece != null && 
+                piecesWaypoint[i % piecesWaypoint.Count] != null && 
+                !piece.GetComponent<PuzzlePiece>().solved) {
+
                 piece.transform.position = piecesWaypoint[i % piecesWaypoint.Count].transform.position;
                 i++;
                 piece.SetActive(true);
+
+                foreach (GameObject t in piecesTargetPoint)
+                {
+                    if (t.name.Contains(piece.GetComponent<PuzzlePiece>().targetPointName))
+                    {   
+                        t.GetComponentInChildren<MeshRenderer>().enabled = true;
+                        break;
+                    }
+                }
             }
         }
-        foreach(var target in piecesTargetPoint)
-        {
-            if(target)
-                target.GetComponentInChildren<MeshRenderer>().enabled = true;
-        }
+        
         inventory = true;
     }
 

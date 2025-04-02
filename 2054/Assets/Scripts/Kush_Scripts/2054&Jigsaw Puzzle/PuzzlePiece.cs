@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 using UnityEngine.ProBuilder.Shapes;
 
@@ -8,6 +9,9 @@ public class PuzzlePiece : MonoBehaviour
     [Header("Target Point")]
     public string targetPointName = string.Empty;
 
+    [Header("Mesh Renderer")]
+    [SerializeField] MeshRenderer meshRenderer;
+
     [Header("Bools")]
     public bool issolving = false;
     public bool solved = false;
@@ -15,14 +19,20 @@ public class PuzzlePiece : MonoBehaviour
     //internal variables
     bool isDragging = false;
     bool added = false;
-    Vector3 offset = new Vector3();
+    Vector3 offset = new();
     Camera cam;
     Transform targetPoint = null;
+    Material objectMaterial;
+    UnityEngine.Color emissionColor;
+    float intensity;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player") && !added)
         {
+            StopAllCoroutines();
+            objectMaterial.SetColor("_EmissionColor", emissionColor * 1f);
+
             PuzzleManager.instance.AddPiece(this.gameObject);
             added = true;
         }
@@ -31,6 +41,45 @@ public class PuzzlePiece : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        objectMaterial = meshRenderer.material;
+
+        offset = -transform.forward * 0.1f;
+
+        StartCoroutine(Flash());
+    }
+
+    IEnumerator Flash()
+    {
+        float elapsedTime = 0f;
+        float totalDuration = 2f;
+        emissionColor = objectMaterial.GetColor("_EmissionColor");
+        objectMaterial.EnableKeyword("_EMISSION");
+        intensity = -1f;
+
+        while (true)
+        {
+            while (elapsedTime < totalDuration)
+            {
+                intensity = Mathf.Lerp(-1, 5, elapsedTime / totalDuration);
+                objectMaterial.SetColor("_EmissionColor", emissionColor * intensity);
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+            intensity = 5f;
+            objectMaterial.SetColor("_EmissionColor", emissionColor * intensity);
+            elapsedTime = 0f;
+
+            while (elapsedTime < totalDuration)
+            {
+                intensity = Mathf.Lerp(5, -1, elapsedTime / totalDuration);
+                objectMaterial.SetColor("_EmissionColor", emissionColor * intensity);
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+            intensity = -1f;
+            objectMaterial.SetColor("_EmissionColor", emissionColor * intensity);
+            elapsedTime = 0f;
+        }
     }
 
     // Update is called once per frame
@@ -39,11 +88,14 @@ public class PuzzlePiece : MonoBehaviour
         if (issolving)
         {
             if(cam == null) cam = MouseLookAround.instance.GetCam();
-            if(targetPoint == null)
-                foreach(GameObject t in PuzzleManager.instance.GetTargetPoints())
+            if (targetPoint == null)
+                foreach (GameObject t in PuzzleManager.instance.GetTargetPoints())
                 {
                     if (t.name.Contains(targetPointName))
+                    {
                         targetPoint = t.transform;
+                        break;
+                    }
                 }
 
             if (Input.GetMouseButton(0) && !isDragging && !PuzzleManager.instance.IsDraggingObject())
@@ -53,7 +105,6 @@ public class PuzzlePiece : MonoBehaviour
                 {
                     isDragging = true;
                     PuzzleManager.instance.SetDraggingObject(isDragging);
-                    offset = transform.position - GetMouseWorldPosition();
                 }
             }
             else if (Input.GetMouseButtonUp(0)) { 
