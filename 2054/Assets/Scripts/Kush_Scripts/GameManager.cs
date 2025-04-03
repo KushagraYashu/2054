@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
+    private void Awake(){        if (instance == null) instance = this;        else Destroy(this);    }
+
     [Header("Camera Positions")]
     public Transform mainMenuCamPos;
     public Transform playerCamPos;
@@ -12,11 +17,23 @@ public class GameManager : MonoBehaviour
     [Header("Transistion Speed")]
     [SerializeField] float transitionSpeed = 2f;
 
+    [Header("Lights")]
+    [SerializeField]
+    GameObject[] allLights;
+    [SerializeField] GameObject[] livingRoomLights;
+    [SerializeField] Material lightBoxMaterial;
+
     [Header("Canvases")]
     [SerializeField] GameObject mainMenuCanvas;
 
     [Header("Player")]
     [SerializeField] GameObject player;
+
+    [Header("Tutorial Things")]
+    [SerializeField] GameObject tutorialLight;
+    [SerializeField] GameObject tutorialCollider;
+    [SerializeField] Transform tutorialSpawnPt;
+    [SerializeField] List<Transform> tutorialWaypoints = new();
 
     //internal variables
     Camera mainCamera;
@@ -44,7 +61,9 @@ public class GameManager : MonoBehaviour
         mainCamera.transform.position = playerCamPos.position;
         yield return new WaitForSeconds(0.5f);
         MouseLookAround.instance.SetMouseLock();
-        MouseLookAround.instance.lookAllowed = true;
+        PuzzleManager.instance.UnfreezePlayer();
+
+        LightTutorial();
     }
 
     public void StartGame()
@@ -59,6 +78,58 @@ public class GameManager : MonoBehaviour
         player.GetComponent<CharacterController>().enabled = true;
         player.GetComponent<PlayerBehaviour>().enabled = true;
         player.GetComponent<PlayerMovement>().enabled = true;
+    }
+
+    void LightTutorial()
+    {
+        lightBoxMaterial.DisableKeyword("_EMISSION");
+
+        foreach(GameObject light in allLights)
+        {
+            if(!livingRoomLights.Contains(light))
+            {
+                light.GetComponent<Light>().enabled = false;
+            }
+        }
+
+        tutorialLight.GetComponent<Light>().enabled = true;
+
+        tutorialCollider.SetActive(true);
+
+        GuidanceSystem.instance.StartSteps(tutorialWaypoints);
+    }
+
+    public void TutorialReset()
+    {
+        StartCoroutine(TutReset());
+    }
+
+    IEnumerator TutReset()
+    {
+        player.GetComponent<CharacterController>().enabled = false;
+        player.GetComponent<PlayerBehaviour>().enabled = false;
+        player.GetComponent<PlayerMovement>().enabled = false;
+        player.transform.SetPositionAndRotation(tutorialSpawnPt.position, tutorialSpawnPt.rotation);
+        StartCoroutine(UIEffects.instance.Fade(1, 0, 1f));
+        yield return new WaitForSeconds(1f);
+        player.GetComponent<CharacterController>().enabled = true;
+        player.GetComponent<PlayerBehaviour>().enabled = true;
+        player.GetComponent<PlayerMovement>().enabled = true;
+        PuzzleManager.instance.UnfreezePlayer();
+    }
+
+    public void TutorialDone()
+    {
+        lightBoxMaterial.EnableKeyword("_EMISSION");
+
+        foreach (GameObject light in allLights)
+        {
+            light.GetComponent<Light>().enabled = true;
+        }
+
+        tutorialLight.GetComponent<Light>().enabled = false;
+
+        tutorialCollider.SetActive(false);
     }
 
     // Update is called once per frame

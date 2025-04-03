@@ -182,24 +182,25 @@ public class PuzzleManager : MonoBehaviour
         //freeze player
         FreezePlayer();
 
-        StartCoroutine(ImageFade.instance.Fade(0, 1, 2, "Show 2054 Memory"));
+        StartCoroutine(UIEffects.instance.Fade(0, 1, 2, "Show 2054 Memory"));
         yield return new WaitForSeconds(2f);
 
         //play memory animation here
         //yield return new WaitForSeconds(animationDuration);
         //remove this line later (its for testing delay)
         yield return new WaitForSeconds(2f);
-        StartCoroutine(ImageFade.instance.Fade(1, 1, .1f, "Aging Player"));
-        yield return new WaitForSeconds(2f);
 
+        //Scrolling Years (pass the callback function as well)
+        StartCoroutine(UIEffects.instance.ScrollYear(1987, 1994, 0.75f, AgePlayer));
+    }
 
+    void AgePlayer() {
         //aging and guidance system (guidance should be based on time)
         PlayerBehaviour.instance.AgePlayer();
         GuidanceSystem.instance.StartSteps(waypointsFrom2054To);
 
         //fade out
-        StartCoroutine(ImageFade.instance.Fade(1, 0, 2));
-        yield return new WaitForSeconds(2f);
+        StartCoroutine(UIEffects.instance.Fade(1, 0, 2));
 
         //unfreeze player
         UnfreezePlayer();
@@ -212,7 +213,7 @@ public class PuzzleManager : MonoBehaviour
         //freeze player
         FreezePlayer();
 
-        StartCoroutine(ImageFade.instance.Fade(0, 1, 2, "Show Jigsaw Memory"));
+        StartCoroutine(UIEffects.instance.Fade(0, 1, 2, "Show Jigsaw Memory"));
         yield return new WaitForSeconds(2f);
 
         //play memory animation here
@@ -226,7 +227,7 @@ public class PuzzleManager : MonoBehaviour
         SwitchPuzzle();
 
         //fade out
-        StartCoroutine(ImageFade.instance.Fade(1, 0, 2));
+        StartCoroutine(UIEffects.instance.Fade(1, 0, 2));
         yield return new WaitForSeconds(2f);
 
         //unfreeze player
@@ -288,7 +289,7 @@ public class PuzzleManager : MonoBehaviour
     /// <summary>
     ///freeze player for either memory or aging, this function uses PlayerState.TOTAL (also freezes mouse)
     /// </summary>
-    void FreezePlayer()
+    public void FreezePlayer()
     {
         PlayerBehaviour.instance.currentPlayerState = PlayerBehaviour.PlayerState.TOTAL; //TOTAL makes player stop moving, hence applied total
         MouseLookAround.instance.lookAllowed = false;
@@ -297,7 +298,7 @@ public class PuzzleManager : MonoBehaviour
     /// <summary>
     /// unfreeze player for exploring, (also unfreezes mouse)
     /// </summary>
-    void UnfreezePlayer()
+    public void UnfreezePlayer()
     {
         PlayerBehaviour.instance.currentPlayerState = PlayerBehaviour.PlayerState.EXPLORING;
         MouseLookAround.instance.lookAllowed = true;

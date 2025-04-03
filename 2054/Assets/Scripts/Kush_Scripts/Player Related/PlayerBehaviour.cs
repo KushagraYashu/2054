@@ -16,7 +16,7 @@ public class PlayerBehaviour : MonoBehaviour
     };
 
     [Header("Player State")]
-    public PlayerState currentPlayerState = PlayerState.EXPLORING;
+    public PlayerState currentPlayerState = PlayerState.TOTAL;
 
     public enum PlayerAge { 
         Toddler,
