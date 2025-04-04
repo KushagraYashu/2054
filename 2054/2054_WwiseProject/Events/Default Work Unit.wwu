@@ -21,6 +21,54 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Folder Name="Player Footsteps" ID="{253B7D6A-3647-4A9D-BA81-6DABC1D8B854}" ShortID="86684880">
+					<ChildrenList>
+						<Event Name="ToddlerPlayerFootstep" ID="{893AA716-3DA0-4C36-B625-8B998E505CA7}">
+							<ChildrenList>
+								<Action Name="" ID="{BD58EA1F-EED4-462A-9BD0-9AE5C0275925}" ShortID="650319593">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881" ID="{1C83316E-9580-431F-818D-0506C021679E}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="ChildPlayerFootstep" ID="{FD7609B1-3D6B-4A40-98FD-092D80D7A25A}">
+							<ChildrenList>
+								<Action Name="" ID="{BCC6C007-0E99-482C-8EDB-5D1FAECC264A}" ShortID="641386245">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Footsteps, Human, Asphalt, Female, Heels, Walk SND11515 1" ID="{0D23E331-D710-43A3-97A7-520D0A04FC81}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="TeenPlayerFootstep" ID="{EE322A69-C10A-4DCE-95C6-124B4FBE5883}">
+							<ChildrenList>
+								<Action Name="" ID="{F047DA66-C196-40A1-932F-382D463DEA13}" ShortID="128774842">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881" ID="{1C83316E-9580-431F-818D-0506C021679E}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="AdultPlayerFootstep" ID="{6DE3D52D-0FD5-438C-A995-2B2AE8DE324E}">
+							<ChildrenList>
+								<Action Name="" ID="{A1C4A091-0681-49A2-B370-A42CB08CF1AD}" ShortID="568137541">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Footsteps, Human, Carpet, Leather Sole, Slow SND1014" ID="{87EF5ED3-B535-4592-83FD-BB1BE17E4554}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

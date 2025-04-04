@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
 
     //internal variables
     Vector3 velocity;
+    float footstepSoundThreshold = 0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +49,8 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
 
         characterController.Move(speed * Time.deltaTime * move);
+
+        AudioManager.instance.PlayPlayerFootstep(move, footstepSoundThreshold, isGround, PlayerBehaviour.instance.playerAge, this.gameObject);
 
         if (Input.GetButtonDown("Jump") && isGround)
         {

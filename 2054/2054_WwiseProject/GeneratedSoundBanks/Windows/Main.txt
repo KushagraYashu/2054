@@ -1,5 +1,9 @@
 Event	ID	Name			Wwise Object Path	Notes
 	317282339	Weather			\Default Work Unit\Weather	
+	450457492	TeenPlayerFootstep			\Default Work Unit\Player Footsteps\TeenPlayerFootstep	
+	969514050	ToddlerPlayerFootstep			\Default Work Unit\Player Footsteps\ToddlerPlayerFootstep	
+	3061740098	AdultPlayerFootstep			\Default Work Unit\Player Footsteps\AdultPlayerFootstep	
+	3303107572	ChildPlayerFootstep			\Default Work Unit\Player Footsteps\ChildPlayerFootstep	
 
 State Group	ID	Name			Wwise Object Path	Notes
 	317282339	Weather			\Default Work Unit\Weather	
@@ -10,6 +14,9 @@ State	ID	Name	State Group			Notes
 	4103860031	Indoors	Weather			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	54265631	Inside house	C:\Users\jabhi\OneDrive - Abertay University\Documents\GitHub\2054\2054\2054_WwiseProject\.cache\Windows\SFX\Inside house_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Weather\Inside house		34752096
-	520861626	Indoor_Rain	C:\Users\jabhi\OneDrive - Abertay University\Documents\GitHub\2054\2054\2054_WwiseProject\.cache\Windows\SFX\Indoor_Rain_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Weather\Indoor_Rain		34752096
+	35307580	Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881	K:\Abertay\2054\2054\2054_WwiseProject\.cache\Windows\SFX\Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Teen_Footsteps\Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881		24596
+	54265631	Inside house	K:\Abertay\2054\2054\2054_WwiseProject\.cache\Windows\SFX\Inside house_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Weather\Inside house		34752096
+	520861626	Indoor_Rain	K:\Abertay\2054\2054\2054_WwiseProject\.cache\Windows\SFX\Indoor_Rain_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Weather\Indoor_Rain		34752096
+	797068411	Footsteps, Human, Carpet, Leather Sole, Slow SND1014	K:\Abertay\2054\2054\2054_WwiseProject\.cache\Windows\SFX\Footsteps, Human, Carpet, Leather Sole, Slow SND1014_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\OLD-footsteps\Footsteps, Human, Carpet, Leather Sole, Slow SND1014		19752
+	989964845	Footsteps, Human, Asphalt, Female, Heels, Walk SND11515 1	K:\Abertay\2054\2054\2054_WwiseProject\.cache\Windows\SFX\Footsteps, Human, Asphalt, Female, Heels, Walk SND11515 1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Adult_Footsteps\Footsteps, Human, Asphalt, Female, Heels, Walk SND11515 1		16688
 

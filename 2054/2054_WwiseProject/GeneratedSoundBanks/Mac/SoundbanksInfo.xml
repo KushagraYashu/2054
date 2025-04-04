@@ -31,10 +31,14 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{A8AD8750-B76A-3B82-505C-6E1D92CE42E8}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{6F4E3149-67EA-8B8D-2819-AE3B0F9A4BA4}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
+				<File Id="35307580" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881.wav</ShortName>
+					<CachePath>SFX/Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881_818F3B66.wem</CachePath>
+				</File>
 				<File Id="54265631" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Inside house.wav</ShortName>
 					<CachePath>SFX/Inside house_818F3B66.wem</CachePath>
@@ -43,8 +47,36 @@
 					<ShortName>Indoor_Rain.wav</ShortName>
 					<CachePath>SFX/Indoor_Rain_818F3B66.wem</CachePath>
 				</File>
+				<File Id="797068411" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footsteps, Human, Carpet, Leather Sole, Slow SND1014.wav</ShortName>
+					<CachePath>SFX/Footsteps, Human, Carpet, Leather Sole, Slow SND1014_818F3B66.wem</CachePath>
+				</File>
+				<File Id="989964845" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footsteps, Human, Asphalt, Female, Heels, Walk SND11515 1.wav</ShortName>
+					<CachePath>SFX/Footsteps, Human, Asphalt, Female, Heels, Walk SND11515 1_818F3B66.wem</CachePath>
+				</File>
 			</Media>
 			<Events>
+				<Event Id="3061740098" Name="AdultPlayerFootstep" DurationType="OneShot" DurationMin="0.20475" DurationMax="0.20475">
+					<MediaRefs>
+						<MediaRef Id="797068411"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3303107572" Name="ChildPlayerFootstep" DurationType="OneShot" DurationMin="0.15848887" DurationMax="0.1884761">
+					<MediaRefs>
+						<MediaRef Id="989964845"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="450457492" Name="TeenPlayerFootstep" DurationType="OneShot" DurationMin="0.23402709" DurationMax="0.27830666">
+					<MediaRefs>
+						<MediaRef Id="35307580"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="969514050" Name="ToddlerPlayerFootstep" DurationType="OneShot" DurationMin="0.23402709" DurationMax="0.27830666">
+					<MediaRefs>
+						<MediaRef Id="35307580"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="317282339" Name="Weather" DurationType="OneShot" DurationMin="181" DurationMax="181">
 					<MediaRefs>
 						<MediaRef Id="54265631"/>
@@ -54,5 +86,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{C6437E22-0AC2-9AFA-B4DD-D5A9E2476796}</FileHash>
+	<FileHash>{D44F0970-B85D-89A9-21E2-19731CA92D7F}</FileHash>
 </SoundBanksInfo>

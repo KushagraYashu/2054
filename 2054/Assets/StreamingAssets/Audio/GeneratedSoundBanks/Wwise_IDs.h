@@ -13,6 +13,10 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID ADULTPLAYERFOOTSTEP = 3061740098U;
+        static const AkUniqueID CHILDPLAYERFOOTSTEP = 3303107572U;
+        static const AkUniqueID TEENPLAYERFOOTSTEP = 450457492U;
+        static const AkUniqueID TODDLERPLAYERFOOTSTEP = 969514050U;
         static const AkUniqueID WEATHER = 317282339U;
     } // namespace EVENTS
 

@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: b41360aadc36a5418c8e6c331721a1f4
     GuidInternal: 
-    m_lastTime: -8584585142516435293
+    m_lastTime: -8584578108066053639
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 975eb8b647c3434697b2aef874490a0c
     GuidInternal: 
-    m_lastTime: -8584585142517406994
+    m_lastTime: -8584578108075255395
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 6d591579630d4e4b8339eaf347078ef1
     GuidInternal: 
-    m_lastTime: -8584584879048179758
+    m_lastTime: -8584578047353037821
     List:
     - name: Main
       guid: 7f2daec70d93a24395a594bd9476f066
@@ -94,8 +94,105 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 6b6e736efaef2c4ca991b4d0d692e67d
     GuidInternal: 
-    m_lastTime: -8584584879048353531
+    m_lastTime: -8584578047499923251
     List:
+    - name: AdultPlayerFootstep
+      guid: 2dd5e36dd50f8c43a9952b2ae8de324e
+      id: 3061740098
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6b6e736efaef2c4ca991b4d0d692e67d
+      - ElementName: Player Footsteps
+        ObjectType: 4
+        guid: 6a7d3b2547369d4aba816dabc1d8b854
+      - ElementName: AdultPlayerFootstep
+        ObjectType: 3
+        guid: 2dd5e36dd50f8c43a9952b2ae8de324e
+      Path: Events\Default Work Unit\Player Footsteps\AdultPlayerFootstep
+      maxAttenuation: 0
+      maxDuration: 0.20475
+      minDuration: 0.20475
+    - name: ChildPlayerFootstep
+      guid: b10976fd6b3d404a98fd092d80d7a25a
+      id: 3303107572
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6b6e736efaef2c4ca991b4d0d692e67d
+      - ElementName: Player Footsteps
+        ObjectType: 4
+        guid: 6a7d3b2547369d4aba816dabc1d8b854
+      - ElementName: ChildPlayerFootstep
+        ObjectType: 3
+        guid: b10976fd6b3d404a98fd092d80d7a25a
+      Path: Events\Default Work Unit\Player Footsteps\ChildPlayerFootstep
+      maxAttenuation: 0
+      maxDuration: 0.1884761
+      minDuration: 0.15848887
+    - name: Player Footsteps
+      guid: 6a7d3b2547369d4aba816dabc1d8b854
+      id: 3165549291
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6b6e736efaef2c4ca991b4d0d692e67d
+      - ElementName: Player Footsteps
+        ObjectType: 4
+        guid: 6a7d3b2547369d4aba816dabc1d8b854
+      Path: Events\Default Work Unit\Player Footsteps
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: TeenPlayerFootstep
+      guid: 692a32ee0ac1ce4d95c6124b4fbe5883
+      id: 450457492
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6b6e736efaef2c4ca991b4d0d692e67d
+      - ElementName: Player Footsteps
+        ObjectType: 4
+        guid: 6a7d3b2547369d4aba816dabc1d8b854
+      - ElementName: TeenPlayerFootstep
+        ObjectType: 3
+        guid: 692a32ee0ac1ce4d95c6124b4fbe5883
+      Path: Events\Default Work Unit\Player Footsteps\TeenPlayerFootstep
+      maxAttenuation: 0
+      maxDuration: 0.27830666
+      minDuration: 0.23402709
+    - name: ToddlerPlayerFootstep
+      guid: 16a73a89a03d364cb6258b998e505ca7
+      id: 969514050
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6b6e736efaef2c4ca991b4d0d692e67d
+      - ElementName: Player Footsteps
+        ObjectType: 4
+        guid: 6a7d3b2547369d4aba816dabc1d8b854
+      - ElementName: ToddlerPlayerFootstep
+        ObjectType: 3
+        guid: 16a73a89a03d364cb6258b998e505ca7
+      Path: Events\Default Work Unit\Player Footsteps\ToddlerPlayerFootstep
+      maxAttenuation: 0
+      maxDuration: 0.27830666
+      minDuration: 0.23402709
     - name: Weather
       guid: a26b31d1ce11a045aaabac9bf4549e69
       id: 317282339
@@ -125,7 +222,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 9aca37bdec08464e866b33c8822b7e1b
     GuidInternal: 
-    m_lastTime: -8584585142517221290
+    m_lastTime: -8584578108081916703
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
@@ -139,7 +236,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 68a0ea2b43c9fe428d49e2950a66b608
     GuidInternal: 
-    m_lastTime: -8584584879048119963
+    m_lastTime: -8584578108066064619
     List:
     - name: Weather
       guid: 7e61417ace02c443b78317930554403e
@@ -219,7 +316,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 26537b2798b09b4a9d78f1bf3b761d1a
     GuidInternal: 
-    m_lastTime: -8584585142517462184
+    m_lastTime: -8584578108066064619
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
@@ -233,7 +330,7 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: a7cd33f05653624888f07accfab06ce8
     GuidInternal: 
-    m_lastTime: -8584585142516508490
+    m_lastTime: -8584578108066064619
     List: []
   ExpandedFileSystemItemIds: 
   ExpandedWaapiItemIds: 05000000060000000700000008000000090000000a0000000b0000000c000000e5000000e6000000e7000000
