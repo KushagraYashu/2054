@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -53,7 +54,7 @@ public class AudioManager : MonoBehaviour
         
         if(timer > footstepSoundThreshold && isGround) //if we have moved for long enough, we can play the footstep sound (based on the age, ofcourse)
         {
-            playerFootsteps[(int)playerAge].Post(gameObj);
+            playerFootsteps[(int)playerAge % playerFootsteps.Length].Post(gameObj);
             timer = 0f;
         }
     }
