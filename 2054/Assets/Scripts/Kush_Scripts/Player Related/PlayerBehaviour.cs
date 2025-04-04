@@ -16,11 +16,23 @@ public class PlayerBehaviour : MonoBehaviour
     };
 
     [Header("Player State")]
-    public PlayerState currentPlayerState = PlayerState.EXPLORING;
+    public PlayerState currentPlayerState = PlayerState.TOTAL;
 
+    public enum PlayerAge { 
+        Toddler,
+        Child,
+        Teenager,
+        Adult,
+        TOTAL
+    }
+
+    [Header("Player Age")]
+    public PlayerAge playerAge = PlayerAge.Toddler;
 
     // Internal Variables
     PlayerMovement movementComponent;
+    float[] heights = new float[4];
+
 
     private void Awake()
     {
@@ -32,6 +44,14 @@ public class PlayerBehaviour : MonoBehaviour
     void Start()
     {
         movementComponent = GetComponent<PlayerMovement>();
+
+        //Player heights based on Age
+        heights[0] = 0.72f;  //toddler
+        heights[1] = 1.26f;  //child
+        heights[2] = 1.62f;  //teen
+        heights[3] = 1.80f;  //adult
+
+        SetPlayerHeight();
     }
 
     // Update is called once per frame
@@ -46,6 +66,28 @@ public class PlayerBehaviour : MonoBehaviour
                 MouseLookAround.instance.lookAllowed = false;
                 MouseLookAround.instance.SetMouseLock(false);
                 break;
+        }
+
+        
+    }
+
+    void SetPlayerHeight()
+    {
+        transform.localScale = new Vector3(1, heights[(int)playerAge], 1);
+        movementComponent.speed = 10 * (float)(1 - (1.8 - heights[(int)playerAge]) / 1.8);
+    }
+
+    public void AgePlayer()
+    {
+        if(playerAge + 1 < PlayerAge.TOTAL)
+        {
+            playerAge += 1;
+            SetPlayerHeight();
+            RoomManager.instance.AgeRoom();
+        }
+        else
+        {
+            //Win condition
         }
     }
 }
