@@ -1,0 +1,243 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f32085edfd3b1114a91ed95b9999a1e6, type: 3}
+  m_Name: AkWwiseProjectData
+  m_EditorClassIdentifier: 
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Virtual Acoustics
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: b41360aadc36a5418c8e6c331721a1f4
+    ParentPath: Virtual Acoustics\Default Work Unit
+    guid: b41360aadc36a5418c8e6c331721a1f4
+    GuidInternal: 
+    m_lastTime: -8584585142516435293
+    List: []
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Master-Mixer Hierarchy
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 975eb8b647c3434697b2aef874490a0c
+    ParentPath: Master-Mixer Hierarchy\Default Work Unit
+    guid: 975eb8b647c3434697b2aef874490a0c
+    GuidInternal: 
+    m_lastTime: -8584585142517406994
+    List:
+    - name: Master Audio Bus
+      guid: d8a41415a61d2a41a17e75ca0c2149f3
+      id: 3803692087
+      PathAndIcons:
+      - ElementName: Master-Mixer Hierarchy
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 975eb8b647c3434697b2aef874490a0c
+      - ElementName: Master Audio Bus
+        ObjectType: 2
+        guid: d8a41415a61d2a41a17e75ca0c2149f3
+      Path: Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: SoundBanks
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 6d591579630d4e4b8339eaf347078ef1
+    ParentPath: SoundBanks\Default Work Unit
+    guid: 6d591579630d4e4b8339eaf347078ef1
+    GuidInternal: 
+    m_lastTime: -8584584879048179758
+    List:
+    - name: Main
+      guid: 7f2daec70d93a24395a594bd9476f066
+      id: 3161908922
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6d591579630d4e4b8339eaf347078ef1
+      - ElementName: Main
+        ObjectType: 7
+        guid: 7f2daec70d93a24395a594bd9476f066
+      Path: SoundBanks\Default Work Unit\Main
+  EventWwu:
+  - PhysicalPath: Events\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Events
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 6b6e736efaef2c4ca991b4d0d692e67d
+    ParentPath: Events\Default Work Unit
+    guid: 6b6e736efaef2c4ca991b4d0d692e67d
+    GuidInternal: 
+    m_lastTime: -8584584879048353531
+    List:
+    - name: Weather
+      guid: a26b31d1ce11a045aaabac9bf4549e69
+      id: 317282339
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6b6e736efaef2c4ca991b4d0d692e67d
+      - ElementName: Weather
+        ObjectType: 3
+        guid: a26b31d1ce11a045aaabac9bf4549e69
+      Path: Events\Default Work Unit\Weather
+      maxAttenuation: 0
+      maxDuration: 181
+      minDuration: 181
+  RtpcWwu:
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Game Parameters
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 9aca37bdec08464e866b33c8822b7e1b
+    ParentPath: Game Parameters\Default Work Unit
+    guid: 9aca37bdec08464e866b33c8822b7e1b
+    GuidInternal: 
+    m_lastTime: -8584585142517221290
+    List: []
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: States
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 68a0ea2b43c9fe428d49e2950a66b608
+    ParentPath: States\Default Work Unit
+    guid: 68a0ea2b43c9fe428d49e2950a66b608
+    GuidInternal: 
+    m_lastTime: -8584584879048119963
+    List:
+    - name: Weather
+      guid: 7e61417ace02c443b78317930554403e
+      id: 317282339
+      PathAndIcons:
+      - ElementName: States
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 68a0ea2b43c9fe428d49e2950a66b608
+      - ElementName: Weather
+        ObjectType: 9
+        guid: 7e61417ace02c443b78317930554403e
+      Path: States\Default Work Unit\Weather
+      values:
+      - name: Indoor_Rain
+        guid: 3f5e3a779a6b3341867f06d6a0a2e290
+        id: 3205863813
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 68a0ea2b43c9fe428d49e2950a66b608
+        - ElementName: Weather
+          ObjectType: 9
+          guid: 7e61417ace02c443b78317930554403e
+        - ElementName: Indoor_Rain
+          ObjectType: 8
+          guid: 3f5e3a779a6b3341867f06d6a0a2e290
+      - name: Indoors
+        guid: 1b5c9ac312f21f47b77111c55e11482e
+        id: 4103860031
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 68a0ea2b43c9fe428d49e2950a66b608
+        - ElementName: Weather
+          ObjectType: 9
+          guid: 7e61417ace02c443b78317930554403e
+        - ElementName: Indoors
+          ObjectType: 8
+          guid: 1b5c9ac312f21f47b77111c55e11482e
+      - name: None
+        guid: b2bb542b4b4ae64fb6c70830b054506d
+        id: 748895195
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 68a0ea2b43c9fe428d49e2950a66b608
+        - ElementName: Weather
+          ObjectType: 9
+          guid: 7e61417ace02c443b78317930554403e
+        - ElementName: None
+          ObjectType: 8
+          guid: b2bb542b4b4ae64fb6c70830b054506d
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Switches
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: 26537b2798b09b4a9d78f1bf3b761d1a
+    ParentPath: Switches\Default Work Unit
+    guid: 26537b2798b09b4a9d78f1bf3b761d1a
+    GuidInternal: 
+    m_lastTime: -8584585142517462184
+    List: []
+  TriggerWwu:
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    PathAndIcons:
+    - ElementName: Triggers
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Default Work Unit
+      ObjectType: 12
+      guid: a7cd33f05653624888f07accfab06ce8
+    ParentPath: Triggers\Default Work Unit
+    guid: a7cd33f05653624888f07accfab06ce8
+    GuidInternal: 
+    m_lastTime: -8584585142516508490
+    List: []
+  ExpandedFileSystemItemIds: 
+  ExpandedWaapiItemIds: 05000000060000000700000008000000090000000a0000000b0000000c000000e5000000e6000000e7000000
+  AutoSyncSelection: 0
+  autoPopulateEnabled: 1
+  currentDataSource: 0
+  CurrentPluginConfig: 
