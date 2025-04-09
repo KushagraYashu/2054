@@ -19,8 +19,11 @@ public class AudioManager : MonoBehaviour
 
     [Header("Audio Events")] //this is a header for inspector (this makes things look cleaner and easier to manage)
     [SerializeField] //showing the variable the inspector, this is only useful for private variables
-    private AK.Wwise.Event[] playerFootsteps; //array of events for the player footstep, set this in the inspector to be the appropriate event [0th - toddler, 1st - child, 2nd - Teen, 3rd - Adult, if confused see the PlayerAge enum in PlayerBehaviour.cs], also see the PlayPlayerFootstep method.
-
+    private AK.Wwise.Event[] playerFootsteps;
+    [SerializeField]//array of events for the player footstep, set this in the inspector to be the appropriate event [0th - toddler, 1st - child, 2nd - Teen, 3rd - Adult, if confused see the PlayerAge enum in PlayerBehaviour.cs], also see the PlayPlayerFootstep method.
+    private AK.Wwise.Event StartButton;
+    [SerializeField]
+    private AK.Wwise.Event BackButton;
     //I would recommend creating similar events and then their appropriate methods (make them public, so i can call them from other scripts using the singleton instance).
 
 
