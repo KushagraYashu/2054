@@ -1,9 +1,14 @@
 Event	ID	Name			Wwise Object Path	Notes
 	317282339	Weather			\Default Work Unit\Weather	
 	450457492	TeenPlayerFootstep			\Default Work Unit\Player Footsteps\TeenPlayerFootstep	
+	496050709	Volcano_Explosion			\Default Work Unit\Volcano_Explosion	
+	535830432	Door_Open			\Default Work Unit\Door_Open	
 	969514050	ToddlerPlayerFootstep			\Default Work Unit\Player Footsteps\ToddlerPlayerFootstep	
+	2674457354	Start_Button			\Default Work Unit\Start_Button	
+	2886972203	Back_Button			\Default Work Unit\Back_Button	
 	3061740098	AdultPlayerFootstep			\Default Work Unit\Player Footsteps\AdultPlayerFootstep	
 	3303107572	ChildPlayerFootstep			\Default Work Unit\Player Footsteps\ChildPlayerFootstep	
+	3420485851	Volcano_Hiss			\Default Work Unit\Volcano_Hiss	
 
 State Group	ID	Name			Wwise Object Path	Notes
 	317282339	Weather			\Default Work Unit\Weather	
@@ -16,7 +21,13 @@ State	ID	Name	State Group			Notes
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	35307580	Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881	C:\Users\2302441.UAD\OneDrive - Abertay University\Documents\2054\2054\2054\2054_WwiseProject\.cache\Mac\SFX\Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Teen_Footsteps\Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881		24596
 	54265631	Inside house	C:\Users\2302441.UAD\OneDrive - Abertay University\Documents\2054\2054\2054\2054_WwiseProject\.cache\Mac\SFX\Inside house_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Weather\Inside house		34752096
+	163949530	Volcano_Explosion	C:\Users\2302441.UAD\OneDrive - Abertay University\Documents\2054\2054\2054\2054_WwiseProject\.cache\Mac\SFX\Volcano_Explosion_29F9F04C.wem		\Actor-Mixer Hierarchy\Default Work Unit\Volcano_Explosion		827316
+	452509036	Doors, Wood, Open, Close, Handling, Squeaky SND4041 1	C:\Users\2302441.UAD\OneDrive - Abertay University\Documents\2054\2054\2054\2054_WwiseProject\.cache\Mac\SFX\Doors, Wood, Open, Close, Handling, Squeaky SND4041 1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Door\Doors, Wood, Open, Close, Handling, Squeaky SND4041 1		35624
+	463762361	Volcano_Hiss	C:\Users\2302441.UAD\OneDrive - Abertay University\Documents\2054\2054\2054\2054_WwiseProject\.cache\Mac\SFX\Volcano_Hiss_199C9AB4.wem		\Actor-Mixer Hierarchy\Default Work Unit\Volcano_Hiss		545712
 	520861626	Indoor_Rain	C:\Users\2302441.UAD\OneDrive - Abertay University\Documents\2054\2054\2054\2054_WwiseProject\.cache\Mac\SFX\Indoor_Rain_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Weather\Indoor_Rain		34752096
+	635226472	Start Button	C:\Users\2302441.UAD\OneDrive - Abertay University\Documents\2054\2054\2054\2054_WwiseProject\.cache\Mac\SFX\Start Button_C76EA49D.wem		\Actor-Mixer Hierarchy\Default Work Unit\Buttons\Start Button		100488
+	773658402	Back Button	C:\Users\2302441.UAD\OneDrive - Abertay University\Documents\2054\2054\2054\2054_WwiseProject\.cache\Mac\SFX\Back Button_008F2E42.wem		\Actor-Mixer Hierarchy\Default Work Unit\Buttons\Back Button		69112
+	775447075	Door_Open	C:\Users\2302441.UAD\OneDrive - Abertay University\Documents\2054\2054\2054\2054_WwiseProject\.cache\Mac\SFX\Doors, Wood, Open, Close, Handling, Squeaky SND4041_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Door\Door_Open		39364
 	797068411	Footsteps, Human, Carpet, Leather Sole, Slow SND1014	C:\Users\2302441.UAD\OneDrive - Abertay University\Documents\2054\2054\2054\2054_WwiseProject\.cache\Mac\SFX\Footsteps, Human, Carpet, Leather Sole, Slow SND1014_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\OLD-footsteps\Footsteps, Human, Carpet, Leather Sole, Slow SND1014		19752
 	989964845	Footsteps, Human, Asphalt, Female, Heels, Walk SND11515 1	C:\Users\2302441.UAD\OneDrive - Abertay University\Documents\2054\2054\2054\2054_WwiseProject\.cache\Mac\SFX\Footsteps, Human, Asphalt, Female, Heels, Walk SND11515 1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footsteps\Adult_Footsteps\Footsteps, Human, Asphalt, Female, Heels, Walk SND11515 1		16688
 

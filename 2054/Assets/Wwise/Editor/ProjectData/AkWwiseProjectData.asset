@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 6d591579630d4e4b8339eaf347078ef1
     GuidInternal: 
-    m_lastTime: -8584575673564305036
+    m_lastTime: -8584574119980116204
     List:
     - name: Main
       guid: 7f2daec70d93a24395a594bd9476f066
@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 6b6e736efaef2c4ca991b4d0d692e67d
     GuidInternal: 
-    m_lastTime: -8584575673579865040
+    m_lastTime: -8584574071021451422
     List:
     - name: AdultPlayerFootstep
       guid: 2dd5e36dd50f8c43a9952b2ae8de324e
@@ -116,6 +116,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.20475
       minDuration: 0.20475
+    - name: Back_Button
+      guid: 6ffe185b2cfe84429757467e25a5579c
+      id: 2886972203
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6b6e736efaef2c4ca991b4d0d692e67d
+      - ElementName: Back_Button
+        ObjectType: 3
+        guid: 6ffe185b2cfe84429757467e25a5579c
+      Path: Events\Default Work Unit\Back_Button
+      maxAttenuation: 0
+      maxDuration: 0.35947713
+      minDuration: 0.35947713
     - name: ChildPlayerFootstep
       guid: b10976fd6b3d404a98fd092d80d7a25a
       id: 3303107572
@@ -136,6 +153,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.1884761
       minDuration: 0.15848887
+    - name: Door_Open
+      guid: aee6451dce511e489544c4ad6ecb73b4
+      id: 535830432
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6b6e736efaef2c4ca991b4d0d692e67d
+      - ElementName: Door_Open
+        ObjectType: 3
+        guid: aee6451dce511e489544c4ad6ecb73b4
+      Path: Events\Default Work Unit\Door_Open
+      maxAttenuation: 0
+      maxDuration: 0.40904167
+      minDuration: 0.37008333
     - name: Player Footsteps
       guid: 6a7d3b2547369d4aba816dabc1d8b854
       id: 3165549291
@@ -153,6 +187,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Start_Button
+      guid: 7f68b18c70b67740ae169c65a2e131c9
+      id: 2674457354
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6b6e736efaef2c4ca991b4d0d692e67d
+      - ElementName: Start_Button
+        ObjectType: 3
+        guid: 7f68b18c70b67740ae169c65a2e131c9
+      Path: Events\Default Work Unit\Start_Button
+      maxAttenuation: 0
+      maxDuration: 0.52287585
+      minDuration: 0.52287585
     - name: TeenPlayerFootstep
       guid: 692a32ee0ac1ce4d95c6124b4fbe5883
       id: 450457492
@@ -193,6 +244,40 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.27830666
       minDuration: 0.23402709
+    - name: Volcano_Explosion
+      guid: 311bc9635ad4ea418b4ba1451493dbba
+      id: 496050709
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6b6e736efaef2c4ca991b4d0d692e67d
+      - ElementName: Volcano_Explosion
+        ObjectType: 3
+        guid: 311bc9635ad4ea418b4ba1451493dbba
+      Path: Events\Default Work Unit\Volcano_Explosion
+      maxAttenuation: 0
+      maxDuration: 4.308436
+      minDuration: 4.308436
+    - name: Volcano_Hiss
+      guid: 77ce1afd64e08445b1fd4174b32c1ffd
+      id: 3420485851
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6b6e736efaef2c4ca991b4d0d692e67d
+      - ElementName: Volcano_Hiss
+        ObjectType: 3
+        guid: 77ce1afd64e08445b1fd4174b32c1ffd
+      Path: Events\Default Work Unit\Volcano_Hiss
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Weather
       guid: a26b31d1ce11a045aaabac9bf4549e69
       id: 317282339
@@ -333,7 +418,7 @@ MonoBehaviour:
     m_lastTime: -8584575673564265042
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000007000000071000000720000007300000074000000e5000000e6000000e7000000440e0000450e0000
+  ExpandedWaapiItemIds: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000e0000000f000000100000007000000071000000720000007300000074000000e5000000e6000000e7000000440e0000450e0000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

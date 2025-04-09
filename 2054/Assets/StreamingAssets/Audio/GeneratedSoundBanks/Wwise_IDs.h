@@ -14,9 +14,14 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID ADULTPLAYERFOOTSTEP = 3061740098U;
+        static const AkUniqueID BACK_BUTTON = 2886972203U;
         static const AkUniqueID CHILDPLAYERFOOTSTEP = 3303107572U;
+        static const AkUniqueID DOOR_OPEN = 535830432U;
+        static const AkUniqueID START_BUTTON = 2674457354U;
         static const AkUniqueID TEENPLAYERFOOTSTEP = 450457492U;
         static const AkUniqueID TODDLERPLAYERFOOTSTEP = 969514050U;
+        static const AkUniqueID VOLCANO_EXPLOSION = 496050709U;
+        static const AkUniqueID VOLCANO_HISS = 3420485851U;
         static const AkUniqueID WEATHER = 317282339U;
     } // namespace EVENTS
 

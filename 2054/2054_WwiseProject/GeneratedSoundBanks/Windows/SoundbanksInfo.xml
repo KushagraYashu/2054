@@ -31,7 +31,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{6F4E3149-67EA-8B8D-2819-AE3B0F9A4BA4}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{E6E5EADE-97DD-5BBF-E594-5F5430163CCB}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -43,9 +43,33 @@
 					<ShortName>Inside house.wav</ShortName>
 					<CachePath>SFX/Inside house_818F3B66.wem</CachePath>
 				</File>
+				<File Id="163949530" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Volcano_Explosion.wav</ShortName>
+					<CachePath>SFX/Volcano_Explosion_29F9F04C.wem</CachePath>
+				</File>
+				<File Id="452509036" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Doors, Wood, Open, Close, Handling, Squeaky SND4041 1.wav</ShortName>
+					<CachePath>SFX/Doors, Wood, Open, Close, Handling, Squeaky SND4041 1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="463762361" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Volcano_Hiss.wav</ShortName>
+					<CachePath>SFX/Volcano_Hiss_199C9AB4.wem</CachePath>
+				</File>
 				<File Id="520861626" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Indoor_Rain.wav</ShortName>
 					<CachePath>SFX/Indoor_Rain_818F3B66.wem</CachePath>
+				</File>
+				<File Id="635226472" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Start Button.wav</ShortName>
+					<CachePath>SFX/Start Button_C76EA49D.wem</CachePath>
+				</File>
+				<File Id="773658402" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Back Button.wav</ShortName>
+					<CachePath>SFX/Back Button_008F2E42.wem</CachePath>
+				</File>
+				<File Id="775447075" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Doors, Wood, Open, Close, Handling, Squeaky SND4041.wav</ShortName>
+					<CachePath>SFX/Doors, Wood, Open, Close, Handling, Squeaky SND4041_818F3B66.wem</CachePath>
 				</File>
 				<File Id="797068411" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footsteps, Human, Carpet, Leather Sole, Slow SND1014.wav</ShortName>
@@ -62,9 +86,25 @@
 						<MediaRef Id="797068411"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2886972203" Name="Back_Button" DurationType="OneShot" DurationMin="0.35947713" DurationMax="0.35947713">
+					<MediaRefs>
+						<MediaRef Id="773658402"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3303107572" Name="ChildPlayerFootstep" DurationType="OneShot" DurationMin="0.15848887" DurationMax="0.1884761">
 					<MediaRefs>
 						<MediaRef Id="989964845"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="535830432" Name="Door_Open" DurationType="OneShot" DurationMin="0.37008333" DurationMax="0.40904167">
+					<MediaRefs>
+						<MediaRef Id="452509036"/>
+						<MediaRef Id="775447075"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2674457354" Name="Start_Button" DurationType="OneShot" DurationMin="0.52287585" DurationMax="0.52287585">
+					<MediaRefs>
+						<MediaRef Id="635226472"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="450457492" Name="TeenPlayerFootstep" DurationType="OneShot" DurationMin="0.23402709" DurationMax="0.27830666">
@@ -77,6 +117,16 @@
 						<MediaRef Id="35307580"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="496050709" Name="Volcano_Explosion" DurationType="OneShot" DurationMin="4.308436" DurationMax="4.308436">
+					<MediaRefs>
+						<MediaRef Id="163949530"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3420485851" Name="Volcano_Hiss" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="463762361"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="317282339" Name="Weather" DurationType="OneShot" DurationMin="181" DurationMax="181">
 					<MediaRefs>
 						<MediaRef Id="54265631"/>
@@ -86,5 +136,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{B13B125C-1152-9F6C-57E3-8520DBEAA558}</FileHash>
+	<FileHash>{2E27E593-49BF-7587-33BE-8E032DEB05A6}</FileHash>
 </SoundBanksInfo>

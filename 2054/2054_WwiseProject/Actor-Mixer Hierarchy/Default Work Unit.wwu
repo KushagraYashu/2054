@@ -972,33 +972,6 @@
 						</Sound>
 					</ChildrenList>
 				</Folder>
-				<Sound Name="Door_Open" ID="{53C084CF-3424-43EE-896E-64448A3BB608}" ShortID="794647145">
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="Door_Open" ID="{8E2D2DA9-443E-4758-A27A-630A0C98048B}">
-							<PropertyList>
-								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-								<Property Name="TrimBegin" Type="Real64" Value="0.147058823529412"/>
-								<Property Name="TrimEnd" Type="Real64" Value="1.18464052287582"/>
-							</PropertyList>
-							<Language>SFX</Language>
-							<AudioFile>Door_Open.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="801878873"/>
-							</MediaIDList>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="Door_Open" ID="{8E2D2DA9-443E-4758-A27A-630A0C98048B}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
 				<Sound Name="Volcano_Explosion" ID="{EBA219A6-FD7D-4E85-BE7F-317A7B6760CE}" ShortID="459734136">
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -1083,6 +1056,167 @@
 						<ActiveSource Name="Water_Pour_2" ID="{254E37F6-D63D-46F1-9657-3A6A253D2557}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Folder Name="Paper_Pick_Up" ID="{4C347E4C-4A2D-487E-AC73-3425E0461DBC}" ShortID="686033234">
+					<ChildrenList>
+						<Sound Name="Paper_Pick_Up_4" ID="{D0D76474-674E-42AA-AC8E-F4156BCFAFA7}" ShortID="781854247">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Paper_Pick_Up_4" ID="{C0BF84E8-31F9-4323-B8CD-C9151A9B93F1}">
+									<Language>SFX</Language>
+									<AudioFile>Paper_Pick_Up_4.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="924570648"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Paper_Pick_Up_4" ID="{C0BF84E8-31F9-4323-B8CD-C9151A9B93F1}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Pick_Up_Paper_1" ID="{6DFA744A-93D8-4D69-887C-AF21BFC2EAFC}" ShortID="677835590">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Pick_Up_Paper_1" ID="{CD4F334F-95AF-4F6C-ABDE-25FDEE005AC7}">
+									<Language>SFX</Language>
+									<AudioFile>Pick_Up_Paper_1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="732840364"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Pick_Up_Paper_1" ID="{CD4F334F-95AF-4F6C-ABDE-25FDEE005AC7}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Pick_Up_Paper_2" ID="{8712C3BC-ABC4-4E6E-814E-478E1D7B6B6C}" ShortID="303405053">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Pick_Up_Paper_2" ID="{9A525271-1777-41F0-9DE6-6D67D3FA15AD}">
+									<Language>SFX</Language>
+									<AudioFile>Pick_Up_Paper_2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="424710017"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Pick_Up_Paper_2" ID="{9A525271-1777-41F0-9DE6-6D67D3FA15AD}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Pick_Up_Paper_3" ID="{56527826-B340-4877-97C2-23A7686DBB18}" ShortID="248394025">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Pick_Up_Paper_3" ID="{EF98FA0A-028A-482C-9846-7B5A67D8D79A}">
+									<Language>SFX</Language>
+									<AudioFile>Pick_Up_Paper_3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="561798647"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Pick_Up_Paper_3" ID="{EF98FA0A-028A-482C-9846-7B5A67D8D79A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
+				<RandomSequenceContainer Name="Door" ID="{8D8DDBE9-4944-46A5-8C50-523BEEAD4B3F}" ShortID="406166664">
+					<PropertyList>
+						<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Door_Open" ID="{001E2095-5154-4D98-AF39-72E7D0CB0D2A}" ShortID="423064514">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Doors, Wood, Open, Close, Handling, Squeaky SND4041" ID="{BE5E8D37-BE4B-44B8-B9FC-AF4B74D73072}">
+									<Language>SFX</Language>
+									<AudioFile>Doors, Wood, Open, Close, Handling, Squeaky SND4041.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="775447075"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Doors, Wood, Open, Close, Handling, Squeaky SND4041" ID="{BE5E8D37-BE4B-44B8-B9FC-AF4B74D73072}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Doors, Wood, Open, Close, Handling, Squeaky SND4041 1" ID="{BD71EDB6-31A7-4722-B1A1-15FDE7696646}" ShortID="687928963">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Doors, Wood, Open, Close, Handling, Squeaky SND4041 1" ID="{B88C0A94-2679-4B95-BF25-3771624593F3}">
+									<Language>SFX</Language>
+									<AudioFile>Doors, Wood, Open, Close, Handling, Squeaky SND4041 1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="452509036"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Doors, Wood, Open, Close, Handling, Squeaky SND4041 1" ID="{B88C0A94-2679-4B95-BF25-3771624593F3}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="Playlist">
+							<Reference>
+								<ObjectRef Name="Door_Open" ID="{001E2095-5154-4D98-AF39-72E7D0CB0D2A}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+							</Reference>
+							<Reference>
+								<ObjectRef Name="Doors, Wood, Open, Close, Handling, Squeaky SND4041 1" ID="{BD71EDB6-31A7-4722-B1A1-15FDE7696646}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
+				</RandomSequenceContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

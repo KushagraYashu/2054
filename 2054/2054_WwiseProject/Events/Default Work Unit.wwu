@@ -115,10 +115,10 @@
 				</Event>
 				<Event Name="Door_Open" ID="{1D45E6AE-51CE-481E-9544-C4AD6ECB73B4}">
 					<ChildrenList>
-						<Action Name="" ID="{93161FCF-02EC-4F4F-9934-184F9F1527AF}" ShortID="188583673">
+						<Action Name="" ID="{E5FCC2D5-5B74-4374-8D81-AD10013DD698}" ShortID="686907463">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Door_Open" ID="{53C084CF-3424-43EE-896E-64448A3BB608}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+									<ObjectRef Name="Door" ID="{8D8DDBE9-4944-46A5-8C50-523BEEAD4B3F}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

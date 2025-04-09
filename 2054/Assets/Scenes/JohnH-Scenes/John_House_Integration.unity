@@ -18755,11 +18755,15 @@ MonoBehaviour:
   playerFootsteps:
   - idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 69d4be2a9c5655d4a8b86dc246ae2a00, type: 2}
-  ButtonClick:
+    WwiseObjectReference: {fileID: 11400000, guid: fe5c7ef5818fedd40801c0b55d3e1c1d, type: 2}
+  StartButton:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 719b34c0a341fdd4b9c4a54431c77437, type: 2}
+  BackButton:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e2f247544cd15b54bbc1e545f361bad4, type: 2}
 --- !u!1 &585116175
 GameObject:
   m_ObjectHideFlags: 0
@@ -49698,6 +49702,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WwiseGlobal (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5180800008042146318, guid: 557ae41be57351b4ea4cab2396a41e34, type: 3}
+      propertyPath: data.WwiseObjectReference
+      value: 
+      objectReference: {fileID: 11400000, guid: fd9040704bc018546a633c6b54c19d99, type: 2}
     - target: {fileID: 9029863953855376098, guid: 557ae41be57351b4ea4cab2396a41e34, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
