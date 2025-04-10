@@ -130,6 +130,9 @@ public class PuzzleManager : MonoBehaviour
 
         if (inventory && Input.GetKeyDown(KeyCode.E) && !solving)
         {
+            //stop glitches
+            GameManager.instance.StopGlitching();
+
             if (PlayerBehaviour.instance.currentPlayerState != PlayerBehaviour.PlayerState.SOLVING_PUZZLE)
                 PlayerBehaviour.instance.currentPlayerState = PlayerBehaviour.PlayerState.SOLVING_PUZZLE;
             MouseLookAround.instance.SetMouseLock(false);
@@ -180,6 +183,7 @@ public class PuzzleManager : MonoBehaviour
         //fade in
 
         //freeze player
+        GameManager.instance.StopGlitching();
         FreezePlayer();
 
         StartCoroutine(UIEffects.instance.Fade(0, 1, 2, "Show 2054 Memory"));
@@ -204,6 +208,9 @@ public class PuzzleManager : MonoBehaviour
 
         //unfreeze player
         UnfreezePlayer();
+
+        //allow glitching
+        GameManager.instance.StartGlitching();
     }
 
     IEnumerator ShowJigsawMemory()
@@ -211,6 +218,7 @@ public class PuzzleManager : MonoBehaviour
         //fade in
 
         //freeze player
+        GameManager.instance.StopGlitching();
         FreezePlayer();
 
         StartCoroutine(UIEffects.instance.Fade(0, 1, 2, "Show Jigsaw Memory"));
@@ -232,6 +240,9 @@ public class PuzzleManager : MonoBehaviour
 
         //unfreeze player
         UnfreezePlayer();
+
+        //start glitching
+        GameManager.instance.StartGlitching();
     }
 
     void SwitchPuzzle()
