@@ -58,9 +58,8 @@ public class GameManager : MonoBehaviour
     public void StopGlitching()
     {
         glitchAllowed = false;
-        
-        StopCoroutine(Glitching());
-        StopCoroutine(DoGlitch());
+
+        StopAllCoroutines();
 
         glitchCamera.gameObject.SetActive(false);
         MouseLookAround.instance.GetCam().gameObject.SetActive(true);
@@ -69,6 +68,8 @@ public class GameManager : MonoBehaviour
 
     public void StartGlitching()
     {
+        StopAllCoroutines();
+
         glitchAllowed = true;
         StartCoroutine(Glitching());
     }

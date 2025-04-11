@@ -43,8 +43,6 @@ public class PuzzlePiece : MonoBehaviour
     {
         objectMaterial = meshRenderer.material;
 
-        offset = -transform.forward * 0.1f;
-
         StartCoroutine(Flash());
     }
 
@@ -87,7 +85,9 @@ public class PuzzlePiece : MonoBehaviour
     {
         if (issolving)
         {
-            if(cam == null) cam = MouseLookAround.instance.GetCam();
+            offset = PlayerBehaviour.instance.transform.forward * 0.1f;
+
+            if (cam == null) cam = MouseLookAround.instance.GetCam();
             if (targetPoint == null)
                 foreach (GameObject t in PuzzleManager.instance.GetTargetPoints())
                 {
