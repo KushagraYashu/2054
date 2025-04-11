@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
 
     //internal variables
     Camera mainCamera;
+    float t;
 
     // Start is called before the first frame update
     void Start()
@@ -113,12 +114,15 @@ public class GameManager : MonoBehaviour
 
     IEnumerator TransitionCam()
     {
-        float t = 0;
+        t = 0;
         mainMenuCamPos.transform.GetPositionAndRotation(out Vector3 startPosition, out Quaternion startRotation);
         while (t < 1)
         {
             t += Time.deltaTime * transitionSpeed;
             mainCamera.transform.SetPositionAndRotation(Vector3.Lerp(startPosition, playerCamPos.position, t), Quaternion.Lerp(startRotation, playerCamPos.rotation, t));
+
+            Debug.Log("Moving Camera");
+
             yield return null;
         }
 

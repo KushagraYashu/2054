@@ -69,7 +69,7 @@ public class Volcano : MonoBehaviour
                     isDragging = true;
                 }
             }
-            else if (Input.GetMouseButtonUp(0))
+            else if (Input.GetMouseButtonUp(0) && isDragging)
             {
                 GameManager.instance.StartGlitching();
                 isDragging = false;
@@ -166,8 +166,12 @@ public class Volcano : MonoBehaviour
 
     void UpdatePosition()
     {
+        Vector3 targetDirection = PlayerBehaviour.instance.transform.forward;
+        Quaternion rot = Quaternion.LookRotation(Vector3.Cross(Vector3.up, targetDirection), Vector3.up);
+        transform.rotation = rot;
+
         //offset method, player can use Q and R to move the model closer or farther
-        transform.position = PlayerBehaviour.instance.transform.position + (offset * 35f);
+        transform.position = PlayerBehaviour.instance.transform.position + (offset * 25f);
         return;
 
         if (Input.GetKey(KeyCode.Q))
