@@ -408,6 +408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPointName: THREE
+  meshRenderer: {fileID: 8217190592284745245}
   issolving: 0
   solved: 0
 --- !u!1 &3102341685698783928
@@ -535,7 +536,7 @@ GameObject:
   - component: {fileID: 4063975298182490916}
   - component: {fileID: 6726894468490347298}
   m_Layer: 0
-  m_Name: puzzle_left_001
+  m_Name: MESH-puzzle_left_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -572,7 +573,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5171380694563043111}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -620,7 +621,7 @@ GameObject:
   - component: {fileID: 1698135645516479185}
   - component: {fileID: 4013499167346005472}
   m_Layer: 0
-  m_Name: puzzle_bottom_001
+  m_Name: MESH-puzzle_bottom_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -657,7 +658,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6336024357728731413}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -790,7 +791,7 @@ GameObject:
   - component: {fileID: 7975407378101814696}
   - component: {fileID: 8217190592284745245}
   m_Layer: 0
-  m_Name: puzzle_right_001
+  m_Name: MESH-puzzle_right_001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -827,7 +828,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7053878270738764165}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -975,6 +976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPointName: ONE
+  meshRenderer: {fileID: 4013499167346005472}
   issolving: 0
   solved: 0
 --- !u!1 &7387668544031221658
@@ -1347,6 +1349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPointName: TWO
+  meshRenderer: {fileID: 6726894468490347298}
   issolving: 0
   solved: 0
 --- !u!1 &9019124994662351883

@@ -201,7 +201,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 75a4425fbb403ef4b90f7475dbfd7f7d, type: 2}
+  - {fileID: 2100000, guid: 1894bd5429122844e892c095ff220df5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -257,6 +257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPointName: FOUR
+  meshRenderer: {fileID: 1017714922468411405}
   issolving: 0
   solved: 0
 --- !u!1 &929505475204508053
@@ -939,7 +940,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ebcc6a9725d05314c95b2c69d7f6cf65, type: 2}
+  - {fileID: 2100000, guid: 2fc42c536d7529b4cbba99c315b87f64, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -995,6 +996,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPointName: FIVE
+  meshRenderer: {fileID: 1593809004529953047}
   issolving: 0
   solved: 0
 --- !u!1 &5434751358497806504
@@ -1147,7 +1149,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c77df9274740ef44cb6ea60548a9c543, type: 2}
+  - {fileID: 2100000, guid: 74825a7f4af8b6d43a230c0c267123e0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1203,6 +1205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPointName: TWO
+  meshRenderer: {fileID: 1749752959906756224}
   issolving: 0
   solved: 0
 --- !u!1 &7423899329502805907
@@ -1359,7 +1362,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 11e8b8e8875c6574bb8652e55ae8bf2a, type: 2}
+  - {fileID: 2100000, guid: f01c7925680ea664c9c3e702c29b415e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1415,6 +1418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPointName: ZERO
+  meshRenderer: {fileID: 7875798679089908053}
   issolving: 0
   solved: 0
 --- !u!1 &7604106358360831189
