@@ -12,9 +12,12 @@
 						<ObjectRef Name="Volcano_Hiss" ID="{FD1ACE77-E064-4584-B1FD-4174B32C1FFD}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Weather" ID="{D1316BA2-11CE-45A0-AAAB-AC9BF4549E69}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Door_Open" ID="{1D45E6AE-51CE-481E-9544-C4AD6ECB73B4}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Tv_Static" ID="{1D82C48D-01B7-497F-8F9E-A1DAE2ADA8FB}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="ChildPlayerFootstep" ID="{FD7609B1-3D6B-4A40-98FD-092D80D7A25A}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Wood_Floor_Jump_land" ID="{41E4C70D-B95C-4B2A-8C91-F7F303082872}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="ToddlerPlayerFootstep" ID="{893AA716-3DA0-4C36-B625-8B998E505CA7}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="TeenPlayerFootstep" ID="{EE322A69-C10A-4DCE-95C6-124B4FBE5883}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Footsteps" ID="{81D6C086-5A94-4F9F-8DAD-8304DD96B8D2}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>

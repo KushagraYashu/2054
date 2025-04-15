@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 6d591579630d4e4b8339eaf347078ef1
     GuidInternal: 
-    m_lastTime: -8584574119980116204
+    m_lastTime: -8584568781669892563
     List:
     - name: Main
       guid: 7f2daec70d93a24395a594bd9476f066
@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 6b6e736efaef2c4ca991b4d0d692e67d
     GuidInternal: 
-    m_lastTime: -8584574071021451422
+    m_lastTime: -8584568781669832558
     List:
     - name: AdultPlayerFootstep
       guid: 2dd5e36dd50f8c43a9952b2ae8de324e
@@ -114,8 +114,8 @@ MonoBehaviour:
         guid: 2dd5e36dd50f8c43a9952b2ae8de324e
       Path: Events\Default Work Unit\Player Footsteps\AdultPlayerFootstep
       maxAttenuation: 0
-      maxDuration: 0.20475
-      minDuration: 0.20475
+      maxDuration: 0.22328146
+      minDuration: 0.18775658
     - name: Back_Button
       guid: 6ffe185b2cfe84429757467e25a5579c
       id: 2886972203
@@ -151,8 +151,8 @@ MonoBehaviour:
         guid: b10976fd6b3d404a98fd092d80d7a25a
       Path: Events\Default Work Unit\Player Footsteps\ChildPlayerFootstep
       maxAttenuation: 0
-      maxDuration: 0.1884761
-      minDuration: 0.15848887
+      maxDuration: 0.20553462
+      minDuration: 0.14533494
     - name: Door_Open
       guid: aee6451dce511e489544c4ad6ecb73b4
       id: 535830432
@@ -170,6 +170,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.40904167
       minDuration: 0.37008333
+    - name: Footsteps
+      guid: 86c0d681945a9f4f8dad8304dd96b8d2
+      id: 2385628198
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6b6e736efaef2c4ca991b4d0d692e67d
+      - ElementName: Footsteps
+        ObjectType: 3
+        guid: 86c0d681945a9f4f8dad8304dd96b8d2
+      Path: Events\Default Work Unit\Footsteps
+      maxAttenuation: 0
+      maxDuration: 0.45635477
+      minDuration: 0.17942713
     - name: Player Footsteps
       guid: 6a7d3b2547369d4aba816dabc1d8b854
       id: 3165549291
@@ -295,6 +312,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 181
       minDuration: 181
+    - name: Wood_Floor_Jump_land
+      guid: 0dc7e4415cb92a4b8c91f7f303082872
+      id: 1900150648
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6b6e736efaef2c4ca991b4d0d692e67d
+      - ElementName: Wood_Floor_Jump_land
+        ObjectType: 3
+        guid: 0dc7e4415cb92a4b8c91f7f303082872
+      Path: Events\Default Work Unit\Wood_Floor_Jump_land
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -401,8 +435,58 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 26537b2798b09b4a9d78f1bf3b761d1a
     GuidInternal: 
-    m_lastTime: -8584575673564275044
-    List: []
+    m_lastTime: -8584568797717238577
+    List:
+    - name: Teen_Footsteps
+      guid: ea4eeed0e5191149ac21a567d251d4bf
+      id: 2775722229
+      PathAndIcons:
+      - ElementName: Switches
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 26537b2798b09b4a9d78f1bf3b761d1a
+      - ElementName: Teen_Footsteps
+        ObjectType: 11
+        guid: ea4eeed0e5191149ac21a567d251d4bf
+      Path: Switches\Default Work Unit\Teen_Footsteps
+      values:
+      - name: Carpet
+        guid: 7d2a8b3a92501e428aee3463a763fbd1
+        id: 2412606308
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 26537b2798b09b4a9d78f1bf3b761d1a
+        - ElementName: Teen_Footsteps
+          ObjectType: 11
+          guid: ea4eeed0e5191149ac21a567d251d4bf
+        - ElementName: Carpet
+          ObjectType: 10
+          guid: 7d2a8b3a92501e428aee3463a763fbd1
+      - name: Floor
+        guid: 4846c4b6395bc14fa77579ce9768e960
+        id: 1088209313
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 26537b2798b09b4a9d78f1bf3b761d1a
+        - ElementName: Teen_Footsteps
+          ObjectType: 11
+          guid: ea4eeed0e5191149ac21a567d251d4bf
+        - ElementName: Floor
+          ObjectType: 10
+          guid: 4846c4b6395bc14fa77579ce9768e960
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     PathAndIcons:
@@ -418,7 +502,7 @@ MonoBehaviour:
     m_lastTime: -8584575673564265042
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000e0000000f000000100000007000000071000000720000007300000074000000e5000000e6000000e7000000440e0000450e0000
+  ExpandedWaapiItemIds: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000e0000000f0000001000000015000000160000007000000071000000720000007300000074000000e5000000e6000000e7000000440e0000450e0000c4951f00
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

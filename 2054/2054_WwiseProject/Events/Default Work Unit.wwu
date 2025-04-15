@@ -124,6 +124,39 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Footsteps" ID="{81D6C086-5A94-4F9F-8DAD-8304DD96B8D2}">
+					<ChildrenList>
+						<Action Name="" ID="{33B67B12-F0A9-4ED6-AE03-64093F9AED5E}" ShortID="379962421">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Footsteps" ID="{6C3A3DFE-A5B3-4EAC-B732-EBB80542FDE8}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Wood_Floor_Jump_land" ID="{41E4C70D-B95C-4B2A-8C91-F7F303082872}">
+					<ChildrenList>
+						<Action Name="" ID="{3338A403-A936-4073-8348-E0DD218A5D84}" ShortID="97162813">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Wood_Floor_land" ID="{51F507CB-FC79-4765-984D-A3EC51D7C9D9}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Tv_Static" ID="{1D82C48D-01B7-497F-8F9E-A1DAE2ADA8FB}">
+					<ChildrenList>
+						<Action Name="" ID="{7BB4CE85-A315-4CE7-AFA4-DFEB4E1F7031}" ShortID="761995921">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Tv_Static" ID="{B8AE4812-A2AF-4F62-A429-E87B3AB93E54}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -30,8 +30,16 @@
 					</States>
 				</StateGroup>
 			</StateGroups>
+			<SwitchGroups>
+				<SwitchGroup Id="2775722229" Name="Teen_Footsteps">
+					<Switches>
+						<Switch Id="1088209313" Name="Floor"/>
+						<Switch Id="2412606308" Name="Carpet"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{E6E5EADE-97DD-5BBF-E594-5F5430163CCB}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{EEE12975-EB5E-42C5-EEC6-FE43640A28BE}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -43,9 +51,45 @@
 					<ShortName>Inside house.wav</ShortName>
 					<CachePath>SFX/Inside house_818F3B66.wem</CachePath>
 				</File>
+				<File Id="64261832" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881 1.wav</ShortName>
+					<CachePath>SFX/Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881 1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="126038618" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881 10.wav</ShortName>
+					<CachePath>SFX/Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881 10_818F3B66.wem</CachePath>
+				</File>
+				<File Id="130049611" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881 3.wav</ShortName>
+					<CachePath>SFX/Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881 3_818F3B66.wem</CachePath>
+				</File>
+				<File Id="149217514" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Electricity, Buzz &amp; Hum, Electric, Light, Neon, Loop SND5752 1.wav</ShortName>
+					<CachePath>SFX/Electricity, Buzz &amp; Hum, Electric, Light, Neon, Loop SND5752 1_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="159103562" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footsteps, Human, Wood, Creaky, Sneaker, Medium SND1113 2.wav</ShortName>
+					<CachePath>SFX/Footsteps, Human, Wood, Creaky, Sneaker, Medium SND1113 2_818F3B66.wem</CachePath>
+				</File>
 				<File Id="163949530" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Volcano_Explosion.wav</ShortName>
-					<CachePath>SFX/Volcano_Explosion_29F9F04C.wem</CachePath>
+					<CachePath>SFX/Volcano_Explosion_F98F5800.wem</CachePath>
+				</File>
+				<File Id="362887173" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881 7.wav</ShortName>
+					<CachePath>SFX/Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881 7_818F3B66.wem</CachePath>
+				</File>
+				<File Id="377645377" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881 5.wav</ShortName>
+					<CachePath>SFX/Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881 5_818F3B66.wem</CachePath>
+				</File>
+				<File Id="407038475" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footsteps, Human, Wood, Creaky, Sneaker, Medium SND1113 3.wav</ShortName>
+					<CachePath>SFX/Footsteps, Human, Wood, Creaky, Sneaker, Medium SND1113 3_818F3B66.wem</CachePath>
+				</File>
+				<File Id="410055280" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881 6.wav</ShortName>
+					<CachePath>SFX/Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881 6_818F3B66.wem</CachePath>
 				</File>
 				<File Id="452509036" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Doors, Wood, Open, Close, Handling, Squeaky SND4041 1.wav</ShortName>
@@ -53,7 +97,11 @@
 				</File>
 				<File Id="463762361" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Volcano_Hiss.wav</ShortName>
-					<CachePath>SFX/Volcano_Hiss_199C9AB4.wem</CachePath>
+					<CachePath>SFX/Volcano_Hiss_9DF884FC.wem</CachePath>
+				</File>
+				<File Id="492750794" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881 2.wav</ShortName>
+					<CachePath>SFX/Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881 2_818F3B66.wem</CachePath>
 				</File>
 				<File Id="520861626" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Indoor_Rain.wav</ShortName>
@@ -61,11 +109,23 @@
 				</File>
 				<File Id="635226472" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Start Button.wav</ShortName>
-					<CachePath>SFX/Start Button_C76EA49D.wem</CachePath>
+					<CachePath>SFX/Start Button_7D1FDFDC.wem</CachePath>
+				</File>
+				<File Id="637900214" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footsteps, Human, Wood, Creaky, Sneaker, Medium SND1113 1.wav</ShortName>
+					<CachePath>SFX/Footsteps, Human, Wood, Creaky, Sneaker, Medium SND1113 1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="720974324" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footsteps, Human, Wood, Creaky, Sneaker, Medium SND1113 5.wav</ShortName>
+					<CachePath>SFX/Footsteps, Human, Wood, Creaky, Sneaker, Medium SND1113 5_818F3B66.wem</CachePath>
+				</File>
+				<File Id="740755431" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footsteps, Human, Barefeet, Jump, Land, Wood Floor, Hard SND51719 1.wav</ShortName>
+					<CachePath>SFX/Footsteps, Human, Barefeet, Jump, Land, Wood Floor, Hard SND51719 1_818F3B66.wem</CachePath>
 				</File>
 				<File Id="773658402" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Back Button.wav</ShortName>
-					<CachePath>SFX/Back Button_008F2E42.wem</CachePath>
+					<CachePath>SFX/Back Button_2B451BB3.wem</CachePath>
 				</File>
 				<File Id="775447075" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Doors, Wood, Open, Close, Handling, Squeaky SND4041.wav</ShortName>
@@ -75,13 +135,37 @@
 					<ShortName>Footsteps, Human, Carpet, Leather Sole, Slow SND1014.wav</ShortName>
 					<CachePath>SFX/Footsteps, Human, Carpet, Leather Sole, Slow SND1014_818F3B66.wem</CachePath>
 				</File>
+				<File Id="885683958" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footsteps, Human, Barefeet, Jump, Land, Wood Floor, Hard SND51719 2.wav</ShortName>
+					<CachePath>SFX/Footsteps, Human, Barefeet, Jump, Land, Wood Floor, Hard SND51719 2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="891783108" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footsteps, Human, Wood, Creaky, Sneaker, Medium SND1113 4.wav</ShortName>
+					<CachePath>SFX/Footsteps, Human, Wood, Creaky, Sneaker, Medium SND1113 4_818F3B66.wem</CachePath>
+				</File>
+				<File Id="911357346" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881 4.wav</ShortName>
+					<CachePath>SFX/Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881 4_818F3B66.wem</CachePath>
+				</File>
+				<File Id="912312151" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881 8.wav</ShortName>
+					<CachePath>SFX/Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881 8_818F3B66.wem</CachePath>
+				</File>
 				<File Id="989964845" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footsteps, Human, Asphalt, Female, Heels, Walk SND11515 1.wav</ShortName>
 					<CachePath>SFX/Footsteps, Human, Asphalt, Female, Heels, Walk SND11515 1_818F3B66.wem</CachePath>
 				</File>
+				<File Id="1021057404" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881 9.wav</ShortName>
+					<CachePath>SFX/Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881 9_818F3B66.wem</CachePath>
+				</File>
+				<File Id="1030215800" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Footsteps, Human, Wood, Creaky, Sneaker, Medium SND1113.wav</ShortName>
+					<CachePath>SFX/Footsteps, Human, Wood, Creaky, Sneaker, Medium SND1113_818F3B66.wem</CachePath>
+				</File>
 			</Media>
 			<Events>
-				<Event Id="3061740098" Name="AdultPlayerFootstep" DurationType="OneShot" DurationMin="0.20475" DurationMax="0.20475">
+				<Event Id="3061740098" Name="AdultPlayerFootstep" DurationType="OneShot" DurationMin="0.18775658" DurationMax="0.22328146">
 					<MediaRefs>
 						<MediaRef Id="797068411"/>
 					</MediaRefs>
@@ -91,7 +175,7 @@
 						<MediaRef Id="773658402"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3303107572" Name="ChildPlayerFootstep" DurationType="OneShot" DurationMin="0.15848887" DurationMax="0.1884761">
+				<Event Id="3303107572" Name="ChildPlayerFootstep" DurationType="OneShot" DurationMin="0.14533494" DurationMax="0.20553462">
 					<MediaRefs>
 						<MediaRef Id="989964845"/>
 					</MediaRefs>
@@ -101,6 +185,37 @@
 						<MediaRef Id="452509036"/>
 						<MediaRef Id="775447075"/>
 					</MediaRefs>
+				</Event>
+				<Event Id="2385628198" Name="Footsteps" DurationType="OneShot" DurationMin="0.17942713" DurationMax="0.45635477">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="2775722229" Id="1088209313" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="159103562"/>
+								<MediaRef Id="407038475"/>
+								<MediaRef Id="637900214"/>
+								<MediaRef Id="720974324"/>
+								<MediaRef Id="891783108"/>
+								<MediaRef Id="1030215800"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="2775722229" Id="2412606308"/>
+							<MediaRefs>
+								<MediaRef Id="35307580"/>
+								<MediaRef Id="64261832"/>
+								<MediaRef Id="126038618"/>
+								<MediaRef Id="130049611"/>
+								<MediaRef Id="362887173"/>
+								<MediaRef Id="377645377"/>
+								<MediaRef Id="410055280"/>
+								<MediaRef Id="492750794"/>
+								<MediaRef Id="911357346"/>
+								<MediaRef Id="912312151"/>
+								<MediaRef Id="1021057404"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
 				</Event>
 				<Event Id="2674457354" Name="Start_Button" DurationType="OneShot" DurationMin="0.52287585" DurationMax="0.52287585">
 					<MediaRefs>
@@ -115,6 +230,11 @@
 				<Event Id="969514050" Name="ToddlerPlayerFootstep" DurationType="OneShot" DurationMin="0.23402709" DurationMax="0.27830666">
 					<MediaRefs>
 						<MediaRef Id="35307580"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1436086644" Name="Tv_Static" MaxAttenuation="15" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="149217514"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="496050709" Name="Volcano_Explosion" DurationType="OneShot" DurationMin="4.308436" DurationMax="4.308436">
@@ -133,8 +253,22 @@
 						<MediaRef Id="520861626"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1900150648" Name="Wood_Floor_Jump_land" DurationType="OneShot" DurationMin="0.14778094" DurationMax="0.19735417">
+					<MediaRefs>
+						<MediaRef Id="740755431"/>
+						<MediaRef Id="885683958"/>
+					</MediaRefs>
+				</Event>
 			</Events>
+			<SwitchGroups>
+				<SwitchGroup Id="2775722229" Name="Teen_Footsteps">
+					<Switches>
+						<Switch Id="1088209313" Name="Floor"/>
+						<Switch Id="2412606308" Name="Carpet"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{5533384B-E9B0-A239-4608-E192CBCF9093}</FileHash>
+	<FileHash>{5E88D356-702C-E1C3-0DE5-52EA5A2F6AA5}</FileHash>
 </SoundBanksInfo>
