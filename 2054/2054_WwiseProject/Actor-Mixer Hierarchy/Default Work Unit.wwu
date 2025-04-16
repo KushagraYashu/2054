@@ -1177,6 +1177,7 @@
 								<AudioFileSource Name="Start Button" ID="{E4AB9716-08AA-4F57-AA7F-F76FCAE0578B}">
 									<PropertyList>
 										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+										<Property Name="TrimBegin" Type="Real64" Value="0.136314067611777"/>
 										<Property Name="TrimEnd" Type="Real64" Value="0.522875816993463"/>
 									</PropertyList>
 									<Language>SFX</Language>
@@ -1276,98 +1277,6 @@
 						<ActiveSource Name="Water_Pour_2" ID="{254E37F6-D63D-46F1-9657-3A6A253D2557}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Folder Name="Paper_Pick_Up" ID="{4C347E4C-4A2D-487E-AC73-3425E0461DBC}" ShortID="686033234">
-					<ChildrenList>
-						<Sound Name="Paper_Pick_Up_4" ID="{D0D76474-674E-42AA-AC8E-F4156BCFAFA7}" ShortID="781854247">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Paper_Pick_Up_4" ID="{C0BF84E8-31F9-4323-B8CD-C9151A9B93F1}">
-									<Language>SFX</Language>
-									<AudioFile>Paper_Pick_Up_4.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="924570648"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Paper_Pick_Up_4" ID="{C0BF84E8-31F9-4323-B8CD-C9151A9B93F1}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Pick_Up_Paper_1" ID="{6DFA744A-93D8-4D69-887C-AF21BFC2EAFC}" ShortID="677835590">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Pick_Up_Paper_1" ID="{CD4F334F-95AF-4F6C-ABDE-25FDEE005AC7}">
-									<Language>SFX</Language>
-									<AudioFile>Pick_Up_Paper_1.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="732840364"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Pick_Up_Paper_1" ID="{CD4F334F-95AF-4F6C-ABDE-25FDEE005AC7}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Pick_Up_Paper_2" ID="{8712C3BC-ABC4-4E6E-814E-478E1D7B6B6C}" ShortID="303405053">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Pick_Up_Paper_2" ID="{9A525271-1777-41F0-9DE6-6D67D3FA15AD}">
-									<Language>SFX</Language>
-									<AudioFile>Pick_Up_Paper_2.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="424710017"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Pick_Up_Paper_2" ID="{9A525271-1777-41F0-9DE6-6D67D3FA15AD}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Pick_Up_Paper_3" ID="{56527826-B340-4877-97C2-23A7686DBB18}" ShortID="248394025">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Pick_Up_Paper_3" ID="{EF98FA0A-028A-482C-9846-7B5A67D8D79A}">
-									<Language>SFX</Language>
-									<AudioFile>Pick_Up_Paper_3.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="561798647"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Pick_Up_Paper_3" ID="{EF98FA0A-028A-482C-9846-7B5A67D8D79A}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-					</ChildrenList>
-				</Folder>
 				<RandomSequenceContainer Name="Door" ID="{8D8DDBE9-4944-46A5-8C50-523BEEAD4B3F}" ShortID="406166664">
 					<PropertyList>
 						<Property Name="RandomOrSequence" Type="int16" Value="0"/>
@@ -1487,7 +1396,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-5</Value>
+								<Value>-10</Value>
 							</ValueList>
 							<ModifierList>
 								<ModifierInfo>
@@ -1626,6 +1535,13 @@
 				<Folder Name="Pick_up_paper" ID="{0AF2D4BF-CA8F-433E-A2DF-63AB8C0EDEBD}" ShortID="798088188">
 					<ChildrenList>
 						<Sound Name="Pick_up_paper_1" ID="{5208F011-95F9-4D3D-9D1E-A8C00D13079D}" ShortID="148811115">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
@@ -1707,7 +1623,13 @@
 				</Folder>
 				<RandomSequenceContainer Name="Tick" ID="{32D6007C-5355-49C1-82BD-D8ABCBE2DC46}" ShortID="193666122">
 					<PropertyList>
+						<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 						<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-10</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">

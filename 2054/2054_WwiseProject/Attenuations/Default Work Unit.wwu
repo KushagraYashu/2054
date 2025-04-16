@@ -5,7 +5,7 @@
 			<ChildrenList>
 				<Attenuation Name="Tv" ID="{D090889B-EE32-42B2-BFE2-9E4D052A86C5}" ShortID="577709121">
 					<PropertyList>
-						<Property Name="RadiusMax" Type="Real64" Value="15"/>
+						<Property Name="RadiusMax" Type="Real64" Value="13"/>
 					</PropertyList>
 					<CurveUsageInfoList>
 						<VolumeDryUsage>
@@ -22,7 +22,7 @@
 											<SegmentShape>Log1</SegmentShape>
 										</Point>
 										<Point>
-											<XPos>15</XPos>
+											<XPos>13</XPos>
 											<YPos>-200</YPos>
 											<Flags>37</Flags>
 										</Point>
@@ -50,7 +50,7 @@
 											<SegmentShape>Exp1</SegmentShape>
 										</Point>
 										<Point>
-											<XPos>15</XPos>
+											<XPos>13</XPos>
 											<YPos>100</YPos>
 											<Flags>37</Flags>
 										</Point>

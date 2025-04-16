@@ -15,4 +15,4 @@ MonoBehaviour:
   objectName: Floor
   id: 1088209313
   guid: B6C44648-5B39-4FC1-A775-79CE9768E960
-  WwiseSwitchGroupReference: {fileID: 11400000, guid: dd5c71a40a0c76549b42c89340bcd472, type: 2}
+  WwiseSwitchGroupReference: {fileID: 11400000, guid: e04e91a3a60e652498c0c553bd20c799, type: 2}
