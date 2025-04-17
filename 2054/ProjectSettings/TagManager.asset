@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ToddlerRoomParent
   - Jerry
+  - PuzzleSolvePoint
   layers:
   - Default
   - TransparentFX

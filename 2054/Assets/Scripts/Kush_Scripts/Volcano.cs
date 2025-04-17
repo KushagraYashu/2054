@@ -1,14 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Volcano : MonoBehaviour
 {
+    public static Volcano instance;
+    void Awake()
+    {        if (instance == null) instance = this;        else Destroy(this);    }
+
     [Header("Target Point")]
     [SerializeField] Transform kitchenSinkTargetPoint;
 
     [Header("Bools")]
-    public bool isPlacing = false;
+    public bool IsMixing { get; set; }
+    public bool IsPlaced { get; set; } = false;
+    [SerializeField] bool isPlacing = false;
     [SerializeField] bool isActive = false;
     [SerializeField] bool erupting = false;
 
@@ -20,21 +27,36 @@ public class Volcano : MonoBehaviour
 
     //internal variables
     bool isDragging = false;
+    bool[] chemicalsAdded = {false, false, false};
     Camera cam;
-    Vector3 offset;
+    Vector3 ZOffset;
+    float YOffset;
     Rigidbody rb;
-    float growingTime = 30f;
+    float growingTime;
     float eruptingTime = 5f;
 
     // Start is called before the first frame update
     void Start()
     {
+
+        growingTime = Random.Range(15, 20);
+
+        StartCoroutine(ShowScienceKitImg());
+
+        IsMixing = false;
+
         rb = GetComponent<Rigidbody>();
+    }
+
+    IEnumerator ShowScienceKitImg()
+    {
+        yield return new WaitForSeconds(5f);
+        UIManager.instance.SetHelperText("SciKitImg");
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !isDragging)
+        if (other.CompareTag("Player") && !isDragging && isPlacing)
         {
             MouseLookAround.instance.SetMouseLock(false);
         }
@@ -51,10 +73,55 @@ public class Volcano : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isPlacing)
+        //developer shortcut, REMOVE THIS LATER
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.F))
         {
+            ShowVolcanoMemory();
+        }
 
-            offset = PlayerBehaviour.instance.transform.forward * 0.1f;
+        if (IsMixing)
+        {
+            if (!chemicalsAdded[0])
+            {
+                UIManager.instance.SetHelperText("1");
+                if (Input.GetKeyDown(KeyCode.Alpha1))
+                {
+                    chemicalsAdded[0] = true;
+                }
+            }
+            else if (!chemicalsAdded[1])
+            {
+                UIManager.instance.SetHelperText("2");
+                if (Input.GetKeyDown(KeyCode.Alpha2))
+                {
+                    chemicalsAdded[1] = true;
+                }
+            }
+            else
+            {
+                UIManager.instance.SetHelperText("3");
+                if (Input.GetKeyDown(KeyCode.Alpha3))
+                {
+                    chemicalsAdded[2] = true;
+                }
+            }
+
+            if (chemicalsAdded[0] && chemicalsAdded[1] && chemicalsAdded[2])
+            {
+                isActive = true;
+                isPlacing = true;
+                IsMixing = false;
+
+                kitchenSinkTargetPoint.gameObject.SetActive(true);
+
+                MouseLookAround.instance.SetMouseLock(false);
+            }
+        }
+        else if (isPlacing)
+        {
+            UIManager.instance.SetHelperText("KitcSinkImg"); //show the image here, so make the function something like SetHelperImg()
+
+            ZOffset = PlayerBehaviour.instance.transform.forward * 0.1f;
 
             if (cam == null)
                 cam = MouseLookAround.instance.GetCam();
@@ -81,11 +148,13 @@ public class Volcano : MonoBehaviour
 
                 UpdatePosition();
             }
-        }
-        
-        if(!isDragging)
-        {
-            rb.isKinematic = false;
+
+            if (!isDragging)
+            {
+                rb.isKinematic = false;
+
+                //UIManager.instance.SetHelperText(); //uncomment this once the kitchen sink image logic works, because it clears the text field
+            }
         }
 
         if (isActive)
@@ -128,6 +197,89 @@ public class Volcano : MonoBehaviour
                 yield return null;
             }
         }
+
+        ShowVolcanoMemory();
+    }
+
+    void ShowVolcanoMemory()
+    {
+        isPlacing = false;
+        isDragging = false;
+
+        UIManager.instance.SetHelperText();
+
+        if (IsPlaced)
+        {
+            StartCoroutine(SuccessMemory());
+        }
+        else
+        {
+            StartCoroutine(FailMemory());
+        }
+    }
+
+    IEnumerator SuccessMemory()
+    {
+        //fade in
+
+        //freeze player
+        GameManager.instance.StopGlitching();
+        PuzzleManager.instance.FreezePlayer();
+
+        StartCoroutine(UIEffects.instance.Fade(0, 1, 2, "Show Volcano Success Memory"));
+        yield return new WaitForSeconds(2f);
+
+        //play memory animation here
+        //yield return new WaitForSeconds(animationDuration);
+        //remove this line later (its for testing delay)
+
+        transform.GetChild(0).gameObject.SetActive(false);
+        transform.GetChild(1).gameObject.SetActive(false);
+        transform.GetChild(2).gameObject.SetActive(false);
+        yield return new WaitForSeconds(2f);
+
+        StartCoroutine(UIEffects.instance.ScrollYear(1994, 2001, 0.5f, AgePlayer));
+    }
+
+
+    IEnumerator FailMemory()
+    {
+        kitchenSinkTargetPoint.gameObject.SetActive(false);
+
+        //fade in
+
+        //freeze player
+        GameManager.instance.StopGlitching();
+        PuzzleManager.instance.FreezePlayer();
+
+        StartCoroutine(UIEffects.instance.Fade(0, 1, 2, "Show Volcano Fail Memory"));
+        yield return new WaitForSeconds(2f);
+
+        //play memory animation here
+        //yield return new WaitForSeconds(animationDuration);
+        //remove this (delay) line later (its for testing delay)
+
+        transform.GetChild(0).gameObject.SetActive(false);
+        transform.GetChild(1).gameObject.SetActive(false);
+        transform.GetChild(2).gameObject.SetActive(false);
+        yield return new WaitForSeconds(2f);
+
+        StartCoroutine(UIEffects.instance.ScrollYear(1994, 2001, 0.5f, AgePlayer));
+    }
+
+    void AgePlayer()
+    {
+        //fade out
+        StartCoroutine(UIEffects.instance.Fade(1, 0, 2));
+
+        //unfreeze player
+        PuzzleManager.instance.UnfreezePlayer();
+
+        //start glitching
+        GameManager.instance.StartGlitching();
+
+        //Destroy(this.gameObject, 2.5f);
+        PlayerBehaviour.instance.AgePlayer();
     }
 
     void StartSmoke()
@@ -166,24 +318,27 @@ public class Volcano : MonoBehaviour
 
     void UpdatePosition()
     {
+        UIManager.instance.SetHelperText("R - Move Up\nQ - Move Down");
+
         Vector3 targetDirection = PlayerBehaviour.instance.transform.forward;
         Quaternion rot = Quaternion.LookRotation(Vector3.Cross(Vector3.up, targetDirection), Vector3.up);
         transform.rotation = rot;
 
-        //offset method, player can use Q and R to move the model closer or farther
-        transform.position = PlayerBehaviour.instance.transform.position + (offset * 25f);
-        return;
-
         if (Input.GetKey(KeyCode.Q))
-        {
-            transform.position = GetMouseWorldPosition() - offset;
-        }
+            YOffset -= 1f * Time.deltaTime;
         else if (Input.GetKey(KeyCode.R))
+            YOffset += 1f * Time.deltaTime;
+
+        Vector3 pos = PlayerBehaviour.instance.transform.position + (ZOffset * 25f) + new Vector3(0, YOffset, 0);
+        transform.position = pos;
+
+        if (Vector3.Distance(this.transform.position, kitchenSinkTargetPoint.transform.position) <= 1f)
         {
-            transform.position = GetMouseWorldPosition() + offset;
+            kitchenSinkTargetPoint.gameObject.SetActive(false);
+            transform.position = kitchenSinkTargetPoint.transform.position;
+            IsPlaced = true;
+            isPlacing = false;
         }
-        else
-            transform.position = GetMouseWorldPosition();
     }
 
     private Vector3 GetMouseWorldPosition()

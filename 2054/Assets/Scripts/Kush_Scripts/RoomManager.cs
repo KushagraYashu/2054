@@ -35,6 +35,7 @@ public class RoomManager : MonoBehaviour
 
     // internal variables
     GameObject jerryGO; //VERY CRUCIAL FOR THIS GAME
+    Transform jerrySpawnPoint;
 
     
     // Start is called before the first frame update
@@ -51,8 +52,8 @@ public class RoomManager : MonoBehaviour
     {
         if(jerryGO != null) Destroy(jerryGO);
 
-        var spawnPoint = FindAnyObjectByType<JerrySpawnPoint>().transform;
-        jerryGO = Instantiate(jerryPrefab, spawnPoint.position, jerryPrefab.transform.rotation);
+        jerrySpawnPoint = FindAnyObjectByType<JerrySpawnPoint>().transform;
+        jerryGO = Instantiate(jerryPrefab, jerrySpawnPoint.position, jerryPrefab.transform.rotation);
     }
 
     void UpdateRoom()

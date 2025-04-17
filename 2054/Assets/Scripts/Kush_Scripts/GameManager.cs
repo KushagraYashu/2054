@@ -121,8 +121,6 @@ public class GameManager : MonoBehaviour
             t += Time.deltaTime * transitionSpeed;
             mainCamera.transform.SetPositionAndRotation(Vector3.Lerp(startPosition, playerCamPos.position, t), Quaternion.Lerp(startRotation, playerCamPos.rotation, t));
 
-            Debug.Log("Moving Camera");
-
             yield return null;
         }
 
@@ -198,11 +196,17 @@ public class GameManager : MonoBehaviour
         tutorialLight.GetComponent<Light>().enabled = false;
 
         tutorialCollider.SetActive(false);
+
+        GuidanceSystem.instance.ClearSteps();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //remove later, debug shortcut
+        //if(Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.F))
+        //{
+        //    TutorialDone();
+        //}
     }
 }

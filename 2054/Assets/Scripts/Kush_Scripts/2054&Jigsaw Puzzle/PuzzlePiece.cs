@@ -108,6 +108,7 @@ public class PuzzlePiece : MonoBehaviour
                 }
             }
             else if (Input.GetMouseButtonUp(0)) { 
+                UIManager.instance.SetHelperText();
                 isDragging = false;
                 PuzzleManager.instance.SetDraggingObject(isDragging);
             }
@@ -121,6 +122,8 @@ public class PuzzlePiece : MonoBehaviour
 
     void UpdatePosition()
     {
+        UIManager.instance.SetHelperText("R - Move Away\nQ - Move Closer");
+
         if (Input.GetKey(KeyCode.Q))
         {
             transform.position = GetMouseWorldPosition() - offset;
