@@ -43,8 +43,6 @@ public class PuzzlePiece : MonoBehaviour
     {
         objectMaterial = meshRenderer.material;
 
-        offset = -transform.forward * 0.1f;
-
         StartCoroutine(Flash());
     }
 
@@ -87,7 +85,9 @@ public class PuzzlePiece : MonoBehaviour
     {
         if (issolving)
         {
-            if(cam == null) cam = MouseLookAround.instance.GetCam();
+            offset = PlayerBehaviour.instance.transform.forward * 0.1f;
+
+            if (cam == null) cam = MouseLookAround.instance.GetCam();
             if (targetPoint == null)
                 foreach (GameObject t in PuzzleManager.instance.GetTargetPoints())
                 {
@@ -108,6 +108,7 @@ public class PuzzlePiece : MonoBehaviour
                 }
             }
             else if (Input.GetMouseButtonUp(0)) { 
+                UIManager.instance.SetHelperText();
                 isDragging = false;
                 PuzzleManager.instance.SetDraggingObject(isDragging);
             }
@@ -121,6 +122,8 @@ public class PuzzlePiece : MonoBehaviour
 
     void UpdatePosition()
     {
+        UIManager.instance.SetHelperText("R - Move Away\nQ - Move Closer");
+
         if (Input.GetKey(KeyCode.Q))
         {
             transform.position = GetMouseWorldPosition() - offset;

@@ -35,8 +35,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] Transform tutorialSpawnPt;
     [SerializeField] List<Transform> tutorialWaypoints = new();
 
+    [Header("Glitch Mechanism")]
+    public bool glitchAllowed = true;
+    public Camera glitchCamera;
+    [SerializeField] Vector2 waitTime = new(10f, 50f);
+    [SerializeField] Vector2 glitchTime = new(0.2f, 1f);
+
     //internal variables
     Camera mainCamera;
+    float t;
 
     // Start is called before the first frame update
     void Start()
@@ -45,16 +52,75 @@ public class GameManager : MonoBehaviour
         mainCamera.transform.position = mainMenuCamPos.position;
         MouseLookAround.instance.SetMouseLock(false);
         MouseLookAround.instance.lookAllowed = false;
+
+        StartCoroutine(Glitching());
+    }
+
+    public void StopGlitching()
+    {
+        glitchAllowed = false;
+
+        StopAllCoroutines();
+
+        glitchCamera.gameObject.SetActive(false);
+        MouseLookAround.instance.GetCam().gameObject.SetActive(true);
+        PuzzleManager.instance.UnfreezePlayer();
+    }
+
+    public void StartGlitching()
+    {
+        StopAllCoroutines();
+
+        glitchAllowed = true;
+        StartCoroutine(Glitching());
+    }
+
+    IEnumerator Glitching()
+    {
+        if (glitchAllowed)
+        {
+            float wait = Random.Range(waitTime.x, waitTime.y);
+
+            yield return new WaitForSeconds(wait);
+
+            StartCoroutine(DoGlitch());
+        }
+    }
+
+    IEnumerator DoGlitch()
+    {
+        if (glitchAllowed)
+        {
+            float glitchTime = Random.Range(this.glitchTime.x, this.glitchTime.y);
+
+            StartCoroutine(UIEffects.instance.Fade(1, 0, .5f));
+            PuzzleManager.instance.FreezePlayer();
+
+            glitchCamera.gameObject.SetActive(true);
+            MouseLookAround.instance.GetCam().gameObject.SetActive(false);
+
+            yield return new WaitForSeconds(glitchTime);
+
+            glitchCamera.gameObject.SetActive(false);
+            MouseLookAround.instance.GetCam().gameObject.SetActive(true);
+
+            PuzzleManager.instance.UnfreezePlayer();
+            StartCoroutine(UIEffects.instance.Fade(1, 0, .5f));
+
+            if (glitchAllowed)
+                StartCoroutine(Glitching());
+        }
     }
 
     IEnumerator TransitionCam()
     {
-        float t = 0;
+        t = 0;
         mainMenuCamPos.transform.GetPositionAndRotation(out Vector3 startPosition, out Quaternion startRotation);
         while (t < 1)
         {
             t += Time.deltaTime * transitionSpeed;
             mainCamera.transform.SetPositionAndRotation(Vector3.Lerp(startPosition, playerCamPos.position, t), Quaternion.Lerp(startRotation, playerCamPos.rotation, t));
+
             yield return null;
         }
 
@@ -130,11 +196,17 @@ public class GameManager : MonoBehaviour
         tutorialLight.GetComponent<Light>().enabled = false;
 
         tutorialCollider.SetActive(false);
+
+        GuidanceSystem.instance.ClearSteps();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //remove later, debug shortcut
+        //if(Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.F))
+        //{
+        //    TutorialDone();
+        //}
     }
 }

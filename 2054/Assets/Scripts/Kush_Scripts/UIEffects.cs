@@ -113,47 +113,63 @@ public class UIEffects : MonoBehaviour
         string fromStr = fromYear.ToString();
         string toStr = toYear.ToString();
 
-        for (int i = 3; i >= 0; i--) // Start from rightmost digit
+        // Create a list of coroutines to run in parallel
+        List<Coroutine> coroutines = new List<Coroutine>();
+
+        for (int i = 3; i >= 0; i--)
         {
-            if (fromStr[i] != toStr[i]) // If the digit needs to change
+            int fromDigit = int.Parse(fromStr[i].ToString());
+            int toDigit = int.Parse(toStr[i].ToString());
+
+            if (fromDigit != toDigit)
             {
-                yield return StartCoroutine(ScrollDigit(yearDigits[i], int.Parse(fromStr[i].ToString()), int.Parse(toStr[i].ToString())));
+                float influence = Mathf.Pow(0.1f, (3 - i)); // Rightmost = 1.0, then 0.1, 0.01, 0.001
+                coroutines.Add(StartCoroutine(ScrollDigit(yearDigits[i], fromDigit, toDigit, influence)));
             }
         }
+
+        // Wait for all digit scrolls to complete
+        foreach (var c in coroutines)
+            yield return c;
+
         currentYear = toYear;
     }
 
-    private IEnumerator ScrollDigit(TextMeshProUGUI digitText, int from, int to)
+    private IEnumerator ScrollDigit(TextMeshProUGUI digitText, int from, int to, float influence)
     {
         float elapsedTime = 0f;
-        float moveDistance = 40f; // Distance the digit moves up
+        float moveDistance = 40f;
 
         Vector3 originalPos = digitText.transform.localPosition;
         Vector3 upperPos = originalPos + Vector3.up * moveDistance;
-        Vector3 resetPos = originalPos - Vector3.up * moveDistance; // Move below instantly
+        Vector3 resetPos = originalPos - Vector3.up * moveDistance;
 
-        // Move the digit up
+        // First half: scroll up and fade out
         while (elapsedTime < scrollSpeed)
         {
             elapsedTime += Time.deltaTime;
-            digitText.transform.localPosition = Vector3.Lerp(originalPos, upperPos, elapsedTime / scrollSpeed);
+            float t = elapsedTime / scrollSpeed;
+
+            // Odometer influence causes the digit to scroll slightly, even if it's not changing
+            float influencedT = Mathf.Min(t * (1f + influence), 1f);
+
+            digitText.transform.localPosition = Vector3.Lerp(originalPos, upperPos, influencedT);
             yield return null;
         }
 
-        // Instantly move to the bottom position
         digitText.transform.localPosition = resetPos;
-        digitText.text = to.ToString(); // Update the digit
+        digitText.text = to.ToString();
 
-        // Move up again to create the circular effect
+        // Reset time for the second half
         elapsedTime = 0f;
         while (elapsedTime < scrollSpeed)
         {
             elapsedTime += Time.deltaTime;
-            digitText.transform.localPosition = Vector3.Lerp(resetPos, originalPos, elapsedTime / scrollSpeed);
+            float t = elapsedTime / scrollSpeed;
+            digitText.transform.localPosition = Vector3.Lerp(resetPos, originalPos, t);
             yield return null;
         }
 
-        // Ensure it's perfectly aligned at the end
         digitText.transform.localPosition = originalPos;
     }
 }

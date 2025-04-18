@@ -90,12 +90,14 @@ public class PuzzleManager : MonoBehaviour
         {
             curPuzzleParent = Instantiate(puzzlePrefabs[0], puzzleSpawnPoint);
             curPuzzleParent.transform.parent = GameObject.FindGameObjectWithTag("ToddlerRoomParent").transform;
-            totalPieces = 3;
+            UIManager.instance.SetHelperText("1/3");
+            totalPieces = 2;
         }
         else if (curPuzzleID == 2) {  //2054 Puzzle
             curPuzzleParent = Instantiate(puzzlePrefabs[1], puzzleSpawnPoint);
             curPuzzleParent.transform.parent = GameObject.FindGameObjectWithTag("ToddlerRoomParent").transform;
-            totalPieces = 4;
+            UIManager.instance.SetHelperText("1/4");
+            totalPieces = 3;
         }
 
         var waypoints = FindObjectsByType<PuzzleWaypoints>(FindObjectsSortMode.None);
@@ -114,9 +116,11 @@ public class PuzzleManager : MonoBehaviour
     public void AddPiece(GameObject piece)
     {
         piecesGO.Add(piece);
+        UIManager.instance.SetHelperText((piecesGO.Count + 1).ToString() + "/" + (totalPieces + 1).ToString());
         piece.SetActive(false);
         if(piecesGO.Count == totalPieces)
         {
+            UIManager.instance.SetKeyToPress("E");
             canShowInventory = true;
         }
     }
@@ -130,8 +134,14 @@ public class PuzzleManager : MonoBehaviour
 
         if (inventory && Input.GetKeyDown(KeyCode.E) && !solving)
         {
+            //stop glitches
+            GameManager.instance.StopGlitching();
+
             if (PlayerBehaviour.instance.currentPlayerState != PlayerBehaviour.PlayerState.SOLVING_PUZZLE)
                 PlayerBehaviour.instance.currentPlayerState = PlayerBehaviour.PlayerState.SOLVING_PUZZLE;
+
+            var solvePos = GameObject.FindGameObjectWithTag("PuzzleSolvePoint");
+            PlayerBehaviour.instance.transform.SetPositionAndRotation(solvePos.transform.position, solvePos.transform.rotation);
             MouseLookAround.instance.SetMouseLock(false);
 
             SolvePuzzle();
@@ -139,6 +149,9 @@ public class PuzzleManager : MonoBehaviour
 
         if (puzzleSolved)
         {
+            UIManager.instance.SetKeyToPress();
+            UIManager.instance.SetHelperText();
+
             puzzleSolved = false;
 
             if (PlayerBehaviour.instance.currentPlayerState != PlayerBehaviour.PlayerState.EXPLORING)
@@ -171,7 +184,7 @@ public class PuzzleManager : MonoBehaviour
         //DEBUG INPUT, REMOVE LATER
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.F))
         {
-            StartCoroutine (ShowJigsawMemory());
+            //StartCoroutine (ShowJigsawMemory());
         }
     }
 
@@ -180,6 +193,7 @@ public class PuzzleManager : MonoBehaviour
         //fade in
 
         //freeze player
+        GameManager.instance.StopGlitching();
         FreezePlayer();
 
         StartCoroutine(UIEffects.instance.Fade(0, 1, 2, "Show 2054 Memory"));
@@ -191,7 +205,7 @@ public class PuzzleManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         //Scrolling Years (pass the callback function as well)
-        StartCoroutine(UIEffects.instance.ScrollYear(1987, 1994, 0.75f, AgePlayer));
+        StartCoroutine(UIEffects.instance.ScrollYear(1987, 1994, 0.5f, AgePlayer));
     }
 
     void AgePlayer() {
@@ -204,6 +218,9 @@ public class PuzzleManager : MonoBehaviour
 
         //unfreeze player
         UnfreezePlayer();
+
+        //allow glitching
+        GameManager.instance.StartGlitching();
     }
 
     IEnumerator ShowJigsawMemory()
@@ -211,6 +228,7 @@ public class PuzzleManager : MonoBehaviour
         //fade in
 
         //freeze player
+        GameManager.instance.StopGlitching();
         FreezePlayer();
 
         StartCoroutine(UIEffects.instance.Fade(0, 1, 2, "Show Jigsaw Memory"));
@@ -232,6 +250,9 @@ public class PuzzleManager : MonoBehaviour
 
         //unfreeze player
         UnfreezePlayer();
+
+        //start glitching
+        GameManager.instance.StartGlitching();
     }
 
     void SwitchPuzzle()
@@ -261,6 +282,7 @@ public class PuzzleManager : MonoBehaviour
 
     void ShowInventory()
     {
+
         int i = 0;
         
         foreach (var piece in piecesGO) {
