@@ -16,14 +16,16 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI keyToPress;
     [SerializeField] TextMeshProUGUI helperTxt;
 
-    public void SetKeyToPress(string key = "")
+    public void SetKeyToPress(string key = "", bool append = false)
     {
-        keyToPress.text = key;
+        if (!append) keyToPress.text = key;
+        else keyToPress.text += key;
     }
 
-    public void SetHelperText(string text = "")
+    public void SetHelperText(string text = "", bool append = false)
     {
-        helperTxt.text = text;
+        if (!append) helperTxt.text = text;
+        else helperTxt.text += text;
     }
 
     // Start is called before the first frame update

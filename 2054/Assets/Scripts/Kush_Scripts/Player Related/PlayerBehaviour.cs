@@ -12,6 +12,7 @@ public class PlayerBehaviour : MonoBehaviour
         INSPECTING,
         PLAYING_WITH_CAR,
         SOLVING_PUZZLE,
+        USING_LAPTOP,
         TOTAL,
     };
 
@@ -89,5 +90,14 @@ public class PlayerBehaviour : MonoBehaviour
         {
             //Win condition
         }
+
+        //fade out
+        StartCoroutine(UIEffects.instance.Fade(1, 0, 2));
+
+        //unfreeze player
+        PuzzleManager.instance.UnfreezePlayer();
+
+        //start glitching
+        GameManager.instance.StartGlitching();
     }
 }

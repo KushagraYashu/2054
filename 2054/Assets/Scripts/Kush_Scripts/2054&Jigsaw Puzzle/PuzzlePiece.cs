@@ -101,10 +101,13 @@ public class PuzzlePiece : MonoBehaviour
             if (Input.GetMouseButton(0) && !isDragging && !PuzzleManager.instance.IsDraggingObject())
             {
                 Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.gameObject.GetComponent<PuzzlePiece>() == this)
+                if (Physics.Raycast(ray, out RaycastHit hit))
                 {
-                    isDragging = true;
-                    PuzzleManager.instance.SetDraggingObject(isDragging);
+                    if (hit.transform.gameObject.GetComponent<PuzzlePiece>() == this)
+                    {
+                        isDragging = true;
+                        PuzzleManager.instance.SetDraggingObject(isDragging);
+                    }
                 }
             }
             else if (Input.GetMouseButtonUp(0)) { 

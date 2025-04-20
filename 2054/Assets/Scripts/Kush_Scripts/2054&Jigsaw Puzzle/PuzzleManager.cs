@@ -212,15 +212,6 @@ public class PuzzleManager : MonoBehaviour
         //aging and guidance system (guidance should be based on time)
         PlayerBehaviour.instance.AgePlayer();
         GuidanceSystem.instance.StartSteps(waypointsFrom2054To);
-
-        //fade out
-        StartCoroutine(UIEffects.instance.Fade(1, 0, 2));
-
-        //unfreeze player
-        UnfreezePlayer();
-
-        //allow glitching
-        GameManager.instance.StartGlitching();
     }
 
     IEnumerator ShowJigsawMemory()

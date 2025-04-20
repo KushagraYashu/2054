@@ -5,14 +5,62 @@ using UnityEngine;
 
 public class Toycar : MonoBehaviour
 {
+    public static Toycar instance;
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
+
+    public string[] PossibleCodes = { 
+        "!",
+        "\"",
+        "#",
+        "%",
+        "^",
+        "&",
+        "*",
+        "(",
+        ")",
+        "-",
+        "=",
+        "+",
+        "{",
+        "}",
+        "[",
+        "]",
+        "@",
+        ";",
+        ":",
+        "<",
+        ">",
+        "?",
+        "/",
+        "|",
+        "~",
+        "`",
+        "¦",
+        "_"
+    };
+
     [Header("Mesh Reference")]
-    public Transform toycarTrans;
+    public Transform toycarMeshTrans;
+    public Transform toycarTargetPtTrans;
 
     [Header("Waypoints and Variables")]
     [SerializeField] private float distThreshold = 0.2f;
     [SerializeField] private float speed = 2f;
     public Transform curWaypoint;
     [SerializeField] private List<Transform> waypoints = new(); //no need to change this, it will be set up automatically in Start()
+
+    [Header("Passcode")]
+    public string Passcode { get; private set; } = "";
 
     [Header("Bools")]
     public bool canPlay = false;
@@ -26,11 +74,28 @@ public class Toycar : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && toycarMeshTrans.GetComponent<ToycarMesh>().canPlay)
         {
             canPlay = true;
             isPlaying = false;
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player") && toycarMeshTrans.GetComponent<ToycarMesh>().canPlay)
+        {
+            canPlay = false;
+            isPlaying = false;
+        }
+    }
+
+    public void SetPlay()
+    {
+        toycarMeshTrans.GetComponent<Rigidbody>().isKinematic = true;
+        canPlay = true;
+        UIManager.instance.SetKeyToPress("E");
+        UIManager.instance.SetHelperText();
     }
 
     private void Start()
@@ -47,6 +112,14 @@ public class Toycar : MonoBehaviour
                 } 
                 while (next != null);
         }
+
+        StartCoroutine(ShowToycarImg());
+    }
+
+    IEnumerator ShowToycarImg()
+    {
+        yield return new WaitForSeconds(5f);
+        UIManager.instance.SetHelperText("ToycarImg");
     }
 
     private void Update()
@@ -56,6 +129,7 @@ public class Toycar : MonoBehaviour
             if (Input.GetKey(KeyCode.E))
             {
                 isPlaying = true;
+                //toycarMeshTrans.GetComponent<Rigidbody>().isKinematic = true;
                 StartCoroutine(nameof(MoveToycar));
                 if (PlayerBehaviour.instance.currentPlayerState != PlayerBehaviour.PlayerState.PLAYING_WITH_CAR)
                     PlayerBehaviour.instance.currentPlayerState = PlayerBehaviour.PlayerState.PLAYING_WITH_CAR;
@@ -65,6 +139,7 @@ public class Toycar : MonoBehaviour
             if(Input.GetKeyUp(KeyCode.E) && isPlaying)
             {
                 isPlaying = false;
+                //toycarMeshTrans.GetComponent<Rigidbody>().isKinematic = false;
                 PlayerBehaviour.instance.currentPlayerState = PlayerBehaviour.PlayerState.EXPLORING;
             }
         }
@@ -77,13 +152,13 @@ public class Toycar : MonoBehaviour
             moving = true;
             while (curWaypoint != null)
             {
-                Vector3 direction = curWaypoint.position - toycarTrans.position;
+                Vector3 direction = curWaypoint.position - toycarMeshTrans.position;
                 direction.y = 0;
                 if (direction != Vector3.zero)
                 {
-                    toycarTrans.rotation = Quaternion.LookRotation(direction);
+                    toycarMeshTrans.rotation = Quaternion.LookRotation(direction);
                 }
-                distance = Vector3.Distance(toycarTrans.position, curWaypoint.position);
+                distance = Vector3.Distance(toycarMeshTrans.position, curWaypoint.position);
                 StartCoroutine(nameof(UpdatePosition));
 
                 if (distance <= distThreshold)
@@ -91,11 +166,18 @@ public class Toycar : MonoBehaviour
                     i++;
                     if(i >= waypoints.Count)
                     {
+                        if(i == waypoints.Count) 
+                        {
+                            Passcode += curWaypoint.GetComponent<ToycarWaypoint>().waypointCode;
+                            UIManager.instance.SetHelperText(curWaypoint.GetComponent<ToycarWaypoint>().waypointCode + " ", true);
+                        }
                         SolveState();
                         curWaypoint = null;
                     }
                     else
                     {
+                        Passcode += curWaypoint.GetComponent<ToycarWaypoint>().waypointCode;
+                        UIManager.instance.SetHelperText(curWaypoint.GetComponent<ToycarWaypoint>().waypointCode + " ", true);
                         curWaypoint = waypoints[i];
                     }
                 }
@@ -107,17 +189,20 @@ public class Toycar : MonoBehaviour
 
     void SolveState()
     {
+        Laptop.instance.SetLaptop(true, Passcode);
+
         canPlay = false;
         isPlaying = false;
         finished = true;
+        UIManager.instance.SetKeyToPress();
         GetComponent<BoxCollider>().enabled = false;
         PlayerBehaviour.instance.currentPlayerState = PlayerBehaviour.PlayerState.EXPLORING;
-        toycarTrans.GetComponent<Rigidbody>().isKinematic = false;
+        //toycarMeshTrans.GetComponent<Rigidbody>().isKinematic = false;
 
         //Do memory stuff
 
         //remove this line later
-        GetComponentInChildren<Canvas>().GetComponentInChildren<TextMeshProUGUI>().text += "\nShow Memory";
+        //GetComponentInChildren<Canvas>().GetComponentInChildren<TextMeshProUGUI>().text += "\nShow Memory";
     }
 
     IEnumerator UpdatePosition()
@@ -125,8 +210,8 @@ public class Toycar : MonoBehaviour
         while (distance > distThreshold && isPlaying)
         {
             var position = curWaypoint.position;
-            position.y = toycarTrans.position.y;
-            toycarTrans.position = Vector3.MoveTowards(toycarTrans.position, position, (speed/100) * Time.deltaTime);
+            position.y = toycarMeshTrans.position.y;
+            toycarMeshTrans.position = Vector3.MoveTowards(toycarMeshTrans.position, position, (speed/100) * Time.deltaTime);
 
             yield return null;
             //yield return new WaitForSeconds(.5f);

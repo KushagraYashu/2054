@@ -238,7 +238,7 @@ public class Volcano : MonoBehaviour
         transform.GetChild(2).gameObject.SetActive(false);
         yield return new WaitForSeconds(2f);
 
-        StartCoroutine(UIEffects.instance.ScrollYear(1994, 2001, 0.5f, AgePlayer));
+        StartCoroutine(UIEffects.instance.ScrollYear(1994, 2001, 0.5f, PlayerBehaviour.instance.AgePlayer));
     }
 
 
@@ -264,22 +264,7 @@ public class Volcano : MonoBehaviour
         transform.GetChild(2).gameObject.SetActive(false);
         yield return new WaitForSeconds(2f);
 
-        StartCoroutine(UIEffects.instance.ScrollYear(1994, 2001, 0.5f, AgePlayer));
-    }
-
-    void AgePlayer()
-    {
-        //fade out
-        StartCoroutine(UIEffects.instance.Fade(1, 0, 2));
-
-        //unfreeze player
-        PuzzleManager.instance.UnfreezePlayer();
-
-        //start glitching
-        GameManager.instance.StartGlitching();
-
-        //Destroy(this.gameObject, 2.5f);
-        PlayerBehaviour.instance.AgePlayer();
+        StartCoroutine(UIEffects.instance.ScrollYear(1994, 2001, 0.5f, PlayerBehaviour.instance.AgePlayer));
     }
 
     void StartSmoke()
