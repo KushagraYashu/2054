@@ -14,7 +14,7 @@
   <WwiseInstallationPathWindows>C:\Program Files (x86)\Audiokinetic\Wwise2023.1.6.8555</WwiseInstallationPathWindows>
   <WwiseProjectPath>../2054_WwiseProject/2054_WwiseProject.wproj</WwiseProjectPath>
   <UseWaapi>true</UseWaapi>
-  <WaapiPort>8081</WaapiPort>
+  <WaapiPort>8082</WaapiPort>
   <WaapiIP>127.0.0.1</WaapiIP>
   <XMLTranslatorTimeout>10</XMLTranslatorTimeout>
   <WaapiTranslatorTimeout>0</WaapiTranslatorTimeout>
