@@ -69,6 +69,94 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Event Name="Start_Button" ID="{8CB1687F-B670-4077-AE16-9C65A2E131C9}">
+					<ChildrenList>
+						<Action Name="" ID="{F4165699-4A93-42F3-95D2-EB66ACB84840}" ShortID="344438128">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Start Button" ID="{9132F117-D50D-48CD-B12D-BFD8EB2E6EF2}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Back_Button" ID="{5B18FE6F-FE2C-4284-9757-467E25A5579C}">
+					<ChildrenList>
+						<Action Name="" ID="{79618CBE-D4A3-416A-AF6B-07ECB9615506}" ShortID="223756888">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Back Button" ID="{3ED1CEC1-79C5-4002-8A3D-4F8634E86782}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Volcano_Hiss" ID="{FD1ACE77-E064-4584-B1FD-4174B32C1FFD}">
+					<ChildrenList>
+						<Action Name="" ID="{943BE08A-D11A-4137-B567-3E1D40889542}" ShortID="390192881">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Volcano_Hiss" ID="{0144EB83-0567-4CE1-B0D1-D4901E4FB230}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Volcano_Explosion" ID="{63C91B31-D45A-41EA-8B4B-A1451493DBBA}">
+					<ChildrenList>
+						<Action Name="" ID="{A073D6F1-D54D-4E20-B6AF-C7724D8A3231}" ShortID="483169522">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Volcano_Explosion" ID="{EBA219A6-FD7D-4E85-BE7F-317A7B6760CE}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Door_Open" ID="{1D45E6AE-51CE-481E-9544-C4AD6ECB73B4}">
+					<ChildrenList>
+						<Action Name="" ID="{E5FCC2D5-5B74-4374-8D81-AD10013DD698}" ShortID="686907463">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Door" ID="{8D8DDBE9-4944-46A5-8C50-523BEEAD4B3F}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Footsteps" ID="{81D6C086-5A94-4F9F-8DAD-8304DD96B8D2}">
+					<ChildrenList>
+						<Action Name="" ID="{33B67B12-F0A9-4ED6-AE03-64093F9AED5E}" ShortID="379962421">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Footsteps" ID="{6C3A3DFE-A5B3-4EAC-B732-EBB80542FDE8}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Wood_Floor_Jump_land" ID="{41E4C70D-B95C-4B2A-8C91-F7F303082872}">
+					<ChildrenList>
+						<Action Name="" ID="{3338A403-A936-4073-8348-E0DD218A5D84}" ShortID="97162813">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Wood_Floor_land" ID="{51F507CB-FC79-4765-984D-A3EC51D7C9D9}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Tv_Static" ID="{1D82C48D-01B7-497F-8F9E-A1DAE2ADA8FB}">
+					<ChildrenList>
+						<Action Name="" ID="{7BB4CE85-A315-4CE7-AFA4-DFEB4E1F7031}" ShortID="761995921">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Tv_Static" ID="{B8AE4812-A2AF-4F62-A429-E87B3AB93E54}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

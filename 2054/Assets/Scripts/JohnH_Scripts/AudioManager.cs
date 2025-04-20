@@ -19,7 +19,31 @@ public class AudioManager : MonoBehaviour
 
     [Header("Audio Events")] //this is a header for inspector (this makes things look cleaner and easier to manage)
     [SerializeField] //showing the variable the inspector, this is only useful for private variables
-    private AK.Wwise.Event[] playerFootsteps; //array of events for the player footstep, set this in the inspector to be the appropriate event [0th - toddler, 1st - child, 2nd - Teen, 3rd - Adult, if confused see the PlayerAge enum in PlayerBehaviour.cs], also see the PlayPlayerFootstep method.
+    private AK.Wwise.Event[] playerFootsteps;
+    [SerializeField]//array of events for the player footstep, set this in the inspector to be the appropriate event [0th - toddler, 1st - child, 2nd - Teen, 3rd - Adult, if confused see the PlayerAge enum in PlayerBehaviour.cs], also see the PlayPlayerFootstep method.
+    private AK.Wwise.Event StartButton;
+    [SerializeField]
+    private AK.Wwise.Event BackButton;
+    [SerializeField]
+    private AK.Wwise.Event Door;
+    [SerializeField]
+    private AK.Wwise.Event Tick;
+    [SerializeField]
+    private AK.Wwise.Event Vial;
+    [SerializeField]
+    private AK.Wwise.Event VolcanoExplosion;
+    [SerializeField]
+    private AK.Wwise.Event PaperPickUp1;
+    [SerializeField]
+    private AK.Wwise.Event PaperPickUp2;
+    [SerializeField]
+    private AK.Wwise.Event PaperPickUp3;
+    [SerializeField]
+    private AK.Wwise.Event Wood_Floor_land;
+    [SerializeField]
+    private AK.Wwise.Event Carpet_land;
+    [SerializeField]
+    private AK.Wwise.Event Heartbeat_1;
 
     //I would recommend creating similar events and then their appropriate methods (make them public, so i can call them from other scripts using the singleton instance).
 
@@ -31,7 +55,7 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
