@@ -50,10 +50,13 @@ public class RoomManager : MonoBehaviour
 
     void SpawnJerry()
     {
-        if(jerryGO != null) Destroy(jerryGO);
+        if(currentRoomType != Room.Adult)
+        {
+            if (jerryGO != null) Destroy(jerryGO);
 
-        jerrySpawnPoint = FindAnyObjectByType<JerrySpawnPoint>().transform;
-        jerryGO = Instantiate(jerryPrefab, jerrySpawnPoint.position, jerryPrefab.transform.rotation);
+            jerrySpawnPoint = FindAnyObjectByType<JerrySpawnPoint>().transform;
+            jerryGO = Instantiate(jerryPrefab, jerrySpawnPoint.position, jerryPrefab.transform.rotation);
+        }
     }
 
     void UpdateRoom()

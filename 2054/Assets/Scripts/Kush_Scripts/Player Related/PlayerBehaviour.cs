@@ -30,6 +30,9 @@ public class PlayerBehaviour : MonoBehaviour
     [Header("Player Age")]
     public PlayerAge playerAge = PlayerAge.Toddler;
 
+    [Header("Audio Switches")]
+    public Transform footstepAudioSwitchParent;
+
     // Internal Variables
     PlayerMovement movementComponent;
     float[] heights = new float[4];
@@ -74,6 +77,12 @@ public class PlayerBehaviour : MonoBehaviour
 
     void SetPlayerHeight()
     {
+        for(int i=0; i<(int)PlayerAge.TOTAL; i++)
+        {
+            footstepAudioSwitchParent.GetChild(i).gameObject.SetActive(false);
+        }
+        footstepAudioSwitchParent.GetChild((int)playerAge).gameObject.SetActive(true);
+
         transform.localScale = new Vector3(1, heights[(int)playerAge], 1);
         movementComponent.speed = 10 * (float)(1 - (1.8 - heights[(int)playerAge]) / 1.8);
     }
