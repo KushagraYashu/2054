@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 6d591579630d4e4b8339eaf347078ef1
     GuidInternal: 
-    m_lastTime: -8584568123129025748
+    m_lastTime: -8584566254006643816
     List:
     - name: Main
       guid: 7f2daec70d93a24395a594bd9476f066
@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 6b6e736efaef2c4ca991b4d0d692e67d
     GuidInternal: 
-    m_lastTime: -8584568123150299563
+    m_lastTime: -8584566254014027124
     List:
     - name: AdultPlayerFootstep
       guid: 2dd5e36dd50f8c43a9952b2ae8de324e
@@ -219,8 +219,8 @@ MonoBehaviour:
         guid: 7f68b18c70b67740ae169c65a2e131c9
       Path: Events\Default Work Unit\Start_Button
       maxAttenuation: 0
-      maxDuration: 0.52287585
-      minDuration: 0.52287585
+      maxDuration: 0.38656175
+      minDuration: 0.38656175
     - name: TeenPlayerFootstep
       guid: 692a32ee0ac1ce4d95c6124b4fbe5883
       id: 450457492
@@ -275,7 +275,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: 8dc4821db7017f498f9ea1dae2ada8fb
       Path: Events\Default Work Unit\Tv_Static
-      maxAttenuation: 15
+      maxAttenuation: 13
       maxDuration: -1
       minDuration: -1
     - name: Volcano_Explosion
@@ -452,7 +452,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 26537b2798b09b4a9d78f1bf3b761d1a
     GuidInternal: 
-    m_lastTime: -8584568123129005758
+    m_lastTime: -8584566254006633793
     List:
     - name: Teen_Footsteps
       guid: ea4eeed0e5191149ac21a567d251d4bf
