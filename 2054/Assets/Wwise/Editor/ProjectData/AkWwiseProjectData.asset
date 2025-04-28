@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: b41360aadc36a5418c8e6c331721a1f4
     GuidInternal: 
-    m_lastTime: -8584561994484479160
+    m_lastTime: -8584557620282143672
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 975eb8b647c3434697b2aef874490a0c
     GuidInternal: 
-    m_lastTime: -8584561994497119741
+    m_lastTime: -8584557620295556674
     List:
     - name: Master Audio Bus
       guid: d8a41415a61d2a41a17e75ca0c2149f3
@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 6d591579630d4e4b8339eaf347078ef1
     GuidInternal: 
-    m_lastTime: -8584561994484519118
+    m_lastTime: -8584557620282203477
     List:
     - name: Main
       guid: 7f2daec70d93a24395a594bd9476f066
@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 6b6e736efaef2c4ca991b4d0d692e67d
     GuidInternal: 
-    m_lastTime: -8584561994503374643
+    m_lastTime: -8584557620304327877
     List:
     - name: AdultPlayerFootstep
       guid: 2dd5e36dd50f8c43a9952b2ae8de324e
@@ -114,8 +114,8 @@ MonoBehaviour:
         guid: 2dd5e36dd50f8c43a9952b2ae8de324e
       Path: Events\Default Work Unit\Player Footsteps\AdultPlayerFootstep
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.22328146
+      minDuration: 0.18775658
     - name: Back_Button
       guid: 6ffe185b2cfe84429757467e25a5579c
       id: 2886972203
@@ -131,8 +131,8 @@ MonoBehaviour:
         guid: 6ffe185b2cfe84429757467e25a5579c
       Path: Events\Default Work Unit\Back_Button
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.35947713
+      minDuration: 0.35947713
     - name: ChildPlayerFootstep
       guid: b10976fd6b3d404a98fd092d80d7a25a
       id: 3303107572
@@ -151,8 +151,8 @@ MonoBehaviour:
         guid: b10976fd6b3d404a98fd092d80d7a25a
       Path: Events\Default Work Unit\Player Footsteps\ChildPlayerFootstep
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.20553462
+      minDuration: 0.14533494
     - name: Door_Open
       guid: aee6451dce511e489544c4ad6ecb73b4
       id: 535830432
@@ -168,8 +168,8 @@ MonoBehaviour:
         guid: aee6451dce511e489544c4ad6ecb73b4
       Path: Events\Default Work Unit\Door_Open
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.40904167
+      minDuration: 0.37008333
     - name: Footsteps
       guid: 86c0d681945a9f4f8dad8304dd96b8d2
       id: 2385628198
@@ -185,8 +185,8 @@ MonoBehaviour:
         guid: 86c0d681945a9f4f8dad8304dd96b8d2
       Path: Events\Default Work Unit\Footsteps
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.45635477
+      minDuration: 0.17942713
     - name: Player Footsteps
       guid: 6a7d3b2547369d4aba816dabc1d8b854
       id: 3165549291
@@ -219,8 +219,8 @@ MonoBehaviour:
         guid: 7f68b18c70b67740ae169c65a2e131c9
       Path: Events\Default Work Unit\Start_Button
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.38656175
+      minDuration: 0.38656175
     - name: TeenPlayerFootstep
       guid: 692a32ee0ac1ce4d95c6124b4fbe5883
       id: 450457492
@@ -239,8 +239,8 @@ MonoBehaviour:
         guid: 692a32ee0ac1ce4d95c6124b4fbe5883
       Path: Events\Default Work Unit\Player Footsteps\TeenPlayerFootstep
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.27830666
+      minDuration: 0.23402709
     - name: ToddlerPlayerFootstep
       guid: 16a73a89a03d364cb6258b998e505ca7
       id: 969514050
@@ -259,8 +259,8 @@ MonoBehaviour:
         guid: 16a73a89a03d364cb6258b998e505ca7
       Path: Events\Default Work Unit\Player Footsteps\ToddlerPlayerFootstep
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.27830666
+      minDuration: 0.23402709
     - name: Tv_Static
       guid: 8dc4821db7017f498f9ea1dae2ada8fb
       id: 1436086644
@@ -275,7 +275,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: 8dc4821db7017f498f9ea1dae2ada8fb
       Path: Events\Default Work Unit\Tv_Static
-      maxAttenuation: 0
+      maxAttenuation: 13
       maxDuration: -1
       minDuration: -1
     - name: Volcano_Explosion
@@ -293,8 +293,8 @@ MonoBehaviour:
         guid: 311bc9635ad4ea418b4ba1451493dbba
       Path: Events\Default Work Unit\Volcano_Explosion
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 4.308436
+      minDuration: 4.308436
     - name: Volcano_Hiss
       guid: 77ce1afd64e08445b1fd4174b32c1ffd
       id: 3420485851
@@ -327,8 +327,8 @@ MonoBehaviour:
         guid: a26b31d1ce11a045aaabac9bf4549e69
       Path: Events\Default Work Unit\Weather
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 181
+      minDuration: 181
     - name: Wood_Floor_Jump_land
       guid: 0dc7e4415cb92a4b8c91f7f303082872
       id: 1900150648
@@ -344,8 +344,8 @@ MonoBehaviour:
         guid: 0dc7e4415cb92a4b8c91f7f303082872
       Path: Events\Default Work Unit\Wood_Floor_Jump_land
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0.19735417
+      minDuration: 0.14778094
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -358,7 +358,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 9aca37bdec08464e866b33c8822b7e1b
     GuidInternal: 
-    m_lastTime: -8584561994503364683
+    m_lastTime: -8584557620304307883
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
@@ -372,7 +372,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 68a0ea2b43c9fe428d49e2950a66b608
     GuidInternal: 
-    m_lastTime: -8584561994484508915
+    m_lastTime: -8584557620282183541
     List:
     - name: Weather
       guid: 7e61417ace02c443b78317930554403e
@@ -452,7 +452,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 26537b2798b09b4a9d78f1bf3b761d1a
     GuidInternal: 
-    m_lastTime: -8584561994484499137
+    m_lastTime: -8584557620282163610
     List:
     - name: Teen_Footsteps
       guid: ea4eeed0e5191149ac21a567d251d4bf
@@ -516,7 +516,7 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: a7cd33f05653624888f07accfab06ce8
     GuidInternal: 
-    m_lastTime: -8584561994484489150
+    m_lastTime: -8584557620282153637
     List: []
   ExpandedFileSystemItemIds: 
   ExpandedWaapiItemIds: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000e0000000f0000001000000015000000160000001700000018000000190000007000000071000000720000007300000074000000e5000000e6000000e7000000440e0000450e0000c4951f00
