@@ -355,6 +355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextWaypoint: {fileID: 7911097060932428496}
+  waypointCode: 
 --- !u!1 &2858541567617734211
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,7 +426,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00a4ecc637857264c8c9854670627f56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toycarTrans: {fileID: 6847708232711340234}
+  PossibleCodes:
+  - '!'
+  - '"'
+  - '#'
+  - '%'
+  - ^
+  - '&'
+  - '*'
+  - (
+  - )
+  - '-'
+  - =
+  - +
+  - '{'
+  - '}'
+  - '['
+  - ']'
+  - '@'
+  - ;
+  - ':'
+  - <
+  - '>'
+  - '?'
+  - /
+  - '|'
+  - ~
+  - '`'
+  - "\xA6"
+  - _
+  toycarMeshTrans: {fileID: 0}
+  toycarTargetPtTrans: {fileID: 0}
   distThreshold: 0.5
   speed: 5
   curWaypoint: {fileID: 5686150787726776410}
@@ -477,6 +508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextWaypoint: {fileID: 3241780050278464609}
+  waypointCode: 
 --- !u!1 &4399716423520199091
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,6 +554,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextWaypoint: {fileID: 4013621792406870389}
+  waypointCode: 
 --- !u!1 &4643599945485837655
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,6 +600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextWaypoint: {fileID: 2754917854803610791}
+  waypointCode: 
 --- !u!1 &4702467999747502937
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,6 +646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextWaypoint: {fileID: 1972222546208435256}
+  waypointCode: 
 --- !u!1 &5159392297641393621
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,7 +665,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &9055689441756580382
 RectTransform:
   m_ObjectHideFlags: 0
@@ -759,6 +794,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextWaypoint: {fileID: 5599434945595057953}
+  waypointCode: 
 --- !u!1 &6740982257807907811
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,6 +947,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextWaypoint: {fileID: 0}
+  waypointCode: 
 --- !u!1 &7555470751833704055
 GameObject:
   m_ObjectHideFlags: 0
@@ -956,3 +993,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextWaypoint: {fileID: 4549093114647700120}
+  waypointCode: 

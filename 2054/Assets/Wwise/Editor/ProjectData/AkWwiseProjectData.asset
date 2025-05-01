@@ -219,8 +219,8 @@ MonoBehaviour:
         guid: 7f68b18c70b67740ae169c65a2e131c9
       Path: Events\Default Work Unit\Start_Button
       maxAttenuation: 0
-      maxDuration: 0.52287585
-      minDuration: 0.52287585
+      maxDuration: 0.38656175
+      minDuration: 0.38656175
     - name: TeenPlayerFootstep
       guid: 692a32ee0ac1ce4d95c6124b4fbe5883
       id: 450457492
@@ -275,7 +275,7 @@ MonoBehaviour:
         ObjectType: 3
         guid: 8dc4821db7017f498f9ea1dae2ada8fb
       Path: Events\Default Work Unit\Tv_Static
-      maxAttenuation: 15
+      maxAttenuation: 13
       maxDuration: -1
       minDuration: -1
     - name: Volcano_Explosion

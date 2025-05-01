@@ -32,7 +32,7 @@ public class UIEffects : MonoBehaviour
         childTMPText = fadeImage.gameObject.GetComponentInChildren<TextMeshProUGUI>();
 
         //remove later
-        //StartCoroutine(ScrollYear(1980, 2001, .5f));
+        //StartCoroutine(ScrollYear(1980, 2018, .35f, null, true));
     }
 
     public IEnumerator Fade(float startAlpha, float endAlpha, float fadeDuration, string text = "")
@@ -80,14 +80,14 @@ public class UIEffects : MonoBehaviour
     /// <param name="par"> Parameter, lower is faster</param>
     /// <param name="onComplete"> Callback Function </param>
     /// <returns>Nothing</returns>
-    public IEnumerator ScrollYear(int curYear, int targetYear, float par, Action onComplete = null)
+    public IEnumerator ScrollYear(int curYear, int targetYear, float par, Action onComplete = null, bool active = false)
     {
         yearTextParent.SetActive(true);
 
         currentYear = curYear;
-        scrollSpeed = par;
         int startYear = curYear;
         int endYear = targetYear;
+        int totalYears = endYear - startYear;
 
         for (int i = 0; i < yearDigits.Length; i++)
         {
@@ -96,16 +96,26 @@ public class UIEffects : MonoBehaviour
 
         for (int i = startYear; i < endYear; i++)
         {
+            int yearsRemaining = endYear - i;
+
+            float speedMultiplier = yearsRemaining <= 3 ? Mathf.Lerp(1f, 3f, (3f - yearsRemaining) / 3f) : 0.25f;
+
+            scrollSpeed = par * speedMultiplier;
+
             yield return StartCoroutine(AnimateYearChange(i, i + 1));
         }
 
-        if(onComplete != null)
+        yield return new WaitForSeconds(1f);
+
+        if (onComplete != null)
         {
-            yield return new WaitForSeconds(0.5f);
             onComplete.Invoke();
         }
 
-        yearTextParent.SetActive(false);
+        if (!active)
+        {
+            yearTextParent.SetActive(false);
+        }
     }
 
     private IEnumerator AnimateYearChange(int fromYear, int toYear)

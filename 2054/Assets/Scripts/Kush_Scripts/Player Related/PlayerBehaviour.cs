@@ -47,15 +47,7 @@ public class PlayerBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        movementComponent = GetComponent<PlayerMovement>();
-
-        //Player heights based on Age
-        heights[0] = 0.72f;  //toddler
-        heights[1] = 1.26f;  //child
-        heights[2] = 1.62f;  //teen
-        heights[3] = 1.80f;  //adult
-
-        SetPlayerHeight();
+        
     }
 
     // Update is called once per frame
@@ -75,8 +67,22 @@ public class PlayerBehaviour : MonoBehaviour
         
     }
 
-    void SetPlayerHeight()
+    void SetPrerequisites()
     {
+        movementComponent = GetComponent<PlayerMovement>();
+
+        //Player heights based on Age
+        heights[0] = 0.72f;  //toddler
+        heights[1] = 1.26f;  //child
+        heights[2] = 1.62f;  //teen
+        heights[3] = 1.80f;  //adult
+
+    }
+
+    public void SetPlayerHeight()
+    {
+        SetPrerequisites();
+
         for(int i=0; i<(int)PlayerAge.TOTAL; i++)
         {
             footstepAudioSwitchParent.GetChild(i).gameObject.SetActive(false);
@@ -84,7 +90,10 @@ public class PlayerBehaviour : MonoBehaviour
         footstepAudioSwitchParent.GetChild((int)playerAge).gameObject.SetActive(true);
 
         transform.localScale = new Vector3(1, heights[(int)playerAge], 1);
-        movementComponent.speed = 10 * (float)(1 - (1.8 - heights[(int)playerAge]) / 1.8);
+        if (movementComponent == null)
+            movementComponent = GetComponent<PlayerMovement>();
+
+        movementComponent.speed = movementComponent.maxSpeed * (float)(1 - (1.8 - heights[(int)playerAge]) / 1.8);
     }
 
     public void AgePlayer()

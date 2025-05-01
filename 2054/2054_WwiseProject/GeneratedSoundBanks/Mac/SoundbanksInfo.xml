@@ -39,7 +39,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{EEE12975-EB5E-42C5-EEC6-FE43640A28BE}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{D75D656A-AD5F-D1F3-F735-CB0E94953443}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -109,7 +109,7 @@
 				</File>
 				<File Id="635226472" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Start Button.wav</ShortName>
-					<CachePath>SFX/Start Button_7D1FDFDC.wem</CachePath>
+					<CachePath>SFX/Start Button_0A8D3FC7.wem</CachePath>
 				</File>
 				<File Id="637900214" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footsteps, Human, Wood, Creaky, Sneaker, Medium SND1113 1.wav</ShortName>
@@ -217,7 +217,7 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="2674457354" Name="Start_Button" DurationType="OneShot" DurationMin="0.52287585" DurationMax="0.52287585">
+				<Event Id="2674457354" Name="Start_Button" DurationType="OneShot" DurationMin="0.38656175" DurationMax="0.38656175">
 					<MediaRefs>
 						<MediaRef Id="635226472"/>
 					</MediaRefs>
@@ -232,7 +232,7 @@
 						<MediaRef Id="35307580"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1436086644" Name="Tv_Static" MaxAttenuation="15" DurationType="Infinite">
+				<Event Id="1436086644" Name="Tv_Static" MaxAttenuation="13" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="149217514"/>
 					</MediaRefs>
@@ -270,5 +270,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{5E88D356-702C-E1C3-0DE5-52EA5A2F6AA5}</FileHash>
+	<FileHash>{81A0738B-7E70-0859-A8C8-CBA9DBF4C5B5}</FileHash>
 </SoundBanksInfo>

@@ -134,7 +134,7 @@ public class Laptop : MonoBehaviour
             //remove this line later (its for testing delay)
             yield return new WaitForSeconds(2f);
 
-            StartCoroutine(UIEffects.instance.ScrollYear(2001, 2018, 0.5f, PlayerBehaviour.instance.AgePlayer));
+            StartCoroutine(UIEffects.instance.ScrollYear(2001, 2018, 0.3f, PlayerBehaviour.instance.AgePlayer));
 
             this.enabled = false;
         }
@@ -155,6 +155,7 @@ public class Laptop : MonoBehaviour
                 img.gameObject.SetActive(false);
                 img.color = new Color(0, 0, 0, 0.0f);
                 txt.text = "";
+                curIndex = 0;
             }
         }
     }

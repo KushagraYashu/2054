@@ -323,6 +323,7 @@ public class Volcano : MonoBehaviour
             transform.position = kitchenSinkTargetPoint.transform.position;
             IsPlaced = true;
             isPlacing = false;
+            UIManager.instance.SetHelperText();
         }
     }
 

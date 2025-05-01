@@ -71,10 +71,10 @@ public class PuzzleManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(RoomManager.instance.currentRoomType == RoomManager.Room.Toddler) SetupPuzzleJigsaw2054();
+        
     }
 
-    void SetupPuzzleJigsaw2054()
+    public void SetupPuzzleJigsaw2054()
     {
         //clearing
         canShowInventory = false;

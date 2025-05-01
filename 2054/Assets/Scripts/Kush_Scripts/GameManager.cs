@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Transistion Speed")]
     [SerializeField] float transitionSpeed = 2f;
+    public float GetTransitionSpeed() { return transitionSpeed; }
 
     [Header("Lights")]
     [SerializeField]
@@ -44,16 +45,52 @@ public class GameManager : MonoBehaviour
     //internal variables
     Camera mainCamera;
     float t;
+    
+    public bool pause;
+    public CursorLockMode cursorLockMode;
 
     // Start is called before the first frame update
     void Start()
     {
+        // Comment for build
+        //PlayerPrefs.DeleteAll();
+
+        CheckSave();
+
         mainCamera = MouseLookAround.instance.GetCam();
         mainCamera.transform.position = mainMenuCamPos.position;
         MouseLookAround.instance.SetMouseLock(false);
         MouseLookAround.instance.lookAllowed = false;
+    }
 
-        StartCoroutine(Glitching());
+    void CheckSave()
+    {
+        int saveValue;
+        if (PlayerPrefs.HasKey("PlayerAge"))
+        {
+            saveValue = PlayerPrefs.GetInt("PlayerAge");
+
+            PlayerBehaviour.instance.playerAge = (PlayerBehaviour.PlayerAge)saveValue;
+            PlayerBehaviour.instance.SetPlayerHeight();
+            RoomManager.instance.currentRoomType = (RoomManager.Room)saveValue;
+            RoomManager.instance.UpdateRoom();
+
+            switch (saveValue)
+            {
+                case 0:
+                    PuzzleManager.instance.SetupPuzzleJigsaw2054();
+                    break;
+            }
+        }
+        else
+        {
+            PlayerBehaviour.instance.playerAge = (PlayerBehaviour.PlayerAge)0;
+            PlayerBehaviour.instance.SetPlayerHeight();
+            RoomManager.instance.currentRoomType = (RoomManager.Room)0;
+            RoomManager.instance.UpdateRoom();
+
+            PuzzleManager.instance.SetupPuzzleJigsaw2054();
+        }
     }
 
     public void StopGlitching()
@@ -112,7 +149,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    IEnumerator TransitionCam()
+    public IEnumerator TransitionCam()
     {
         t = 0;
         mainMenuCamPos.transform.GetPositionAndRotation(out Vector3 startPosition, out Quaternion startRotation);
@@ -132,14 +169,9 @@ public class GameManager : MonoBehaviour
         LightTutorial();
     }
 
-    public void StartGame()
-    {
-        StartCoroutine(TransitionCam());
-        mainMenuCanvas.SetActive(false);
-        ActivatePlayer();
-    }
+    
 
-    void ActivatePlayer()
+    public void ActivatePlayer()
     {
         player.GetComponent<CharacterController>().enabled = true;
         player.GetComponent<PlayerBehaviour>().enabled = true;
@@ -208,5 +240,27 @@ public class GameManager : MonoBehaviour
         //{
         //    TutorialDone();
         //}
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pause = !pause;
+            PauseMenu();
+        }
+    }
+
+    public void SaveGame()
+    {
+        PlayerPrefs.SetInt("PlayerAge", (int)PlayerBehaviour.instance.playerAge);
+    }
+
+    void PauseMenu()
+    {
+        UIManager.instance.PauseSequence(pause);
+
+        cursorLockMode = UnityEngine.Cursor.lockState;
+        if (cursorLockMode == CursorLockMode.Locked)
+        {
+            MouseLookAround.instance.SetMouseLock(false);
+        }
     }
 }

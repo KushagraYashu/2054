@@ -72,6 +72,9 @@ MonoBehaviour:
   objectMesh: {fileID: 2718351565477846887}
   canInspect: 0
   inspecting: 0
+  dragable: 0
+  isVolcanoKit: 0
+  targetPoint: {fileID: 0}
 --- !u!54 &3310511401319929714
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -360,7 +363,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4676507153766041299
 RectTransform:
   m_ObjectHideFlags: 0

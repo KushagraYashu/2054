@@ -4,12 +4,23 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    public static Door instance;
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+        else Destroy(this);
+    }
+
     [Header("Rotation Parameters")]
     [SerializeField] float rotationAmount = 70f;
     [SerializeField] float rotationSpeed = 2f;
 
     [Header("Door Collider")]
     [SerializeField] BoxCollider doorCollider;
+
+    public bool canOpen = true;
+    public bool lockOnNextOpen = false;
+    public bool endPhaseOpen = false;
 
     //internal variables
     Vector3 closedRotation;
@@ -32,6 +43,10 @@ public class Door : MonoBehaviour
         }
         doorCollider.enabled = false;
         transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, closedRotation.y + rotationAmount, transform.localEulerAngles.z);
+        if ((endPhaseOpen))
+        {
+            RoomManager.instance.EndPhase();
+        }
 
         yield return new WaitForSeconds(5f);
 
@@ -46,9 +61,14 @@ public class Door : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && Vector3.Magnitude(transform.localEulerAngles - closedRotation) < threshold)
+        if (other.CompareTag("Player") && Vector3.Magnitude(transform.localEulerAngles - closedRotation) < threshold && canOpen)
         {
             StartCoroutine(OpenAndCloseDoor());
+            if (lockOnNextOpen)
+            {
+                canOpen = false;
+                lockOnNextOpen = false;
+            }
         }
     }
 }
