@@ -11,6 +11,7 @@
 						<ObjectRef Name="AdultPlayerFootstep" ID="{6DE3D52D-0FD5-438C-A995-2B2AE8DE324E}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Volcano_Hiss" ID="{FD1ACE77-E064-4584-B1FD-4174B32C1FFD}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Weather" ID="{D1316BA2-11CE-45A0-AAAB-AC9BF4549E69}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Tap_Drip" ID="{CAF1FC35-1D2E-4668-A38F-0EFBBEEF7A87}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Door_Open" ID="{1D45E6AE-51CE-481E-9544-C4AD6ECB73B4}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Tv_Static" ID="{1D82C48D-01B7-497F-8F9E-A1DAE2ADA8FB}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="ChildPlayerFootstep" ID="{FD7609B1-3D6B-4A40-98FD-092D80D7A25A}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>

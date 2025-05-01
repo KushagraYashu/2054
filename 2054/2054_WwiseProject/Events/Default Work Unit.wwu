@@ -157,6 +157,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Tap_Drip" ID="{CAF1FC35-1D2E-4668-A38F-0EFBBEEF7A87}">
+					<ChildrenList>
+						<Action Name="" ID="{F201542C-EB35-45D1-ACB7-053EB16E31C4}" ShortID="490919194">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Water, Drip, Drop, Faucet SND10888 1" ID="{2EEF3E94-FEA0-4E25-A836-55A0022AE7F8}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
