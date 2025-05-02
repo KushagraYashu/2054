@@ -320,6 +320,7 @@ public class Volcano : MonoBehaviour
         if (Vector3.Distance(this.transform.position, kitchenSinkTargetPoint.transform.position) <= 1f)
         {
             kitchenSinkTargetPoint.gameObject.SetActive(false);
+            rb.isKinematic = false;
             transform.position = kitchenSinkTargetPoint.transform.position;
             IsPlaced = true;
             isPlacing = false;

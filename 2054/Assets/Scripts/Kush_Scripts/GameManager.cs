@@ -70,8 +70,7 @@ public class GameManager : MonoBehaviour
         // Comment for build
         //PlayerPrefs.DeleteAll();
         //PlayerPrefs.Save();
-
-        PlayerPrefs.SetInt("PlayerAge", 2);
+        PlayerPrefs.SetInt("PlayerAge", 1);
         PlayerPrefs.Save();
 
         CheckSave();

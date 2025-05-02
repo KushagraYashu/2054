@@ -6,6 +6,10 @@ using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 public class UISpriteAnimation : MonoBehaviour
 {
+    [Header("Static Animation")]
+    public List<Texture> staticSprites = new();
+    public bool isBg = false;
+
     [Header("Key Animation Sprites")]
     public List<Texture> RKeySprites = new();
     public List<Texture> QKeySprites = new();
@@ -41,6 +45,11 @@ public class UISpriteAnimation : MonoBehaviour
 
         UIManager.instance.SetHelperText();
         SetAllBools(false);
+
+        if (isBg)
+        {
+            StartCoroutine(KeyAnim(staticSprites));
+        }
     }
 
     public void StartHelpAnimation(UIManager.HelpType help)
