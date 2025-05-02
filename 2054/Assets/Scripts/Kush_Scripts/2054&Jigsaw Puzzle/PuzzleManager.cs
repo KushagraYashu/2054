@@ -120,7 +120,7 @@ public class PuzzleManager : MonoBehaviour
         piece.SetActive(false);
         if(piecesGO.Count == totalPieces)
         {
-            UIManager.instance.SetKeyToPress("E");
+            UIManager.instance.SetKeyToPress(UIManager.KeyType.E);
             canShowInventory = true;
         }
     }

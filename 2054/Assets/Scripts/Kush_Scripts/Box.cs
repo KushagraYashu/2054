@@ -22,7 +22,7 @@ public class Box : MonoBehaviour
         if (other.CompareTag("Player") && itemsThrown.Count < totItems && !opened)
         {
             opened = true;
-            UIManager.instance.SetKeyToPress("E");
+            UIManager.instance.SetKeyToPress(UIManager.KeyType.E);
             GameManager.instance.StopGlitching();
         }
     }

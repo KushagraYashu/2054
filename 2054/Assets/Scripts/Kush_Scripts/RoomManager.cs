@@ -47,9 +47,6 @@ public class RoomManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        jerryGO = GameObject.FindGameObjectWithTag("Jerry");
-        if (jerryGO == null)
-            SpawnJerry();
     }
 
     void SpawnJerry()

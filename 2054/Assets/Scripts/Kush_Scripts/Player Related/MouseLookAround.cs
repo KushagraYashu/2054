@@ -132,7 +132,7 @@ public class MouseLookAround : MonoBehaviour
         StartCoroutine(UIEffects.instance.Fade(0, 1, 2f));
         yield return new WaitForSeconds(2f);
 
-        StartCoroutine(UIEffects.instance.ScrollYear(2018, 2054, 0.35f, null, true));
+        StartCoroutine(UIEffects.instance.ScrollYear(2018, 2054, 0.35f, null, true, true));
     }
 
     void ApplyLookAround()

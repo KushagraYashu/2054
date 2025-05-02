@@ -63,7 +63,7 @@ public class Item : MonoBehaviour
     {
         GameManager.instance.StopGlitching();
 
-        UIManager.instance.SetHelperText("R - Move Up\nQ - Move Down");
+        UIManager.instance.SetHelperText(UIManager.KeyType.R, UIManager.KeyType.Q, UIManager.HelpType.MOVE_UP_DOWN);
 
         var objectMesh = transform.GetChild(0);
         Vector3 targetDirection = PlayerBehaviour.instance.transform.forward;

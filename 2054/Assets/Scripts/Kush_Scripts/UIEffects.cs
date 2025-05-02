@@ -13,6 +13,7 @@ public class UIEffects : MonoBehaviour
 
     public TextMeshProUGUI[] yearDigits;
     public GameObject yearTextParent;
+    public GameObject yearTextScreenQuitButton;
 
     //internal variables
     TextMeshProUGUI childTMPText;
@@ -79,8 +80,10 @@ public class UIEffects : MonoBehaviour
     /// <param name="targetYear"> Target Year </param>
     /// <param name="par"> Parameter, lower is faster</param>
     /// <param name="onComplete"> Callback Function </param>
+    /// <param name="active"> Bool to decide whether the scroll screen goes away or not</param>
+    /// <param name="quit"> Bool to decide whether the quit button comes or not</param>
     /// <returns>Nothing</returns>
-    public IEnumerator ScrollYear(int curYear, int targetYear, float par, Action onComplete = null, bool active = false)
+    public IEnumerator ScrollYear(int curYear, int targetYear, float par, Action onComplete = null, bool active = false, bool quit = false)
     {
         yearTextParent.SetActive(true);
 
@@ -107,14 +110,17 @@ public class UIEffects : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
 
-        if (onComplete != null)
-        {
-            onComplete.Invoke();
-        }
+        onComplete?.Invoke();
 
         if (!active)
         {
             yearTextParent.SetActive(false);
+        }
+
+        if (quit)
+        {
+            yield return new WaitForSeconds(2f);
+            yearTextScreenQuitButton.SetActive(true);
         }
     }
 

@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UIElements;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class UIManager : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject creditsScreenParent;
 
     [Header("UI Fields")]
+    [SerializeField] GameObject resumeButton;
     [SerializeField] TMP_Dropdown qualityDropdown;
     [SerializeField] TMP_Dropdown resolutionDropdown;
     [SerializeField] UnityEngine.UI.Slider masterVolumeSlider;
@@ -36,23 +38,148 @@ public class UIManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI keyToPress;
     [SerializeField] TextMeshProUGUI helperTxt;
 
+    public enum KeyType
+    {
+        E,
+        R,
+        Q,
+        MOUSE,
+        TOTAL
+    };
+
+    public enum HelpType
+    {
+        INSPECT,
+        MOVE_UP_DOWN,
+        MOVE_CLOSE_FAR,
+        TOTAL
+    };
+
     //internal variables
     Resolution[] resolutions;
 
-    public void SetKeyToPress(string key = "", bool append = false)
+
+    public void SetKeyToPress(KeyType key)
     {
-        if (!append) keyToPress.text = key;
-        else keyToPress.text += key;
+        
     }
 
-    public void SetHelperText(string text = "", bool append = false)
+    public void SetKeyToPress()
     {
+
+    }
+
+    public void SetHelperText(KeyType key1 = KeyType.TOTAL, KeyType key2 = KeyType.TOTAL, HelpType help = HelpType.TOTAL)
+    {
+        helperTxt.enabled = false;
+
+        if(key1 != KeyType.TOTAL)
+        {
+            var img1 = helperTxt.gameObject.transform.GetChild(0).GetComponent<UISpriteAnimation>();
+            img1.gameObject.SetActive(true);
+            img1.StartKeyAnimation(key1);
+        }
+
+        if(key2 != KeyType.TOTAL)
+        {
+            var img2 = helperTxt.gameObject.transform.GetChild(1).GetComponent<UISpriteAnimation>();
+            img2.gameObject.SetActive(true);
+
+            img2.StartKeyAnimation(key2);
+        }
+
+        if(help != HelpType.TOTAL)
+        {
+            var helpImg = helperTxt.gameObject.transform.GetChild(2).GetComponent<UISpriteAnimation>();
+            helpImg.gameObject.SetActive(true);
+
+            helpImg.StartHelpAnimation(help);
+        }
+    }
+
+    public void SetHelperText(RawImage img)
+    {
+        var bigImage = helperTxt.gameObject.transform.GetChild(3);
+        bigImage.gameObject.SetActive(true);
+
+        bigImage.GetComponent<RawImage>().texture = img.texture;
+    }
+
+    public void SetHelperText()
+    {
+        helperTxt.enabled = false;
+
+        var bigImage = helperTxt.gameObject.transform.GetChild(3);
+        bigImage.gameObject.SetActive(false);
+
+        var img1 = helperTxt.gameObject.transform.GetChild(0);
+        img1.gameObject.SetActive(false);
+        img1.GetComponent<UISpriteAnimation>().StopAllCoroutines();
+        img1.GetComponent<UISpriteAnimation>().SetAllBools(false);
+
+        var img2 = helperTxt.gameObject.transform.GetChild(1);
+        img2.gameObject.SetActive(false);
+        img2.GetComponent<UISpriteAnimation>().StopAllCoroutines();
+        img2.GetComponent<UISpriteAnimation>().SetAllBools(false);
+
+        var helpImg = helperTxt.gameObject.transform.GetChild(2);
+        helpImg.gameObject.SetActive(false);
+        helpImg.GetComponent<UISpriteAnimation>().StopAllCoroutines();
+        helpImg.GetComponent<UISpriteAnimation>().SetAllBools(false);
+    }
+
+    public void SetHelperText(string text, bool append = false)
+    {
+        helperTxt.enabled = true;
+
         if (!append) helperTxt.text = text;
         else helperTxt.text += text;
     }
 
-    public void StartGame()
+    void LoadSave()
     {
+        PlayerBehaviour.instance.playerAge = (PlayerBehaviour.PlayerAge)GameManager.instance.saveValue;
+        PlayerBehaviour.instance.SetPlayerHeight();
+        RoomManager.instance.currentRoomType = (RoomManager.Room)GameManager.instance.saveValue;
+        RoomManager.instance.UpdateRoom();
+
+        switch (GameManager.instance.saveValue)
+        {
+            case 0:
+                PuzzleManager.instance.SetupPuzzleJigsaw2054();
+                break;
+        }
+    }
+
+    
+
+    void LoadDefaultAge()
+    {
+        PlayerBehaviour.instance.playerAge = (PlayerBehaviour.PlayerAge)0;
+        PlayerBehaviour.instance.SetPlayerHeight();
+        RoomManager.instance.currentRoomType = (RoomManager.Room)0;
+        RoomManager.instance.UpdateRoom();
+
+        PuzzleManager.instance.SetupPuzzleJigsaw2054();
+    }
+
+    public void StartGame(bool loadSave)
+    {
+
+        if (loadSave && GameManager.instance.saveValue != -1)
+        {
+            LoadSave();
+        }
+        else
+        {
+            GameManager.instance.saveValue = -1;
+
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.Save();
+
+            LoadDefaultAge();
+        }
+
         StartCoroutine(GameManager.instance.TransitionCam());
         mainMenuCanvasParent.SetActive(false);
         GameManager.instance.ActivatePlayer();
@@ -120,6 +247,11 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(GameManager.instance.saveValue != -1)
+        {
+            resumeButton.SetActive(true);
+        }
+
         SetAudioSliders();
         SetQualitySettingDropDown();
         SetResolutionDropdown();

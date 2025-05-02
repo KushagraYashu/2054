@@ -78,13 +78,13 @@ public class BoxManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.F))
-        {
-            GuidanceSystem.instance.StartSteps(FromAdultToEnd);
-            RoomManager.instance.ActivateEndPhase();
-            Door.instance.canOpen = true;
-            this.enabled = false;
-        }
+        //if(Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.F))
+        //{
+        //    GuidanceSystem.instance.StartSteps(FromAdultToEnd);
+        //    RoomManager.instance.ActivateEndPhase();
+        //    Door.instance.canOpen = true;
+        //    this.enabled = false;
+        //}
     }
 
     public void PlayMemory(ItemType item)

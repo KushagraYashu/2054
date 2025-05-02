@@ -142,7 +142,7 @@ public class InspectableObject : MonoBehaviour
 
     void UpdatePosition()
     {
-        UIManager.instance.SetHelperText("R - Move Up\nQ - Move Down");
+        UIManager.instance.SetHelperText(UIManager.KeyType.R, UIManager.KeyType.Q, UIManager.HelpType.MOVE_UP_DOWN);
 
         Vector3 targetDirection = PlayerBehaviour.instance.transform.forward;
         Quaternion rot = Quaternion.LookRotation(Vector3.Cross(Vector3.up, targetDirection), Vector3.up);

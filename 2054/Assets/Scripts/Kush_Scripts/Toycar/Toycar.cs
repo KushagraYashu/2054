@@ -94,7 +94,7 @@ public class Toycar : MonoBehaviour
     {
         toycarMeshTrans.GetComponent<Rigidbody>().isKinematic = true;
         canPlay = true;
-        UIManager.instance.SetKeyToPress("E");
+        UIManager.instance.SetKeyToPress(UIManager.KeyType.E);
         UIManager.instance.SetHelperText();
     }
 

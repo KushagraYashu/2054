@@ -121,11 +121,17 @@ public class PuzzlePiece : MonoBehaviour
                 UpdatePosition();
             }
         }
+
+        //Comment this later, its a dev shortcut
+        if(Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.F))
+        {
+            UIManager.instance.SetHelperText(UIManager.KeyType.R, UIManager.KeyType.Q, UIManager.HelpType.MOVE_CLOSE_FAR);
+        }
     }
 
     void UpdatePosition()
     {
-        UIManager.instance.SetHelperText("R - Move Away\nQ - Move Closer");
+        UIManager.instance.SetHelperText(UIManager.KeyType.R, UIManager.KeyType.Q, UIManager.HelpType.MOVE_CLOSE_FAR);
 
         if (Input.GetKey(KeyCode.Q))
         {
@@ -154,6 +160,8 @@ public class PuzzlePiece : MonoBehaviour
 
     private Vector3 GetMouseWorldPosition()
     {
+        if (cam == null) cam = MouseLookAround.instance.GetCam();
+
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = cam.WorldToScreenPoint(transform.position).z;
         return cam.ScreenToWorldPoint(mousePos);

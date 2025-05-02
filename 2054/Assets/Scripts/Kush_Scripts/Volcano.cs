@@ -119,7 +119,7 @@ public class Volcano : MonoBehaviour
         }
         else if (isPlacing)
         {
-            UIManager.instance.SetHelperText("KitcSinkImg"); //show the image here, so make the function something like SetHelperImg()
+            UIManager.instance.SetHelperText("kitchenSinkImg"); //show the image here, so make the function something like SetHelperImg()
 
             ZOffset = PlayerBehaviour.instance.transform.forward * 0.1f;
 
@@ -303,7 +303,7 @@ public class Volcano : MonoBehaviour
 
     void UpdatePosition()
     {
-        UIManager.instance.SetHelperText("R - Move Up\nQ - Move Down");
+        UIManager.instance.SetHelperText(UIManager.KeyType.R, UIManager.KeyType.Q, UIManager.HelpType.MOVE_UP_DOWN);
 
         Vector3 targetDirection = PlayerBehaviour.instance.transform.forward;
         Quaternion rot = Quaternion.LookRotation(Vector3.Cross(Vector3.up, targetDirection), Vector3.up);

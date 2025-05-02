@@ -48,12 +48,28 @@ public class GameManager : MonoBehaviour
     
     public bool pause;
     public CursorLockMode cursorLockMode;
+    public int saveValue = -1;
+
+    void CheckSave()
+    {
+        if (PlayerPrefs.HasKey("PlayerAge"))
+        {
+            saveValue = PlayerPrefs.GetInt("PlayerAge");
+
+        }
+        else
+        {
+            PlayerPrefs.DeleteAll();
+
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         // Comment for build
         //PlayerPrefs.DeleteAll();
+        //PlayerPrefs.Save();
 
         CheckSave();
 
@@ -63,35 +79,7 @@ public class GameManager : MonoBehaviour
         MouseLookAround.instance.lookAllowed = false;
     }
 
-    void CheckSave()
-    {
-        int saveValue;
-        if (PlayerPrefs.HasKey("PlayerAge"))
-        {
-            saveValue = PlayerPrefs.GetInt("PlayerAge");
-
-            PlayerBehaviour.instance.playerAge = (PlayerBehaviour.PlayerAge)saveValue;
-            PlayerBehaviour.instance.SetPlayerHeight();
-            RoomManager.instance.currentRoomType = (RoomManager.Room)saveValue;
-            RoomManager.instance.UpdateRoom();
-
-            switch (saveValue)
-            {
-                case 0:
-                    PuzzleManager.instance.SetupPuzzleJigsaw2054();
-                    break;
-            }
-        }
-        else
-        {
-            PlayerBehaviour.instance.playerAge = (PlayerBehaviour.PlayerAge)0;
-            PlayerBehaviour.instance.SetPlayerHeight();
-            RoomManager.instance.currentRoomType = (RoomManager.Room)0;
-            RoomManager.instance.UpdateRoom();
-
-            PuzzleManager.instance.SetupPuzzleJigsaw2054();
-        }
-    }
+    
 
     public void StopGlitching()
     {
