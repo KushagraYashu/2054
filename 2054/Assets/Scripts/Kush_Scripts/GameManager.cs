@@ -71,6 +71,9 @@ public class GameManager : MonoBehaviour
         //PlayerPrefs.DeleteAll();
         //PlayerPrefs.Save();
 
+        PlayerPrefs.SetInt("PlayerAge", 2);
+        PlayerPrefs.Save();
+
         CheckSave();
 
         mainCamera = MouseLookAround.instance.GetCam();

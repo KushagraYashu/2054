@@ -44,9 +44,7 @@ public class Toycar : MonoBehaviour
         "/",
         "|",
         "~",
-        "`",
         "¦",
-        "_"
     };
 
     [Header("Mesh Reference")]
@@ -169,6 +167,7 @@ public class Toycar : MonoBehaviour
                         if(i == waypoints.Count) 
                         {
                             Passcode += curWaypoint.GetComponent<ToycarWaypoint>().waypointCode;
+                            curWaypoint.GetComponent<ToycarWaypoint>().SpawnCode();
                             UIManager.instance.SetHelperText(curWaypoint.GetComponent<ToycarWaypoint>().waypointCode + " ", true);
                         }
                         SolveState();
@@ -177,6 +176,7 @@ public class Toycar : MonoBehaviour
                     else
                     {
                         Passcode += curWaypoint.GetComponent<ToycarWaypoint>().waypointCode;
+                        curWaypoint.GetComponent<ToycarWaypoint>().SpawnCode();
                         UIManager.instance.SetHelperText(curWaypoint.GetComponent<ToycarWaypoint>().waypointCode + " ", true);
                         curWaypoint = waypoints[i];
                     }

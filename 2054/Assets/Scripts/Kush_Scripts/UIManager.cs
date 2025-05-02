@@ -107,6 +107,7 @@ public class UIManager : MonoBehaviour
 
     public void SetHelperText()
     {
+        helperTxt.text = "";
         helperTxt.enabled = false;
 
         var bigImage = helperTxt.gameObject.transform.GetChild(3);
@@ -132,7 +133,9 @@ public class UIManager : MonoBehaviour
     {
         helperTxt.enabled = true;
 
-        if (!append) helperTxt.text = text;
+        if (!append) { 
+            helperTxt.text = text; 
+        }
         else helperTxt.text += text;
     }
 
