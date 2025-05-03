@@ -18,8 +18,8 @@ public class BoxManager : MonoBehaviour
         OTHER,
         JERRY,
         WEDDING_PHOTO,
-        ITEM3,
-        ITEM4,
+        VOLCANO_MODEL,
+        GRADUATION_SCROLL,
         TOTAL
     };
 
@@ -54,14 +54,13 @@ public class BoxManager : MonoBehaviour
 
     public void Setup()
     {
-        Door.instance.lockOnNextOpen = true;
 
         itemsNeeded = new List<ItemType>(4)
         {
             ItemType.JERRY,
             ItemType.WEDDING_PHOTO,
-            ItemType.ITEM3,
-            ItemType.ITEM4
+            ItemType.VOLCANO_MODEL,
+            ItemType.GRADUATION_SCROLL
         };
         itemsCollected = new List<ItemType>(itemsNeeded.Count);
 
@@ -87,7 +86,7 @@ public class BoxManager : MonoBehaviour
         //}
     }
 
-    public void PlayMemory(ItemType item)
+    public void PlayMemory(ItemType item, GameObject gO = null)
     {
         UIManager.instance.SetHelperText();
         UIManager.instance.SetKeyToPress();
@@ -97,19 +96,19 @@ public class BoxManager : MonoBehaviour
         switch (item)
         {
             case ItemType.JERRY:
-                StartCoroutine(JerryMemory());
+                StartCoroutine(JerryMemory(gO));
                 break;
 
             case ItemType.WEDDING_PHOTO:
                 StartCoroutine(WeddingMemory());
                 break;
 
-            case ItemType.ITEM3:
-                StartCoroutine(Item3Memory());
+            case ItemType.VOLCANO_MODEL:
+                StartCoroutine(VolcanoMemory());
                 break;
 
-            case ItemType.ITEM4:
-                StartCoroutine(Item4Memory());
+            case ItemType.GRADUATION_SCROLL:
+                StartCoroutine(GraduationMemory());
                 break;
 
             default: 
@@ -118,13 +117,13 @@ public class BoxManager : MonoBehaviour
         }
     }
 
-    IEnumerator Item4Memory()
+    IEnumerator GraduationMemory()
     {
         //freeze player
         GameManager.instance.StopGlitching();
         PuzzleManager.instance.FreezePlayer();
 
-        StartCoroutine(UIEffects.instance.Fade(0, 1, 2, "Show Item4 Memory"));
+        StartCoroutine(UIEffects.instance.Fade(0, 1, 2, "Show Graduation Memory"));
         yield return new WaitForSeconds(2f);
 
         //play memory animation here
@@ -144,20 +143,21 @@ public class BoxManager : MonoBehaviour
         totMemPlayed++;
         if (totMemPlayed >= 4)
         {
-            GuidanceSystem.instance.StartSteps(FromAdultToEnd);
+            //GuidanceSystem.instance.StartSteps(FromAdultToEnd);
+            GameManager.instance.TurnOffLightsExceptBed();
             RoomManager.instance.ActivateEndPhase();
             Door.instance.canOpen = true;
             this.enabled = false;
         }
     }
 
-    IEnumerator Item3Memory()
+    IEnumerator VolcanoMemory()
     {
         //freeze player
         GameManager.instance.StopGlitching();
         PuzzleManager.instance.FreezePlayer();
 
-        StartCoroutine(UIEffects.instance.Fade(0, 1, 2, "Show Item3 Memory"));
+        StartCoroutine(UIEffects.instance.Fade(0, 1, 2, "Show Volcano Memory"));
         yield return new WaitForSeconds(2f);
 
         //play memory animation here
@@ -177,7 +177,8 @@ public class BoxManager : MonoBehaviour
         totMemPlayed++;
         if (totMemPlayed >= 4)
         {
-            GuidanceSystem.instance.StartSteps(FromAdultToEnd);
+            //GuidanceSystem.instance.StartSteps(FromAdultToEnd);
+            GameManager.instance.TurnOffLightsExceptBed();
             Door.instance.canOpen = true;
             RoomManager.instance.ActivateEndPhase();
             this.enabled = false;
@@ -210,14 +211,15 @@ public class BoxManager : MonoBehaviour
         totMemPlayed++;
         if(totMemPlayed >= 4)
         {
-            GuidanceSystem.instance.StartSteps(FromAdultToEnd);
+            //GuidanceSystem.instance.StartSteps(FromAdultToEnd);
+            GameManager.instance.TurnOffLightsExceptBed();
             RoomManager.instance.ActivateEndPhase();
             Door.instance.canOpen = true;
             this.enabled = false;
         }
     }
 
-    IEnumerator JerryMemory()
+    IEnumerator JerryMemory(GameObject gO)
     {
         //freeze player
         GameManager.instance.StopGlitching();
@@ -240,10 +242,13 @@ public class BoxManager : MonoBehaviour
 
         GameManager.instance.StartGlitching();
 
+        gO.transform.GetChild(0).GetComponent<AudioSource>().enabled = true;
+
         totMemPlayed++;
         if (totMemPlayed >= 4)
         {
-            GuidanceSystem.instance.StartSteps(FromAdultToEnd);
+            //GuidanceSystem.instance.StartSteps(FromAdultToEnd);
+            GameManager.instance.TurnOffLightsExceptBed();
             RoomManager.instance.ActivateEndPhase();
             Door.instance.canOpen = true;
             this.enabled = false;

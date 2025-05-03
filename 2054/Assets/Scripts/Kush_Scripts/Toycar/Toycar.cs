@@ -64,6 +64,9 @@ public class Toycar : MonoBehaviour
     public bool canPlay = false;
     public bool isPlaying = false;
 
+    [Header("Image")]
+    public Texture toycarSiloutte;
+
     //internal variables
     float distance = 0f;
     int i = 0;
@@ -117,7 +120,7 @@ public class Toycar : MonoBehaviour
     IEnumerator ShowToycarImg()
     {
         yield return new WaitForSeconds(5f);
-        UIManager.instance.SetHelperText("ToycarImg");
+        UIManager.instance.SetHelperText(toycarSiloutte);
     }
 
     private void Update()

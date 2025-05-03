@@ -25,6 +25,10 @@ public class Volcano : MonoBehaviour
     [SerializeField] Vector2 smokeSysSize = new(2, 5);
     [SerializeField] Vector2 transformSize = new(1, 3);
 
+    [Header("Image")]
+    public Texture sciKitSiloutte;
+    public Texture kitchenSinkSiloutte;
+
     //internal variables
     bool isDragging = false;
     bool[] chemicalsAdded = {false, false, false};
@@ -51,7 +55,7 @@ public class Volcano : MonoBehaviour
     IEnumerator ShowScienceKitImg()
     {
         yield return new WaitForSeconds(5f);
-        UIManager.instance.SetHelperText("SciKitImg");
+        UIManager.instance.SetHelperText(sciKitSiloutte);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -74,10 +78,10 @@ public class Volcano : MonoBehaviour
     void Update()
     {
         //developer shortcut, REMOVE THIS LATER
-        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.F))
-        {
-            ShowVolcanoMemory();
-        }
+        //if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.F))
+        //{
+        //    ShowVolcanoMemory();
+        //}
 
         if (IsMixing)
         {
@@ -119,7 +123,7 @@ public class Volcano : MonoBehaviour
         }
         else if (isPlacing)
         {
-            UIManager.instance.SetHelperText("kitchenSinkImg"); //show the image here, so make the function something like SetHelperImg()
+           
 
             ZOffset = PlayerBehaviour.instance.transform.forward * 0.1f;
 
@@ -153,7 +157,7 @@ public class Volcano : MonoBehaviour
             {
                 rb.isKinematic = false;
 
-                //UIManager.instance.SetHelperText(); //uncomment this once the kitchen sink image logic works, because it clears the text field
+                UIManager.instance.SetHelperText(kitchenSinkSiloutte);
             }
         }
 
@@ -206,7 +210,7 @@ public class Volcano : MonoBehaviour
         isPlacing = false;
         isDragging = false;
 
-        UIManager.instance.SetHelperText();
+        
 
         if (IsPlaced)
         {
@@ -214,6 +218,7 @@ public class Volcano : MonoBehaviour
         }
         else
         {
+            UIManager.instance.SetHelperText();
             StartCoroutine(FailMemory());
         }
     }

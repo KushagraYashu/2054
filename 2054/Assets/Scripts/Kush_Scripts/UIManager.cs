@@ -35,8 +35,15 @@ public class UIManager : MonoBehaviour
     [SerializeField] AudioMixer masterAudioMixer;
 
     [Header("UI Guide Objs")]
-    [SerializeField] TextMeshProUGUI keyToPress;
+    [SerializeField] GameObject keyToPress;
     [SerializeField] TextMeshProUGUI helperTxt;
+
+    //internal variables
+    Transform bigImg;
+    Transform guideImg;
+    Transform img1;
+    Transform img2;
+    Transform helpImg;
 
     public enum KeyType
     {
@@ -61,48 +68,71 @@ public class UIManager : MonoBehaviour
 
     public void SetKeyToPress(KeyType key)
     {
-        
+        keyToPress.GetComponent<RawImage>().enabled = true;
+        keyToPress.GetComponent<UISpriteAnimation>().StartKeyAnimation(key);
     }
 
     public void SetKeyToPress()
     {
-
+        keyToPress.GetComponent<UISpriteAnimation>().StopAllCoroutines();
+        keyToPress.GetComponent<UISpriteAnimation>().SetAllBools(false);
+        keyToPress.GetComponent<RawImage>().enabled = false;
     }
 
     public void SetHelperText(KeyType key1 = KeyType.TOTAL, KeyType key2 = KeyType.TOTAL, HelpType help = HelpType.TOTAL)
     {
+        bigImg.gameObject.SetActive(false);
+        guideImg.gameObject.SetActive(false);
         helperTxt.enabled = false;
 
         if(key1 != KeyType.TOTAL)
         {
-            var img1 = helperTxt.gameObject.transform.GetChild(0).GetComponent<UISpriteAnimation>();
             img1.gameObject.SetActive(true);
-            img1.StartKeyAnimation(key1);
+            img1.GetComponent<UISpriteAnimation>().StartKeyAnimation(key1);
         }
 
         if(key2 != KeyType.TOTAL)
         {
-            var img2 = helperTxt.gameObject.transform.GetChild(1).GetComponent<UISpriteAnimation>();
             img2.gameObject.SetActive(true);
 
-            img2.StartKeyAnimation(key2);
+            img2.GetComponent<UISpriteAnimation>().StartKeyAnimation(key2);
         }
 
         if(help != HelpType.TOTAL)
         {
-            var helpImg = helperTxt.gameObject.transform.GetChild(2).GetComponent<UISpriteAnimation>();
             helpImg.gameObject.SetActive(true);
 
-            helpImg.StartHelpAnimation(help);
+            helpImg.GetComponent<UISpriteAnimation>().StartHelpAnimation(help);
         }
     }
 
-    public void SetHelperText(RawImage img)
+    public void SetHelperText(Texture img)
     {
-        var bigImage = helperTxt.gameObject.transform.GetChild(3);
-        bigImage.gameObject.SetActive(true);
+        img1.gameObject.SetActive(false);
+        img1.GetComponent<UISpriteAnimation>().StopAllCoroutines();
+        img1.GetComponent<UISpriteAnimation>().SetAllBools(false);
 
-        bigImage.GetComponent<RawImage>().texture = img.texture;
+        img2.gameObject.SetActive(false);
+        img2.GetComponent<UISpriteAnimation>().StopAllCoroutines();
+        img2.GetComponent<UISpriteAnimation>().SetAllBools(false);
+
+        helpImg.gameObject.SetActive(false);
+        helpImg.GetComponent<UISpriteAnimation>().StopAllCoroutines();
+        helpImg.GetComponent<UISpriteAnimation>().SetAllBools(false);
+
+        helperTxt.enabled = false;
+
+        bigImg.gameObject.SetActive(true);
+
+        bigImg.GetComponent<RawImage>().texture = img;
+    }
+
+    public void SetGuideImage(Texture img)
+    {
+
+        guideImg.gameObject.SetActive(true);
+
+        guideImg.GetComponent<RawImage>().texture = img;
     }
 
     public void SetHelperText()
@@ -110,20 +140,18 @@ public class UIManager : MonoBehaviour
         helperTxt.text = "";
         helperTxt.enabled = false;
 
-        var bigImage = helperTxt.gameObject.transform.GetChild(3);
-        bigImage.gameObject.SetActive(false);
+        bigImg.gameObject.SetActive(false);
 
-        var img1 = helperTxt.gameObject.transform.GetChild(0);
+        guideImg.gameObject.SetActive(false);
+
         img1.gameObject.SetActive(false);
         img1.GetComponent<UISpriteAnimation>().StopAllCoroutines();
         img1.GetComponent<UISpriteAnimation>().SetAllBools(false);
 
-        var img2 = helperTxt.gameObject.transform.GetChild(1);
         img2.gameObject.SetActive(false);
         img2.GetComponent<UISpriteAnimation>().StopAllCoroutines();
         img2.GetComponent<UISpriteAnimation>().SetAllBools(false);
 
-        var helpImg = helperTxt.gameObject.transform.GetChild(2);
         helpImg.gameObject.SetActive(false);
         helpImg.GetComponent<UISpriteAnimation>().StopAllCoroutines();
         helpImg.GetComponent<UISpriteAnimation>().SetAllBools(false);
@@ -258,6 +286,17 @@ public class UIManager : MonoBehaviour
         SetAudioSliders();
         SetQualitySettingDropDown();
         SetResolutionDropdown();
+
+        SetUIChilds();
+    }
+
+    void SetUIChilds()
+    {
+        img1 = helperTxt.gameObject.transform.GetChild(0);
+        img2 = helperTxt.gameObject.transform.GetChild(1);
+        helpImg = helperTxt.gameObject.transform.GetChild(2);
+        bigImg = helperTxt.gameObject.transform.GetChild(3);
+        guideImg = helperTxt.gameObject.transform.GetChild(4);
     }
 
     void SetAudioSliders()
@@ -333,6 +372,8 @@ public class UIManager : MonoBehaviour
             Time.timeScale = 0;
 
             mainMenuCanvasParent.SetActive(true);
+            var bg = mainMenuCanvasParent.transform.GetChild(0);
+            bg.GetComponent<UISpriteAnimation>().BGAnim();
             mainMenuScreenParent.SetActive(false);
             pauseMenuScreenParent.SetActive(true);
         }

@@ -43,13 +43,19 @@ public class UISpriteAnimation : MonoBehaviour
     {
         rawImg = GetComponent<RawImage>();
 
-        UIManager.instance.SetHelperText();
+        //UIManager.instance.SetHelperText();
         SetAllBools(false);
 
         if (isBg)
         {
-            StartCoroutine(KeyAnim(staticSprites));
+            BGAnim();
         }
+    }
+
+    public void BGAnim()
+    {
+        StopAllCoroutines();
+        StartCoroutine(KeyAnim(staticSprites));
     }
 
     public void StartHelpAnimation(UIManager.HelpType help)
@@ -59,18 +65,21 @@ public class UISpriteAnimation : MonoBehaviour
             case UIManager.HelpType.INSPECT:
                 if (!insp) { 
                     insp = true;
+                    GetComponent<RectTransform>().sizeDelta = new Vector2(93, 50);
                     StartCoroutine(KeyAnim(inspectSprites));
                 }
                 break;
             case UIManager.HelpType.MOVE_UP_DOWN:
                 if(!moveUpDown){
                     moveUpDown = true;
+                    GetComponent<RectTransform>().sizeDelta = new Vector2(35, 70);
                     StartCoroutine(KeyAnim(moveUpDownSprites));
                 }
                 break;
             case UIManager.HelpType.MOVE_CLOSE_FAR:
                 if(!moveCloseFar){
                     moveCloseFar = true;
+                    GetComponent<RectTransform>().sizeDelta = new Vector2(93, 35);
                     StartCoroutine(KeyAnim(moveCloseFarSprites));
                     
                 }
@@ -128,7 +137,7 @@ public class UISpriteAnimation : MonoBehaviour
         {
             curFrame = (curFrame + 1) % tex.Count;
             rawImg.texture = tex[curFrame];
-            yield return new WaitForSeconds(frameDelay);
+            yield return new WaitForSecondsRealtime(frameDelay);
         }
     }
 

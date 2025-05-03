@@ -19,7 +19,6 @@ public class Door : MonoBehaviour
     [SerializeField] BoxCollider doorCollider;
 
     public bool canOpen = true;
-    public bool lockOnNextOpen = false;
     public bool endPhaseOpen = false;
 
     //internal variables
@@ -64,11 +63,6 @@ public class Door : MonoBehaviour
         if (other.CompareTag("Player") && Vector3.Magnitude(transform.localEulerAngles - closedRotation) < threshold && canOpen)
         {
             StartCoroutine(OpenAndCloseDoor());
-            if (lockOnNextOpen)
-            {
-                canOpen = false;
-                lockOnNextOpen = false;
-            }
         }
     }
 }

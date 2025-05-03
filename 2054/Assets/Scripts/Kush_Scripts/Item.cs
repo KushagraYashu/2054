@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Item : MonoBehaviour
@@ -7,7 +8,7 @@ public class Item : MonoBehaviour
     public BoxManager.ItemType itemType;
     public Transform targetPoint;
 
-    bool correctItem;
+    public bool correctItem;
     bool isDragging = false;
     Camera cam;
     float YOffset;
@@ -20,14 +21,34 @@ public class Item : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Player") && correctItem)
+        {
+            MouseLookAround.instance.SetMouseLock(false);
+
+            GameManager.instance.StopGlitching();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.CompareTag("Player") && correctItem)
+        {
+            MouseLookAround.instance.SetMouseLock(true);
+
+            GameManager.instance.StartGlitching();
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
         if (correctItem)
         {
+            ZOffset = PlayerBehaviour.instance.transform.forward * 0.1f;
             if (Input.GetMouseButton(0) && !isDragging)
             {
-                ZOffset = PlayerBehaviour.instance.transform.forward * 0.1f;
                 if ((cam == null))
                 {
                     cam = MouseLookAround.instance.GetCam();
@@ -38,17 +59,15 @@ public class Item : MonoBehaviour
                     if (hit.transform.gameObject.GetComponent<Item>() == this)
                     {
                         rb.isKinematic = true;
-
                         isDragging = true;
                     }
                 }
             }
-            else if (Input.GetMouseButtonUp(0))
+            else if (Input.GetMouseButtonUp(0) && isDragging)
             {
                 GameManager.instance.StartGlitching();
 
-                rb.isKinematic = false;
-                UIManager.instance.SetHelperText();
+                
                 isDragging = false;
             }
 
@@ -56,19 +75,22 @@ public class Item : MonoBehaviour
             {
                 UpdatePosition();
             }
+
+            if (!isDragging)
+            {
+                rb.isKinematic = false;
+                UIManager.instance.SetHelperText();
+            }
         }
     }
 
     void UpdatePosition()
     {
-        GameManager.instance.StopGlitching();
-
         UIManager.instance.SetHelperText(UIManager.KeyType.R, UIManager.KeyType.Q, UIManager.HelpType.MOVE_UP_DOWN);
 
-        var objectMesh = transform.GetChild(0);
         Vector3 targetDirection = PlayerBehaviour.instance.transform.forward;
         Quaternion rot = Quaternion.LookRotation(Vector3.Cross(Vector3.up, targetDirection), Vector3.up);
-        //objectMesh.rotation = rot;
+        transform.rotation = rot;
 
         if (Input.GetKey(KeyCode.Q))
             YOffset -= 1f * Time.deltaTime;
@@ -80,30 +102,41 @@ public class Item : MonoBehaviour
 
         if (Vector3.Distance(this.transform.position, targetPoint.transform.position) <= 1f)
         {
-            isDragging = false;
             targetPoint.gameObject.SetActive(false);
-            transform.position = targetPoint.transform.position;
-            //transform.rotation = targetPoint.transform.rotation;
+            rb.isKinematic = false;
+            transform.SetPositionAndRotation(targetPoint.transform.position, targetPoint.transform.rotation);
+            correctItem = false;
+            isDragging = false;
             UIManager.instance.SetHelperText();
-            BoxManager.instance.PlayMemory(itemType);
+            if(itemType == BoxManager.ItemType.JERRY)
+            {
+                BoxManager.instance.PlayMemory(itemType, this.gameObject);
+            }
+            else
+            {
+                BoxManager.instance.PlayMemory(itemType);
+            }
             this.enabled = false;
         }
     }
 
     public void Throw(Transform thPoint, Transform taPoint)
     {
+        float randX = Random.Range(BoxManager.instance.throwForceMin.x, BoxManager.instance.throwForceMax.x);
+        float randY = Random.Range(BoxManager.instance.throwForceMin.y, BoxManager.instance.throwForceMax.y);
+        float randZ = Random.Range(BoxManager.instance.throwForceMin.z, BoxManager.instance.throwForceMax.z);
+
         if (!BoxManager.instance.AddItem(itemType))
         {
             transform.position = thPoint.position;
-
             
             rb.isKinematic = false;
 
-            float randX = Random.Range(BoxManager.instance.throwForceMin.x, BoxManager.instance.throwForceMax.x);
-            float randY = Random.Range(BoxManager.instance.throwForceMin.y, BoxManager.instance.throwForceMax.y);
-            float randZ = Random.Range(BoxManager.instance.throwForceMin.z, BoxManager.instance.throwForceMax.z);
+            
 
             rb.AddForce(randX, randY, randZ, ForceMode.Impulse);
+
+            this.enabled = false;
         }
         else
         {
@@ -111,6 +144,8 @@ public class Item : MonoBehaviour
 
             transform.position = taPoint.position;
             transform.GetChild(0).gameObject.SetActive(true);
+
+            rb.AddForce(randX, randY, randZ, ForceMode.Impulse);
         }
     }
 }

@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
     [Header("Lights")]
     [SerializeField]
     GameObject[] allLights;
+    [SerializeField]
+    GameObject[] allLightsExceptBedRoom;
     [SerializeField] GameObject[] livingRoomLights;
     [SerializeField] Material lightBoxMaterial;
 
@@ -47,7 +49,7 @@ public class GameManager : MonoBehaviour
     float t;
     
     public bool pause;
-    public CursorLockMode cursorLockMode;
+    public CursorLockMode cursorLockMode = CursorLockMode.Locked;
     public int saveValue = -1;
 
     void CheckSave()
@@ -59,8 +61,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            PlayerPrefs.DeleteAll();
-
+            saveValue = -1;
         }
     }
 
@@ -70,8 +71,8 @@ public class GameManager : MonoBehaviour
         // Comment for build
         //PlayerPrefs.DeleteAll();
         //PlayerPrefs.Save();
-        PlayerPrefs.SetInt("PlayerAge", 1);
-        PlayerPrefs.Save();
+        //PlayerPrefs.SetInt("PlayerAge", 3);
+        //PlayerPrefs.Save();
 
         CheckSave();
 
@@ -81,7 +82,13 @@ public class GameManager : MonoBehaviour
         MouseLookAround.instance.lookAllowed = false;
     }
 
-    
+    public void TurnOffLightsExceptBed()
+    {
+        foreach(GameObject light in allLightsExceptBedRoom)
+        {
+            light.SetActive(false);
+        }
+    }
 
     public void StopGlitching()
     {
@@ -247,10 +254,17 @@ public class GameManager : MonoBehaviour
     {
         UIManager.instance.PauseSequence(pause);
 
-        cursorLockMode = UnityEngine.Cursor.lockState;
-        if (cursorLockMode == CursorLockMode.Locked)
+        if (pause)
         {
-            MouseLookAround.instance.SetMouseLock(false);
+            cursorLockMode = UnityEngine.Cursor.lockState;
+            if (cursorLockMode == CursorLockMode.Locked)
+            {
+                MouseLookAround.instance.SetMouseLock(false);
+            }
+        }
+        else
+        {
+            UnityEngine.Cursor.lockState = cursorLockMode;
         }
     }
 }

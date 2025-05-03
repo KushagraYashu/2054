@@ -101,13 +101,17 @@ public class RoomManager : MonoBehaviour
         }
         currentRoomType = Room.TOTAL;
         endPhaseRoom.SetActive(true);
+
+        SpawnJerry();
     }
 
     public void EndPhase()
     {
         GameManager.instance.StopGlitching();
 
-        PlayerBehaviour.instance.transform.SetPositionAndRotation(endPhaseRoom.transform.GetChild(0).position, endPhaseRoom.transform.GetChild(0).rotation);
+        var pos = endPhaseRoom.transform.GetChild(0).position;
+        pos.y = PlayerBehaviour.instance.transform.position.y;
+        PlayerBehaviour.instance.transform.SetPositionAndRotation(pos, endPhaseRoom.transform.GetChild(0).rotation);
         PlayerBehaviour.instance.transform.GetChild(0).gameObject.SetActive(true);
         PuzzleManager.instance.FreezePlayer();
         MouseLookAround.instance.lookAllowed = false;

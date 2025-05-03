@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PuzzleManager : MonoBehaviour
 {
@@ -36,6 +37,9 @@ public class PuzzleManager : MonoBehaviour
     [SerializeField] List<GameObject> piecesWaypoint = new();
     [SerializeField] List<GameObject> piecesTargetPoint = new();
     public List<GameObject> GetTargetPoints() {  return piecesTargetPoint; }
+
+    [Header("Image")]
+    public Texture guideImageJigsaw;
 
     [Header("Bools")]
     bool canShowInventory = false;
@@ -90,6 +94,7 @@ public class PuzzleManager : MonoBehaviour
         {
             curPuzzleParent = Instantiate(puzzlePrefabs[0], puzzleSpawnPoint);
             curPuzzleParent.transform.parent = GameObject.FindGameObjectWithTag("ToddlerRoomParent").transform;
+            UIManager.instance.SetGuideImage(guideImageJigsaw);
             UIManager.instance.SetHelperText("1/3");
             totalPieces = 2;
         }
@@ -182,10 +187,10 @@ public class PuzzleManager : MonoBehaviour
         }
 
         //DEBUG INPUT, REMOVE LATER
-        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.F))
-        {
-            //StartCoroutine (ShowJigsawMemory());
-        }
+        //if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.F))
+        //{
+        //    //StartCoroutine (ShowJigsawMemory());
+        //}
     }
 
     IEnumerator Show2054Memory()

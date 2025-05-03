@@ -123,10 +123,10 @@ public class PuzzlePiece : MonoBehaviour
         }
 
         //Comment this later, its a dev shortcut
-        if(Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.F))
-        {
-            UIManager.instance.SetHelperText(UIManager.KeyType.R, UIManager.KeyType.Q, UIManager.HelpType.MOVE_CLOSE_FAR);
-        }
+        //if(Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.F))
+        //{
+        //    UIManager.instance.SetHelperText(UIManager.KeyType.R, UIManager.KeyType.Q, UIManager.HelpType.MOVE_CLOSE_FAR);
+        //}
     }
 
     void UpdatePosition()

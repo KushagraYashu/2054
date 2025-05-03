@@ -49,7 +49,7 @@ public class Box : MonoBehaviour
     {
         if (opened && !done)
         {
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 ThrowItems();
             }
@@ -66,6 +66,7 @@ public class Box : MonoBehaviour
         if(itemsThrown.Count < totItems)
         {
             //items[curIndex].gameObject.GetComponent<MeshRenderer>().enabled = true;
+            items[curIndex].transform.GetChild(0).gameObject.SetActive(true);
             items[curIndex].Throw(throwPoint, takePoint);
             itemsThrown.Add(items[curIndex]);
             curIndex++;

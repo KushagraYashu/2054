@@ -121,6 +121,7 @@ public class UIEffects : MonoBehaviour
         {
             yield return new WaitForSeconds(2f);
             yearTextScreenQuitButton.SetActive(true);
+            MouseLookAround.instance.SetMouseLock(false);
         }
     }
 
@@ -154,7 +155,7 @@ public class UIEffects : MonoBehaviour
     private IEnumerator ScrollDigit(TextMeshProUGUI digitText, int from, int to, float influence)
     {
         float elapsedTime = 0f;
-        float moveDistance = 40f;
+        float moveDistance = 80f;
 
         Vector3 originalPos = digitText.transform.localPosition;
         Vector3 upperPos = originalPos + Vector3.up * moveDistance;
