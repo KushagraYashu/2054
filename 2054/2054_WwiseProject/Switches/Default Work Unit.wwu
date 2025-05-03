@@ -9,6 +9,12 @@
 						<Switch Name="Floor" ID="{B6C44648-5B39-4FC1-A775-79CE9768E960}"/>
 					</ChildrenList>
 				</SwitchGroup>
+				<SwitchGroup Name="Adult_Footsteps" ID="{6B08FC3F-1027-4346-A913-589B9CC06416}">
+					<ChildrenList>
+						<Switch Name="Carpet" ID="{8AF79714-B7B3-4C44-9B2E-68C457B8EDA5}"/>
+						<Switch Name="Floor" ID="{355BD3C2-9AE8-4067-9651-9DCF005D6BC8}"/>
+					</ChildrenList>
+				</SwitchGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</Switches>

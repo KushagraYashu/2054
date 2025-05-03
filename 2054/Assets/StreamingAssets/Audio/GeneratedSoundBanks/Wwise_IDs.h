@@ -47,6 +47,17 @@ namespace AK
 
     namespace SWITCHES
     {
+        namespace ADULT_FOOTSTEPS
+        {
+            static const AkUniqueID GROUP = 1966850591U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID CARPET = 2412606308U;
+                static const AkUniqueID FLOOR = 1088209313U;
+            } // namespace SWITCH
+        } // namespace ADULT_FOOTSTEPS
+
         namespace TEEN_FOOTSTEPS
         {
             static const AkUniqueID GROUP = 2775722229U;
