@@ -228,23 +228,23 @@ public class Volcano : MonoBehaviour
 
     IEnumerator SuccessMemory()
     {
-        //fade in
+        BoxManager.instance.VolcanoSuccess = true;
 
         //freeze player
         GameManager.instance.StopGlitching();
         PuzzleManager.instance.FreezePlayer();
 
-        StartCoroutine(UIEffects.instance.Fade(0, 1, 2, "Show Volcano Success Memory"));
+        //fade in
+        StartCoroutine(UIEffects.instance.Fade(0, 1, 2));
         yield return new WaitForSeconds(2f);
 
         //play memory animation here
-        //yield return new WaitForSeconds(animationDuration);
-        //remove this line later (its for testing delay)
+        UIManager.instance.ShowMemory(UIManager.MemoryType.CHILD_VOLCANO_SUCCESS, out float waitTime);
 
         transform.GetChild(0).gameObject.SetActive(false);
         transform.GetChild(1).gameObject.SetActive(false);
         transform.GetChild(2).gameObject.SetActive(false);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(waitTime);
 
         StartCoroutine(UIEffects.instance.ScrollYear(1994, 2001, 0.5f, PlayerBehaviour.instance.AgePlayer));
     }
@@ -252,25 +252,27 @@ public class Volcano : MonoBehaviour
 
     IEnumerator FailMemory()
     {
-        kitchenSinkTargetPoint.gameObject.SetActive(false);
+        BoxManager.instance.VolcanoSuccess = false;
 
-        //fade in
+        kitchenSinkTargetPoint.gameObject.SetActive(false);
 
         //freeze player
         GameManager.instance.StopGlitching();
         PuzzleManager.instance.FreezePlayer();
 
-        StartCoroutine(UIEffects.instance.Fade(0, 1, 2, "Show Volcano Fail Memory"));
+        //fade in
+        StartCoroutine(UIEffects.instance.Fade(0, 1, 2));
         yield return new WaitForSeconds(2f);
 
         //play memory animation here
-        //yield return new WaitForSeconds(animationDuration);
-        //remove this (delay) line later (its for testing delay)
+        UIManager.instance.ShowMemory(UIManager.MemoryType.CHILD_VOLCANO_FAIL, out float waitTime);
+        yield return new WaitForSeconds(waitTime);
 
         transform.GetChild(0).gameObject.SetActive(false);
         transform.GetChild(1).gameObject.SetActive(false);
         transform.GetChild(2).gameObject.SetActive(false);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(waitTime);
+
 
         StartCoroutine(UIEffects.instance.ScrollYear(1994, 2001, 0.5f, PlayerBehaviour.instance.AgePlayer));
     }

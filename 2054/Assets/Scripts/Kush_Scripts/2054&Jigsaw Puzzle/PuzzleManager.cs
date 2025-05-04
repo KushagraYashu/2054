@@ -201,13 +201,12 @@ public class PuzzleManager : MonoBehaviour
         GameManager.instance.StopGlitching();
         FreezePlayer();
 
-        StartCoroutine(UIEffects.instance.Fade(0, 1, 2, "Show 2054 Memory"));
+        StartCoroutine(UIEffects.instance.Fade(0, 1, 2));
         yield return new WaitForSeconds(2f);
 
         //play memory animation here
-        //yield return new WaitForSeconds(animationDuration);
-        //remove this line later (its for testing delay)
-        yield return new WaitForSeconds(2f);
+        UIManager.instance.ShowMemory(UIManager.MemoryType.TODDLER_2054, out float waitTime);
+        yield return new WaitForSeconds(waitTime);
 
         //Scrolling Years (pass the callback function as well)
         StartCoroutine(UIEffects.instance.ScrollYear(1987, 1994, 0.5f, AgePlayer));
@@ -227,15 +226,13 @@ public class PuzzleManager : MonoBehaviour
         GameManager.instance.StopGlitching();
         FreezePlayer();
 
-        StartCoroutine(UIEffects.instance.Fade(0, 1, 2, "Show Jigsaw Memory"));
+        StartCoroutine(UIEffects.instance.Fade(0, 1, 2));
         yield return new WaitForSeconds(2f);
 
         //play memory animation here
-        //yield return new WaitForSeconds(animationDuration);
-                        //remove this line later (its for testing delay)
-                        yield return new WaitForSeconds(2f);
+        UIManager.instance.ShowMemory(UIManager.MemoryType.TODDLER_PAINTING, out float waitTime);
+        yield return new WaitForSeconds(waitTime);
 
-        
 
         //switch puzzle now
         SwitchPuzzle();

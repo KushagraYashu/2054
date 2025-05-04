@@ -17,6 +17,12 @@ public class UIManager : MonoBehaviour
         else Destroy(this);
     }
 
+    [Header("Memory UI")]
+    [SerializeField] RawImage memoryImg;
+
+    [Header("Memory Textures")]
+    [SerializeField] List<Texture> memoryTextures = new();
+
     [Header("Main UI")]
     [SerializeField] GameObject mainMenuCanvasParent;
     [SerializeField] GameObject mainMenuScreenParent;
@@ -61,6 +67,18 @@ public class UIManager : MonoBehaviour
         MOVE_CLOSE_FAR,
         TOTAL
     };
+
+    public enum MemoryType
+    {
+        TODDLER_PAINTING,
+        TODDLER_2054,
+        CHILD_VOLCANO_SUCCESS,
+        CHILD_VOLCANO_FAIL,
+        TEEN_LAPTOP,
+        ADULT_JERRY,
+        ADULT_WEDDING,
+        ADULT_GRADUATION,
+    }
 
     //internal variables
     Resolution[] resolutions;
@@ -389,5 +407,19 @@ public class UIManager : MonoBehaviour
 
             GameManager.instance.pause = p;
         }
+    }
+
+    public void ShowMemory(MemoryType memType, out float time)
+    {
+        time = 3f;
+        StartCoroutine(ShowMemoryImg(memoryTextures[(int)memType], time));
+    }
+
+    IEnumerator ShowMemoryImg(Texture img, float time)
+    {
+        memoryImg.enabled = true;
+        memoryImg.texture = img;
+        yield return new WaitForSeconds(time);
+        memoryImg.enabled = false;
     }
 }

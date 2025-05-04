@@ -126,13 +126,12 @@ public class Laptop : MonoBehaviour
             GameManager.instance.StopGlitching();
             PuzzleManager.instance.FreezePlayer();
 
-            StartCoroutine(UIEffects.instance.Fade(0, 1, 2, "Show Laptop Memory"));
+            StartCoroutine(UIEffects.instance.Fade(0, 1, 2));
             yield return new WaitForSeconds(2f);
 
             //play memory animation here
-            //yield return new WaitForSeconds(animationDuration);
-            //remove this line later (its for testing delay)
-            yield return new WaitForSeconds(2f);
+            UIManager.instance.ShowMemory(UIManager.MemoryType.TEEN_LAPTOP, out float waitTime);
+            yield return new WaitForSeconds(waitTime);
 
             StartCoroutine(UIEffects.instance.ScrollYear(2001, 2018, 0.3f, PlayerBehaviour.instance.AgePlayer));
 

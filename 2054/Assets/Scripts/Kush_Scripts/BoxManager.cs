@@ -43,6 +43,8 @@ public class BoxManager : MonoBehaviour
     [Header("Waypoints")]
     public List<Transform> FromAdultToEnd = new();
 
+    public bool VolcanoSuccess { get; set; } = false;
+
     //internal variables
     int totMemPlayed = 0;
 
@@ -123,13 +125,12 @@ public class BoxManager : MonoBehaviour
         GameManager.instance.StopGlitching();
         PuzzleManager.instance.FreezePlayer();
 
-        StartCoroutine(UIEffects.instance.Fade(0, 1, 2, "Show Graduation Memory"));
+        StartCoroutine(UIEffects.instance.Fade(0, 1, 2));
         yield return new WaitForSeconds(2f);
 
         //play memory animation here
-        //yield return new WaitForSeconds(animationDuration);
-        //remove this line later (its for testing delay)
-        yield return new WaitForSeconds(2f);
+        UIManager.instance.ShowMemory(UIManager.MemoryType.ADULT_GRADUATION, out float waitTime);
+        yield return new WaitForSeconds(waitTime);
 
         //fade out
         StartCoroutine(UIEffects.instance.Fade(1, 0, 2));
@@ -157,13 +158,21 @@ public class BoxManager : MonoBehaviour
         GameManager.instance.StopGlitching();
         PuzzleManager.instance.FreezePlayer();
 
-        StartCoroutine(UIEffects.instance.Fade(0, 1, 2, "Show Volcano Memory"));
+        //Fade in
+        StartCoroutine(UIEffects.instance.Fade(0, 1, 2));
         yield return new WaitForSeconds(2f);
 
-        //play memory animation here
-        //yield return new WaitForSeconds(animationDuration);
-        //remove this line later (its for testing delay)
-        yield return new WaitForSeconds(2f);
+        //play memory
+        float waitTime;
+        if (VolcanoSuccess)
+        {
+            UIManager.instance.ShowMemory(UIManager.MemoryType.CHILD_VOLCANO_SUCCESS, out waitTime);
+        }
+        else
+        {
+            UIManager.instance.ShowMemory(UIManager.MemoryType.CHILD_VOLCANO_FAIL, out waitTime);
+        }
+        yield return new WaitForSeconds(waitTime);
 
         //fade out
         StartCoroutine(UIEffects.instance.Fade(1, 0, 2));
@@ -191,13 +200,12 @@ public class BoxManager : MonoBehaviour
         GameManager.instance.StopGlitching();
         PuzzleManager.instance.FreezePlayer();
 
-        StartCoroutine(UIEffects.instance.Fade(0, 1, 2, "Show Wedding Memory"));
+        StartCoroutine(UIEffects.instance.Fade(0, 1, 2));
         yield return new WaitForSeconds(2f);
 
         //play memory animation here
-        //yield return new WaitForSeconds(animationDuration);
-        //remove this line later (its for testing delay)
-        yield return new WaitForSeconds(2f);
+        UIManager.instance.ShowMemory(UIManager.MemoryType.ADULT_WEDDING, out float waitTime);
+        yield return new WaitForSeconds(waitTime);
 
         //fade out
         StartCoroutine(UIEffects.instance.Fade(1, 0, 2));
@@ -225,13 +233,12 @@ public class BoxManager : MonoBehaviour
         GameManager.instance.StopGlitching();
         PuzzleManager.instance.FreezePlayer();
 
-        StartCoroutine(UIEffects.instance.Fade(0, 1, 2, "Show Jerry Memory"));
+        StartCoroutine(UIEffects.instance.Fade(0, 1, 2));
         yield return new WaitForSeconds(2f);
 
         //play memory animation here
-        //yield return new WaitForSeconds(animationDuration);
-        //remove this line later (its for testing delay)
-        yield return new WaitForSeconds(2f);
+        UIManager.instance.ShowMemory(UIManager.MemoryType.ADULT_JERRY, out float waitTime);
+        yield return new WaitForSeconds(waitTime);
 
         //fade out
         StartCoroutine(UIEffects.instance.Fade(1, 0, 2));
