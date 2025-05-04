@@ -19,13 +19,17 @@ public class AudioManager : MonoBehaviour
 
     [Header("Audio Events")] //this is a header for inspector (this makes things look cleaner and easier to manage)
     [SerializeField] //showing the variable the inspector, this is only useful for private variables
-    private AK.Wwise.Event[] playerFootsteps;
+    private AK.Wwise.Event playerFootsteps;
     [SerializeField]//array of events for the player footstep, set this in the inspector to be the appropriate event [0th - toddler, 1st - child, 2nd - Teen, 3rd - Adult, if confused see the PlayerAge enum in PlayerBehaviour.cs], also see the PlayPlayerFootstep method.
     private AK.Wwise.Event StartButton;
     [SerializeField]
     private AK.Wwise.Event BackButton;
     [SerializeField]
-    private AK.Wwise.Event Door;
+    private AK.Wwise.Event QuitButton;
+    [SerializeField]
+    private AK.Wwise.Event DoorOpen;
+    [SerializeField]
+    private AK.Wwise.Event DoorClose;
     [SerializeField]
     private AK.Wwise.Event Tick;
     [SerializeField]
@@ -33,17 +37,22 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private AK.Wwise.Event VolcanoExplosion;
     [SerializeField]
-    private AK.Wwise.Event PaperPickUp1;
-    [SerializeField]
-    private AK.Wwise.Event PaperPickUp2;
-    [SerializeField]
-    private AK.Wwise.Event PaperPickUp3;
+    private AK.Wwise.Event PaperPickUp;
     [SerializeField]
     private AK.Wwise.Event Wood_Floor_land;
     [SerializeField]
     private AK.Wwise.Event Carpet_land;
     [SerializeField]
     private AK.Wwise.Event Heartbeat_1;
+    [SerializeField]
+    private AK.Wwise.Event Keyboard;
+    [SerializeField]
+    private AK.Wwise.Event Musicbox;
+    [SerializeField]
+    private AK.Wwise.Event Weddingbells;
+    [SerializeField]
+    private AK.Wwise.Event Light;
+   
 
     //I would recommend creating similar events and then their appropriate methods (make them public, so i can call them from other scripts using the singleton instance).
 
@@ -70,16 +79,22 @@ public class AudioManager : MonoBehaviour
     {
         START_BUTTON,
         BACK_BUTTON,
-        DOOR,
+        QUIT_BUTTON,
+        DOOROPEN,
+        DOORCLOSE,
         VOLCANO_EXPLOSION,
         CLOCK_TICK,
         VIAL,
-        PAPER_PICKUP_1, 
-        PAPER_PICKUP_2, 
-        PAPER_PICKUP_3,
+        PAPER_PICKUP, 
         WOOD_FLOOR_LAND,
         CARPET_LAND,
         HEARTBEAT_1,
+        KEYBOARD,
+        MUSICBOX,
+        WEDDINGBELLS,
+        LIGHTSWITCH,
+     
+
 
     };
 
@@ -92,9 +107,24 @@ public class AudioManager : MonoBehaviour
                 else StartButton.Post(this.gameObject);
                 break;
 
-            case SoundType.DOOR:
-                if ((obj != null)) Door.Post(obj);
-                else Door.Post(this.gameObject);
+            case SoundType.BACK_BUTTON:
+                if (obj != null) BackButton.Post(obj);
+                else BackButton.Post(this.gameObject);
+                break;
+
+            case SoundType.QUIT_BUTTON:
+                if (obj != null) QuitButton.Post(obj);
+                else QuitButton.Post(this.gameObject);
+                break;
+
+            case SoundType.DOOROPEN:
+                if ((obj != null)) DoorOpen.Post(obj);
+                else DoorOpen.Post(this.gameObject);
+                break;
+
+            case SoundType.DOORCLOSE:
+                if ((obj != null)) DoorClose.Post(obj);
+                else DoorClose.Post(this.gameObject);
                 break;
 
             case SoundType.VOLCANO_EXPLOSION:
@@ -112,20 +142,12 @@ public class AudioManager : MonoBehaviour
                 else Vial.Post(this.gameObject);
                 break;
 
-            case SoundType.PAPER_PICKUP_1:
-                if ((obj != null)) PaperPickUp1.Post(obj);
-                else PaperPickUp1.Post(this.gameObject);
+            case SoundType.PAPER_PICKUP:
+                if ((obj != null)) PaperPickUp.Post(obj);
+                else PaperPickUp.Post(this.gameObject);
                 break;
 
-            case SoundType.PAPER_PICKUP_2:
-                if ((obj != null)) PaperPickUp2.Post(obj);
-                else PaperPickUp2.Post(this.gameObject);
-                break;
-
-            case SoundType.PAPER_PICKUP_3:
-                if ((obj != null)) PaperPickUp3.Post(obj);
-                else PaperPickUp3.Post(this.gameObject);
-                break;
+           
 
             case SoundType.WOOD_FLOOR_LAND:
                 if ((obj != null)) Wood_Floor_land.Post(obj);
@@ -142,6 +164,27 @@ public class AudioManager : MonoBehaviour
                 else Heartbeat_1.Post(this.gameObject);
                 break;
 
+
+            case SoundType.KEYBOARD:
+                if ((obj != null)) Keyboard.Post(obj);
+                else Keyboard.Post(this.gameObject);
+                break;
+
+
+            case SoundType.MUSICBOX:
+                if ((obj != null)) Musicbox.Post(obj);
+                else Musicbox.Post(this.gameObject);
+                break;
+
+            case SoundType.WEDDINGBELLS:
+                if ((obj != null)) Weddingbells.Post(obj);
+                else Weddingbells.Post(this.gameObject);
+                break;
+
+            case SoundType.LIGHTSWITCH:
+                if ((obj != null)) Light.Post(obj);
+                else Light.Post(this.gameObject);
+                break;
         }
     }
 
@@ -161,7 +204,7 @@ public class AudioManager : MonoBehaviour
         
         if(timer > footstepSoundThreshold && isGround) //if we have moved for long enough, we can play the footstep sound (based on the age, ofcourse)
         {
-            playerFootsteps[(int)playerAge % playerFootsteps.Length].Post(gameObj);
+            playerFootsteps.Post(gameObj);
             timer = 0f;
         }
     }

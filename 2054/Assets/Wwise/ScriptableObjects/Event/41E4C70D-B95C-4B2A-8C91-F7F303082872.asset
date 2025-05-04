@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fcd84fd7bec074418faecf0d356061a, type: 3}
+  m_Name: 41E4C70D-B95C-4B2A-8C91-F7F303082872
+  m_EditorClassIdentifier: 
+  objectName: Wood_Floor_Jump_land
+  id: 1900150648
+  guid: 41E4C70D-B95C-4B2A-8C91-F7F303082872

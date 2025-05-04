@@ -25,11 +25,14 @@ public class PuzzlePiece : MonoBehaviour
     Material objectMaterial;
     UnityEngine.Color emissionColor;
     float intensity;
+    bool firstPickup = true;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player") && !added)
         {
+            AudioManager.instance.PlaySound(AudioManager.SoundType.PAPER_PICKUP);
+
             StopAllCoroutines();
             objectMaterial.SetColor("_EmissionColor", emissionColor * 1f);
 
@@ -100,6 +103,8 @@ public class PuzzlePiece : MonoBehaviour
 
             if (Input.GetMouseButton(0) && !isDragging && !PuzzleManager.instance.IsDraggingObject())
             {
+                firstPickup = false;
+                if(firstPickup) AudioManager.instance.PlaySound(AudioManager.SoundType.PAPER_PICKUP);
                 Ray ray = cam.ScreenPointToRay(Input.mousePosition);
                 if (Physics.Raycast(ray, out RaycastHit hit))
                 {
@@ -147,6 +152,7 @@ public class PuzzlePiece : MonoBehaviour
         }
         if (Vector3.Distance(this.transform.position, targetPoint.transform.position) <= PuzzleManager.instance.solveThreshold)
         {
+            AudioManager.instance.PlaySound(AudioManager.SoundType.PAPER_PICKUP);
             targetPoint.GetComponentInChildren<MeshRenderer>().enabled = false;
             transform.position = targetPoint.position;
             issolving = false;

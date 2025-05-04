@@ -214,7 +214,7 @@ public class UIManager : MonoBehaviour
 
     public void StartGame(bool loadSave)
     {
-
+        AudioManager.instance.PlaySound(AudioManager.SoundType.START_BUTTON);
         if (loadSave && GameManager.instance.saveValue != -1)
         {
             LoadSave();
@@ -233,11 +233,12 @@ public class UIManager : MonoBehaviour
         mainMenuCanvasParent.SetActive(false);
         GameManager.instance.ActivatePlayer();
 
-        GameManager.instance.StartGlitching();
+        //GameManager.instance.StartGlitching();
     }
 
     public void OpenSettings()
     {
+        AudioManager.instance.PlaySound(AudioManager.SoundType.START_BUTTON);
         if (GameManager.instance.pause)
             pauseMenuScreenParent.SetActive(false);
         else
@@ -248,6 +249,7 @@ public class UIManager : MonoBehaviour
 
     public void Back(int i)
     {
+        AudioManager.instance.PlaySound(AudioManager.SoundType.BACK_BUTTON);
         if (i == 1) //Back from settings screen
         {
             settingsScreenParent.SetActive(false);
@@ -266,12 +268,20 @@ public class UIManager : MonoBehaviour
 
     public void OpenCredits()
     {
+        AudioManager.instance.PlaySound(AudioManager.SoundType.START_BUTTON);
         mainMenuScreenParent.SetActive(false);
         creditsScreenParent.SetActive(true);
     }
 
     public void QuitGame()
     {
+        AudioManager.instance.PlaySound(AudioManager.SoundType.QUIT_BUTTON);
+        StartCoroutine(QuitButton());
+    }
+
+    IEnumerator QuitButton()
+    {
+        yield return new WaitForSeconds(0.4f);
         Application.Quit();
     }
 
@@ -380,6 +390,7 @@ public class UIManager : MonoBehaviour
 
     public void SaveGame()
     {
+        AudioManager.instance.PlaySound(AudioManager.SoundType.START_BUTTON);
         GameManager.instance.SaveGame();
     }
 
@@ -412,6 +423,15 @@ public class UIManager : MonoBehaviour
     public void ShowMemory(MemoryType memType, out float time)
     {
         time = 3f;
+        if (memType == MemoryType.ADULT_JERRY)
+        {
+            AudioManager.instance.PlaySound(AudioManager.SoundType.MUSICBOX);
+        }
+
+        if (memType == MemoryType.ADULT_WEDDING)
+        {
+            AudioManager.instance.PlaySound(AudioManager.SoundType.WEDDINGBELLS);
+        }
         StartCoroutine(ShowMemoryImg(memoryTextures[(int)memType], time));
     }
 

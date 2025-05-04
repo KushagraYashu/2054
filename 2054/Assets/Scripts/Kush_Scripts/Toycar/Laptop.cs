@@ -161,6 +161,7 @@ public class Laptop : MonoBehaviour
 
     public void EnterCode(string code)
     {
+        AudioManager.instance.PlaySound(AudioManager.SoundType.KEYBOARD);
         if (enterCode) { passcodeTxtFields[curIndex % 5].text = code; curIndex++; }
         else return;
     }

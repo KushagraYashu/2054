@@ -106,6 +106,8 @@ public class UIEffects : MonoBehaviour
             scrollSpeed = par * speedMultiplier;
 
             yield return StartCoroutine(AnimateYearChange(i, i + 1));
+            AudioManager.instance.PlaySound(AudioManager.SoundType.CLOCK_TICK);
+
         }
 
         yield return new WaitForSeconds(1f);

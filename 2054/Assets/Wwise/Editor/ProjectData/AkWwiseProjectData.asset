@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 6d591579630d4e4b8339eaf347078ef1
     GuidInternal: 
-    m_lastTime: -8584554080273736672
+    m_lastTime: -8584552198157913432
     List:
     - name: Main
       guid: 7f2daec70d93a24395a594bd9476f066
@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 6b6e736efaef2c4ca991b4d0d692e67d
     GuidInternal: 
-    m_lastTime: -8584554080299640000
+    m_lastTime: -8584552193213047137
     List:
     - name: AdultPlayerFootstep
       guid: 2dd5e36dd50f8c43a9952b2ae8de324e
@@ -131,11 +131,11 @@ MonoBehaviour:
         guid: 6ffe185b2cfe84429757467e25a5579c
       Path: Events\Default Work Unit\Back_Button
       maxAttenuation: 0
-      maxDuration: 0.35947713
-      minDuration: 0.35947713
-    - name: ChildPlayerFootstep
-      guid: b10976fd6b3d404a98fd092d80d7a25a
-      id: 3303107572
+      maxDuration: 0.59566677
+      minDuration: 0.59566677
+    - name: Door_Close
+      guid: 53ba13a3010a93469ad8ca8c8a8a1d9c
+      id: 128625444
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -143,16 +143,13 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 6b6e736efaef2c4ca991b4d0d692e67d
-      - ElementName: Player Footsteps
-        ObjectType: 4
-        guid: 6a7d3b2547369d4aba816dabc1d8b854
-      - ElementName: ChildPlayerFootstep
+      - ElementName: Door_Close
         ObjectType: 3
-        guid: b10976fd6b3d404a98fd092d80d7a25a
-      Path: Events\Default Work Unit\Player Footsteps\ChildPlayerFootstep
+        guid: 53ba13a3010a93469ad8ca8c8a8a1d9c
+      Path: Events\Default Work Unit\Door_Close
       maxAttenuation: 0
-      maxDuration: 0.20553462
-      minDuration: 0.14533494
+      maxDuration: 0.37008333
+      minDuration: 0.37008333
     - name: Door_Open
       guid: aee6451dce511e489544c4ad6ecb73b4
       id: 535830432
@@ -185,8 +182,25 @@ MonoBehaviour:
         guid: 86c0d681945a9f4f8dad8304dd96b8d2
       Path: Events\Default Work Unit\Footsteps
       maxAttenuation: 0
-      maxDuration: 1.9147952
+      maxDuration: 0.6470773
       minDuration: 0.17942713
+    - name: Keyboard
+      guid: 30e5c3481ab2044b977529833069ef2d
+      id: 1403540682
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6b6e736efaef2c4ca991b4d0d692e67d
+      - ElementName: Keyboard
+        ObjectType: 3
+        guid: 30e5c3481ab2044b977529833069ef2d
+      Path: Events\Default Work Unit\Keyboard
+      maxAttenuation: 0
+      maxDuration: 2.537929
+      minDuration: 2.537929
     - name: Player Footsteps
       guid: 6a7d3b2547369d4aba816dabc1d8b854
       id: 3165549291
@@ -204,6 +218,57 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Pp1
+      guid: adff3f981bc5004db3f131306befe274
+      id: 997675398
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6b6e736efaef2c4ca991b4d0d692e67d
+      - ElementName: Pp1
+        ObjectType: 3
+        guid: adff3f981bc5004db3f131306befe274
+      Path: Events\Default Work Unit\Pp1
+      maxAttenuation: 0
+      maxDuration: 0.6935833
+      minDuration: 0.47980207
+    - name: Quit
+      guid: 0aaf0d3c35349345839bfdde5987479b
+      id: 3930794392
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6b6e736efaef2c4ca991b4d0d692e67d
+      - ElementName: Quit
+        ObjectType: 3
+        guid: 0aaf0d3c35349345839bfdde5987479b
+      Path: Events\Default Work Unit\Quit
+      maxAttenuation: 0
+      maxDuration: 0.52708334
+      minDuration: 0.52708334
+    - name: Random_tick
+      guid: 83e9f76def1f944f9e150baea1b0e0f6
+      id: 1073037076
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6b6e736efaef2c4ca991b4d0d692e67d
+      - ElementName: Random_tick
+        ObjectType: 3
+        guid: 83e9f76def1f944f9e150baea1b0e0f6
+      Path: Events\Default Work Unit\Random_tick
+      maxAttenuation: 0
+      maxDuration: 0.23958333
+      minDuration: 0.15625
     - name: Start_Button
       guid: 7f68b18c70b67740ae169c65a2e131c9
       id: 2674457354
@@ -219,8 +284,8 @@ MonoBehaviour:
         guid: 7f68b18c70b67740ae169c65a2e131c9
       Path: Events\Default Work Unit\Start_Button
       maxAttenuation: 0
-      maxDuration: 0.38656175
-      minDuration: 0.38656175
+      maxDuration: 0.56896544
+      minDuration: 0.56896544
     - name: Tap_Drip
       guid: 35fcf1ca2e1d6846a38f0efbbeef7a87
       id: 2969906854
@@ -258,6 +323,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.27830666
       minDuration: 0.23402709
+    - name: Tick
+      guid: 86951df55e94d644a6c19767f711a9db
+      id: 2755031898
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6b6e736efaef2c4ca991b4d0d692e67d
+      - ElementName: Tick
+        ObjectType: 3
+        guid: 86951df55e94d644a6c19767f711a9db
+      Path: Events\Default Work Unit\Tick
+      maxAttenuation: 0
+      maxDuration: 0.23958333
+      minDuration: 0.15625
     - name: ToddlerPlayerFootstep
       guid: 16a73a89a03d364cb6258b998e505ca7
       id: 969514050
@@ -295,6 +377,23 @@ MonoBehaviour:
       maxAttenuation: 13
       maxDuration: -1
       minDuration: -1
+    - name: Vial
+      guid: 6641a9fa4a80034592b9facbd6bc5007
+      id: 3303065289
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6b6e736efaef2c4ca991b4d0d692e67d
+      - ElementName: Vial
+        ObjectType: 3
+        guid: 6641a9fa4a80034592b9facbd6bc5007
+      Path: Events\Default Work Unit\Vial
+      maxAttenuation: 0
+      maxDuration: 3.3099985
+      minDuration: 3.3099985
     - name: Volcano_Explosion
       guid: 311bc9635ad4ea418b4ba1451493dbba
       id: 496050709
@@ -469,8 +568,58 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 26537b2798b09b4a9d78f1bf3b761d1a
     GuidInternal: 
-    m_lastTime: -8584554080273716739
+    m_lastTime: -8584552199733500441
     List:
+    - name: Adult_Footsteps
+      guid: 3ffc086b27104643a913589b9cc06416
+      id: 1966850591
+      PathAndIcons:
+      - ElementName: Switches
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 26537b2798b09b4a9d78f1bf3b761d1a
+      - ElementName: Adult_Footsteps
+        ObjectType: 11
+        guid: 3ffc086b27104643a913589b9cc06416
+      Path: Switches\Default Work Unit\Adult_Footsteps
+      values:
+      - name: Carpet
+        guid: 1497f78ab3b7444c9b2e68c457b8eda5
+        id: 2412606308
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 26537b2798b09b4a9d78f1bf3b761d1a
+        - ElementName: Adult_Footsteps
+          ObjectType: 11
+          guid: 3ffc086b27104643a913589b9cc06416
+        - ElementName: Carpet
+          ObjectType: 10
+          guid: 1497f78ab3b7444c9b2e68c457b8eda5
+      - name: Floor
+        guid: c2d35b35e89a674096519dcf005d6bc8
+        id: 1088209313
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 26537b2798b09b4a9d78f1bf3b761d1a
+        - ElementName: Adult_Footsteps
+          ObjectType: 11
+          guid: 3ffc086b27104643a913589b9cc06416
+        - ElementName: Floor
+          ObjectType: 10
+          guid: c2d35b35e89a674096519dcf005d6bc8
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
     - name: Teen_Footsteps
       guid: ea4eeed0e5191149ac21a567d251d4bf
       id: 2775722229
@@ -486,9 +635,9 @@ MonoBehaviour:
         guid: ea4eeed0e5191149ac21a567d251d4bf
       Path: Switches\Default Work Unit\Teen_Footsteps
       values:
-      - name: Carpet
-        guid: 7d2a8b3a92501e428aee3463a763fbd1
-        id: 2412606308
+      - name: Adult_Carpet
+        guid: d8611a785d38a141bed11ed134c307c7
+        id: 2720435227
         PathAndIcons:
         - ElementName: Switches
           ObjectType: 5
@@ -499,12 +648,44 @@ MonoBehaviour:
         - ElementName: Teen_Footsteps
           ObjectType: 11
           guid: ea4eeed0e5191149ac21a567d251d4bf
-        - ElementName: Carpet
+        - ElementName: Adult_Carpet
+          ObjectType: 10
+          guid: d8611a785d38a141bed11ed134c307c7
+      - name: Adult_Floor
+        guid: a7e9e41c0304e54a86e94cebc02473fb
+        id: 3688067344
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 26537b2798b09b4a9d78f1bf3b761d1a
+        - ElementName: Teen_Footsteps
+          ObjectType: 11
+          guid: ea4eeed0e5191149ac21a567d251d4bf
+        - ElementName: Adult_Floor
+          ObjectType: 10
+          guid: a7e9e41c0304e54a86e94cebc02473fb
+      - name: Teen_Carpet
+        guid: 7d2a8b3a92501e428aee3463a763fbd1
+        id: 498501321
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 26537b2798b09b4a9d78f1bf3b761d1a
+        - ElementName: Teen_Footsteps
+          ObjectType: 11
+          guid: ea4eeed0e5191149ac21a567d251d4bf
+        - ElementName: Teen_Carpet
           ObjectType: 10
           guid: 7d2a8b3a92501e428aee3463a763fbd1
-      - name: Floor
+      - name: Teen_Floor
         guid: 4846c4b6395bc14fa77579ce9768e960
-        id: 1088209313
+        id: 4197808738
         PathAndIcons:
         - ElementName: Switches
           ObjectType: 5
@@ -515,9 +696,41 @@ MonoBehaviour:
         - ElementName: Teen_Footsteps
           ObjectType: 11
           guid: ea4eeed0e5191149ac21a567d251d4bf
-        - ElementName: Floor
+        - ElementName: Teen_Floor
           ObjectType: 10
           guid: 4846c4b6395bc14fa77579ce9768e960
+      - name: Toddler_Carpet
+        guid: 1f81370a5d2a734eb2f04ad8efa9579f
+        id: 485222939
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 26537b2798b09b4a9d78f1bf3b761d1a
+        - ElementName: Teen_Footsteps
+          ObjectType: 11
+          guid: ea4eeed0e5191149ac21a567d251d4bf
+        - ElementName: Toddler_Carpet
+          ObjectType: 10
+          guid: 1f81370a5d2a734eb2f04ad8efa9579f
+      - name: Toddler_Floor
+        guid: e75b85216ac7b84cafdb81dcb2c155d1
+        id: 3863698192
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 26537b2798b09b4a9d78f1bf3b761d1a
+        - ElementName: Teen_Footsteps
+          ObjectType: 11
+          guid: ea4eeed0e5191149ac21a567d251d4bf
+        - ElementName: Toddler_Floor
+          ObjectType: 10
+          guid: e75b85216ac7b84cafdb81dcb2c155d1
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
@@ -536,7 +749,7 @@ MonoBehaviour:
     m_lastTime: -8584554080273706773
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000e0000000f0000001000000015000000160000001700000018000000190000007000000071000000720000007300000074000000e5000000e6000000e7000000440e0000450e0000c4951f00
+  ExpandedWaapiItemIds: 0100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000e0000000f0000001000000015000000160000001700000018000000190000002000000021000000230000007000000071000000720000007300000074000000e5000000e6000000e7000000440e0000450e0000c4951f00
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

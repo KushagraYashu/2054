@@ -22,7 +22,10 @@ public class TutorialCollider : MonoBehaviour
             }
             else
             {
+                AudioManager.instance.PlaySound(AudioManager.SoundType.LIGHTSWITCH);
                 GameManager.instance.TutorialDone();
+
+                GameManager.instance.StartGlitching();
             }
         }
     }
@@ -31,7 +34,7 @@ public class TutorialCollider : MonoBehaviour
     {
         PuzzleManager.instance.FreezePlayer();
         StartCoroutine(
-                UIEffects.instance.Fade(0, 1, 1f));
+        UIEffects.instance.Fade(0, 1, 1f));
         yield return new WaitForSeconds(1f);
         GameManager.instance.TutorialReset();
     }

@@ -5,8 +5,12 @@
 			<ChildrenList>
 				<SwitchGroup Name="Teen_Footsteps" ID="{D0EE4EEA-19E5-4911-AC21-A567D251D4BF}">
 					<ChildrenList>
-						<Switch Name="Carpet" ID="{3A8B2A7D-5092-421E-8AEE-3463A763FBD1}"/>
-						<Switch Name="Floor" ID="{B6C44648-5B39-4FC1-A775-79CE9768E960}"/>
+						<Switch Name="Teen_Carpet" ID="{3A8B2A7D-5092-421E-8AEE-3463A763FBD1}"/>
+						<Switch Name="Teen_Floor" ID="{B6C44648-5B39-4FC1-A775-79CE9768E960}"/>
+						<Switch Name="Toddler_Carpet" ID="{0A37811F-2A5D-4E73-B2F0-4AD8EFA9579F}"/>
+						<Switch Name="Toddler_Floor" ID="{21855BE7-C76A-4CB8-AFDB-81DCB2C155D1}"/>
+						<Switch Name="Adult_Floor" ID="{1CE4E9A7-0403-4AE5-86E9-4CEBC02473FB}"/>
+						<Switch Name="Adult_Carpet" ID="{781A61D8-385D-41A1-BED1-1ED134C307C7}"/>
 					</ChildrenList>
 				</SwitchGroup>
 				<SwitchGroup Name="Adult_Footsteps" ID="{6B08FC3F-1027-4346-A913-589B9CC06416}">

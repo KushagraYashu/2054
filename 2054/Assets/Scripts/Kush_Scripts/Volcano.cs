@@ -93,6 +93,8 @@ public class Volcano : MonoBehaviour
                 UIManager.instance.SetHelperText("1");
                 if (Input.GetKeyDown(KeyCode.Alpha1))
                 {
+                    AudioManager.instance.PlaySound(AudioManager.SoundType.VIAL);
+
                     chemicalsAdded[0] = true;
                 }
             }
@@ -101,6 +103,7 @@ public class Volcano : MonoBehaviour
                 UIManager.instance.SetHelperText("2");
                 if (Input.GetKeyDown(KeyCode.Alpha2))
                 {
+                    AudioManager.instance.PlaySound(AudioManager.SoundType.VIAL);
                     chemicalsAdded[1] = true;
                 }
             }
@@ -109,6 +112,7 @@ public class Volcano : MonoBehaviour
                 UIManager.instance.SetHelperText("3");
                 if (Input.GetKeyDown(KeyCode.Alpha3))
                 {
+                    AudioManager.instance.PlaySound(AudioManager.SoundType.VIAL);
                     chemicalsAdded[2] = true;
                 }
             }

@@ -116,7 +116,7 @@
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
 								</Reference>
 								<Reference Name="DefaultSwitchOrState">
-									<ObjectRef Name="Floor" ID="{B6C44648-5B39-4FC1-A775-79CE9768E960}" WorkUnitID="{277B5326-B098-4A9B-9D78-F1BF3B761D1A}"/>
+									<ObjectRef Name="Toddler_Floor" ID="{21855BE7-C76A-4CB8-AFDB-81DCB2C155D1}" WorkUnitID="{277B5326-B098-4A9B-9D78-F1BF3B761D1A}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
@@ -642,7 +642,6 @@
 												</ModifierInfo>
 											</ModifierList>
 										</Property>
-										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -845,7 +844,6 @@
 												</ModifierInfo>
 											</ModifierList>
 										</Property>
-										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -1104,8 +1102,6 @@
 									<PropertyList>
 										<Property Name="OverrideEffect" Type="bool" Value="True"/>
 										<Property Name="OverridePositioning" Type="bool" Value="True"/>
-										<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
-										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 										<Property Name="SpeakerPanning3DSpatializationMix" Type="int32" Value="13"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
@@ -1309,7 +1305,6 @@
 											</ModifierList>
 										</Property>
 										<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
-										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
 												<Value>-5</Value>
@@ -1543,7 +1538,6 @@
 												</ModifierInfo>
 											</ModifierList>
 										</Property>
-										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
 												<Value>-15</Value>
@@ -1742,15 +1736,39 @@
 								</GroupingBehaviorList>
 								<GroupingList>
 									<Grouping>
-										<SwitchRef Name="Floor" ID="{B6C44648-5B39-4FC1-A775-79CE9768E960}"/>
+										<SwitchRef Name="Toddler_Carpet" ID="{0A37811F-2A5D-4E73-B2F0-4AD8EFA9579F}"/>
+										<ItemList>
+											<ItemRef Name="Toddler-Footsteps-carpet" ID="{9AC1BFE2-7A30-4A48-A6D1-6716889410DD}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Teen_Floor" ID="{B6C44648-5B39-4FC1-A775-79CE9768E960}"/>
 										<ItemList>
 											<ItemRef Name="Teen_footsteps_carpet" ID="{A6E1628C-CBB4-430D-9C9C-363F9DD70E03}"/>
 										</ItemList>
 									</Grouping>
 									<Grouping>
-										<SwitchRef Name="Carpet" ID="{3A8B2A7D-5092-421E-8AEE-3463A763FBD1}"/>
+										<SwitchRef Name="Teen_Carpet" ID="{3A8B2A7D-5092-421E-8AEE-3463A763FBD1}"/>
 										<ItemList>
 											<ItemRef Name="Teen_Footsteps" ID="{FE8493B7-0ACC-47D1-83C5-FD0C9866102D}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Adult_Floor" ID="{1CE4E9A7-0403-4AE5-86E9-4CEBC02473FB}"/>
+										<ItemList>
+											<ItemRef Name="Adult_Footsteps" ID="{52262BC4-039D-425C-B91D-3648CFF2D0A7}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Adult_Carpet" ID="{781A61D8-385D-41A1-BED1-1ED134C307C7}"/>
+										<ItemList>
+											<ItemRef Name="Adult_Footsteps_Carpet" ID="{4B731F2D-C18E-4EB5-ADCB-03613C500D41}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Toddler_Floor" ID="{21855BE7-C76A-4CB8-AFDB-81DCB2C155D1}"/>
+										<ItemList>
+											<ItemRef Name="Toddler-footsteps" ID="{8EDF953A-5665-4C94-8A2F-8BC8A50220B7}"/>
 										</ItemList>
 									</Grouping>
 								</GroupingList>
@@ -1761,6 +1779,13 @@
 				<Folder Name="Buttons" ID="{BE9D1B44-5C42-46D1-879F-8DE1E4B2B7FE}" ShortID="74347529">
 					<ChildrenList>
 						<Sound Name="Back Button" ID="{3ED1CEC1-79C5-4002-8A3D-4F8634E86782}" ShortID="326220416">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
@@ -1774,7 +1799,7 @@
 									<PropertyList>
 										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 										<Property Name="TrimBegin" Type="Real64" Value="1.25544662309369"/>
-										<Property Name="TrimEnd" Type="Real64" Value="1.62309368191721"/>
+										<Property Name="TrimEnd" Type="Real64" Value="1.8511134025417"/>
 									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>Back Button.wav</AudioFile>
@@ -1799,9 +1824,10 @@
 							<ChildrenList>
 								<AudioFileSource Name="Start Button" ID="{E4AB9716-08AA-4F57-AA7F-F76FCAE0578B}">
 									<PropertyList>
+										<Property Name="FadeOutDuration" Type="Real64" Value="0.295809367296631"/>
 										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 										<Property Name="TrimBegin" Type="Real64" Value="0.136314067611777"/>
-										<Property Name="TrimEnd" Type="Real64" Value="0.596405228758169"/>
+										<Property Name="TrimEnd" Type="Real64" Value="0.705279509777068"/>
 									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>Start Button.wav</AudioFile>
@@ -2006,6 +2032,11 @@
 						</Sound>
 						<Sound Name="Heartbeat_65" ID="{ED685B21-C085-4D6C-A800-8D942CD0DB2C}" ShortID="377849030">
 							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>-200</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-12</Value>
@@ -2122,7 +2153,17 @@
 				<Sound Name="Tv_Static" ID="{B8AE4812-A2AF-4F62-A429-E87B3AB93E54}" ShortID="1067716910">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="Highpass" Type="int16">
+							<ValueList>
+								<Value>35</Value>
+							</ValueList>
+						</Property>
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-180</Value>
+							</ValueList>
+						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
 								<Value>-22</Value>
@@ -2187,102 +2228,7 @@
 						<ActiveSource Name="Mechanical, Switch, Designed, Big Metal Switch, Lever, Spotlight, Reverberant SND110022" ID="{19719C5F-1057-4E5A-A213-61A0221C2C4B}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Folder Name="Pick_up_paper" ID="{0AF2D4BF-CA8F-433E-A2DF-63AB8C0EDEBD}" ShortID="798088188">
-					<ChildrenList>
-						<Sound Name="Pick_up_paper_1" ID="{5208F011-95F9-4D3D-9D1E-A8C00D13079D}" ShortID="148811115">
-							<PropertyList>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-17</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Paper, Handle, Item Pick Up, Paper Note, Gameplay x4 SND103749" ID="{1697DA93-C1CF-42FA-B392-94BA77260A8B}">
-									<Language>SFX</Language>
-									<AudioFile>Paper, Handle, Item Pick Up, Paper Note, Gameplay x4 SND103749.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="138316514"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Paper, Handle, Item Pick Up, Paper Note, Gameplay x4 SND103749" ID="{1697DA93-C1CF-42FA-B392-94BA77260A8B}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Pick_up_paper_2" ID="{8729DA49-352C-4687-88B7-BE23CF126F20}" ShortID="679075384">
-							<PropertyList>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-17</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Paper, Handle, Item Pick Up, Paper Note, Gameplay x4 SND103749 2" ID="{029367B7-75B2-4640-B942-144E3813D98C}">
-									<Language>SFX</Language>
-									<AudioFile>Paper, Handle, Item Pick Up, Paper Note, Gameplay x4 SND103749 2.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="13798568"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Paper, Handle, Item Pick Up, Paper Note, Gameplay x4 SND103749 2" ID="{029367B7-75B2-4640-B942-144E3813D98C}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Pick_up_paper_3" ID="{BFF89E59-E208-45BC-A103-65AF20F8D532}" ShortID="255491479">
-							<PropertyList>
-								<Property Name="Pitch" Type="int32">
-									<ValueList>
-										<Value>200</Value>
-									</ValueList>
-								</Property>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-18</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Paper, Handle, Item Pick Up, Paper Note, Gameplay x4 SND103749 3" ID="{49FD89FE-11ED-4543-A553-DBE0BC19C05F}">
-									<Language>SFX</Language>
-									<AudioFile>Paper, Handle, Item Pick Up, Paper Note, Gameplay x4 SND103749 3.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="342699650"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Paper, Handle, Item Pick Up, Paper Note, Gameplay x4 SND103749 3" ID="{49FD89FE-11ED-4543-A553-DBE0BC19C05F}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-					</ChildrenList>
-				</Folder>
+				<Folder Name="Pick_up_paper" ID="{0AF2D4BF-CA8F-433E-A2DF-63AB8C0EDEBD}" ShortID="798088188"/>
 				<RandomSequenceContainer Name="Tick" ID="{32D6007C-5355-49C1-82BD-D8ABCBE2DC46}" ShortID="193666122">
 					<PropertyList>
 						<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
@@ -2301,162 +2247,6 @@
 							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
 						</Reference>
 					</ReferenceList>
-					<ChildrenList>
-						<Sound Name="Clocks, Tick, Small 01 SND12577" ID="{DCAE0EDC-4A00-471C-90A2-05535C3CBBF7}" ShortID="844290573">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Clocks, Tick, Small 01 SND12577" ID="{C182CA99-E858-41E7-B0EE-00241009EF08}">
-									<Language>SFX</Language>
-									<AudioFile>Clocks, Tick, Small 01 SND12577.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="18786649"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Clocks, Tick, Small 01 SND12577" ID="{C182CA99-E858-41E7-B0EE-00241009EF08}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Clocks, Tick, Small 01 SND12577 1" ID="{12A2E162-C7CE-4BB3-9887-C2988A023827}" ShortID="1043043850">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Clocks, Tick, Small 01 SND12577 1" ID="{184E44F0-4AAE-4DE5-A73B-E76B1DB60560}">
-									<Language>SFX</Language>
-									<AudioFile>Clocks, Tick, Small 01 SND12577 1.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="553077303"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Clocks, Tick, Small 01 SND12577 1" ID="{184E44F0-4AAE-4DE5-A73B-E76B1DB60560}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Clocks, Tick, Small 01 SND12577 2" ID="{67CE5FB1-2D49-4B41-8E75-D8F96514D022}" ShortID="269542675">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Clocks, Tick, Small 01 SND12577 2" ID="{E9DAF21D-5EE7-431E-814B-CEE14EA898F0}">
-									<Language>SFX</Language>
-									<AudioFile>Clocks, Tick, Small 01 SND12577 2.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="544432092"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Clocks, Tick, Small 01 SND12577 2" ID="{E9DAF21D-5EE7-431E-814B-CEE14EA898F0}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Clocks, Tick, Small 01 SND12577 3" ID="{63EFD873-058F-429E-A0FD-1DB164B7BCD7}" ShortID="393764709">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Clocks, Tick, Small 01 SND12577 3" ID="{399EE597-8518-431D-971F-98007DD7366B}">
-									<Language>SFX</Language>
-									<AudioFile>Clocks, Tick, Small 01 SND12577 3.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="519377606"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Clocks, Tick, Small 01 SND12577 3" ID="{399EE597-8518-431D-971F-98007DD7366B}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Clocks, Tick, Small 01 SND12577 4" ID="{B12F6E6F-E7FD-4541-8B67-2A4E4404CA7F}" ShortID="489657828">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Clocks, Tick, Small 01 SND12577 4" ID="{F9A76B16-C922-48C6-962B-8DBAB51ADCB5}">
-									<Language>SFX</Language>
-									<AudioFile>Clocks, Tick, Small 01 SND12577 4.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="574989335"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Clocks, Tick, Small 01 SND12577 4" ID="{F9A76B16-C922-48C6-962B-8DBAB51ADCB5}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-						<Sound Name="Clocks, Tick, Small 01 SND12577 5" ID="{A5AD19AC-C974-44D3-8A66-E59C08D3ADDA}" ShortID="785096321">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Clocks, Tick, Small 01 SND12577 5" ID="{167D34CC-A275-4A94-9338-5759810E4DB5}">
-									<Language>SFX</Language>
-									<AudioFile>Clocks, Tick, Small 01 SND12577 5.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="447190628"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Clocks, Tick, Small 01 SND12577 5" ID="{167D34CC-A275-4A94-9338-5759810E4DB5}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-					</ChildrenList>
-					<ObjectLists>
-						<ObjectList Name="Playlist">
-							<Reference>
-								<ObjectRef Name="Clocks, Tick, Small 01 SND12577" ID="{DCAE0EDC-4A00-471C-90A2-05535C3CBBF7}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
-							</Reference>
-							<Reference>
-								<ObjectRef Name="Clocks, Tick, Small 01 SND12577 1" ID="{12A2E162-C7CE-4BB3-9887-C2988A023827}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
-							</Reference>
-							<Reference>
-								<ObjectRef Name="Clocks, Tick, Small 01 SND12577 2" ID="{67CE5FB1-2D49-4B41-8E75-D8F96514D022}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
-							</Reference>
-							<Reference>
-								<ObjectRef Name="Clocks, Tick, Small 01 SND12577 3" ID="{63EFD873-058F-429E-A0FD-1DB164B7BCD7}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
-							</Reference>
-							<Reference>
-								<ObjectRef Name="Clocks, Tick, Small 01 SND12577 4" ID="{B12F6E6F-E7FD-4541-8B67-2A4E4404CA7F}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
-							</Reference>
-							<Reference>
-								<ObjectRef Name="Clocks, Tick, Small 01 SND12577 5" ID="{A5AD19AC-C974-44D3-8A66-E59C08D3ADDA}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
-							</Reference>
-						</ObjectList>
-					</ObjectLists>
 				</RandomSequenceContainer>
 				<Sound Name="Car_On_Floor" ID="{3239F016-59D8-4571-8D8A-BF8E77536F57}" ShortID="369281982">
 					<PropertyList>
@@ -3017,6 +2807,13 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="Light_Switch" ID="{76C64AF4-2AD7-4F6C-A6FB-DC4FDD767DB5}" ShortID="304745115">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-17</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
@@ -3042,10 +2839,15 @@
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="2"/>
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-2</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Attenuation">
-							<ObjectRef Name="Tv" ID="{D090889B-EE32-42B2-BFE2-9E4D052A86C5}" WorkUnitID="{254488C7-4085-4F81-B69C-830F730DF1D1}"/>
+							<ObjectRef Name="birds" ID="{7FF7A9AA-545C-46BD-A66B-CA918E8ED801}" WorkUnitID="{254488C7-4085-4F81-B69C-830F730DF1D1}"/>
 						</Reference>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
@@ -3072,6 +2874,320 @@
 						<ActiveSource Name="Ambience, Birdsong, Singing Birds, Early Morning SND11282" ID="{C2E05483-314E-4FBB-AEAF-7D590BB27FE9}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="utomp3_com - TV STATIC 4K 60FPS" ID="{22BAEEA2-0FDC-4F57-A96A-628208CDA7F8}" ShortID="980959134">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="2"/>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-12</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<ObjectRef Name="Tv" ID="{D090889B-EE32-42B2-BFE2-9E4D052A86C5}" WorkUnitID="{254488C7-4085-4F81-B69C-830F730DF1D1}"/>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="utomp3_com - TV STATIC 4K 60FPS" ID="{225A99F8-9855-4875-8FB4-2EED7D89CB9F}">
+							<PropertyList>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>utomp3.com - TV STATIC 4K 60FPS.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="532022070"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="utomp3_com - TV STATIC 4K 60FPS" ID="{225A99F8-9855-4875-8FB4-2EED7D89CB9F}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="On Off Button by Fission9 Id-693859 1" ID="{59C38867-BC13-42A7-8F13-10D29A78907D}" ShortID="997951938">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-3</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="On Off Button by Fission9 Id-693859 1" ID="{230F4F52-48AE-4F15-924C-0ECAF6A0E9AC}">
+							<Language>SFX</Language>
+							<AudioFile>On Off Button by Fission9 Id-693859 1.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="545672649"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="On Off Button by Fission9 Id-693859 1" ID="{230F4F52-48AE-4F15-924C-0ECAF6A0E9AC}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="Paper_Pick_Up" ID="{9BB41E0B-E4A6-4D56-9A72-42F32619E2F0}" ShortID="184537789">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Pick_up_paper_2" ID="{8729DA49-352C-4687-88B7-BE23CF126F20}" ShortID="679075384">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-17</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Paper, Handle, Item Pick Up, Paper Note, Gameplay x4 SND103749 2" ID="{029367B7-75B2-4640-B942-144E3813D98C}">
+									<Language>SFX</Language>
+									<AudioFile>Paper, Handle, Item Pick Up, Paper Note, Gameplay x4 SND103749 2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="13798568"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Paper, Handle, Item Pick Up, Paper Note, Gameplay x4 SND103749 2" ID="{029367B7-75B2-4640-B942-144E3813D98C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Pick_up_paper_3" ID="{BFF89E59-E208-45BC-A103-65AF20F8D532}" ShortID="255491479">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ValueList>
+										<Value>200</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-18</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Paper, Handle, Item Pick Up, Paper Note, Gameplay x4 SND103749 3" ID="{49FD89FE-11ED-4543-A553-DBE0BC19C05F}">
+									<Language>SFX</Language>
+									<AudioFile>Paper, Handle, Item Pick Up, Paper Note, Gameplay x4 SND103749 3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="342699650"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Paper, Handle, Item Pick Up, Paper Note, Gameplay x4 SND103749 3" ID="{49FD89FE-11ED-4543-A553-DBE0BC19C05F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Pick_up_paper_1" ID="{5208F011-95F9-4D3D-9D1E-A8C00D13079D}" ShortID="148811115">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-17</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Paper, Handle, Item Pick Up, Paper Note, Gameplay x4 SND103749" ID="{1697DA93-C1CF-42FA-B392-94BA77260A8B}">
+									<Language>SFX</Language>
+									<AudioFile>Paper, Handle, Item Pick Up, Paper Note, Gameplay x4 SND103749.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="138316514"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Paper, Handle, Item Pick Up, Paper Note, Gameplay x4 SND103749" ID="{1697DA93-C1CF-42FA-B392-94BA77260A8B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="Random_Tick" ID="{E4C7B7FC-1750-40CF-9912-205921697960}" ShortID="46841200">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Clocks, Tick, Small 01 SND12577" ID="{DCAE0EDC-4A00-471C-90A2-05535C3CBBF7}" ShortID="844290573">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Clocks, Tick, Small 01 SND12577" ID="{C182CA99-E858-41E7-B0EE-00241009EF08}">
+									<Language>SFX</Language>
+									<AudioFile>Clocks, Tick, Small 01 SND12577.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="18786649"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Clocks, Tick, Small 01 SND12577" ID="{C182CA99-E858-41E7-B0EE-00241009EF08}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Clocks, Tick, Small 01 SND12577 1" ID="{12A2E162-C7CE-4BB3-9887-C2988A023827}" ShortID="1043043850">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Clocks, Tick, Small 01 SND12577 1" ID="{184E44F0-4AAE-4DE5-A73B-E76B1DB60560}">
+									<Language>SFX</Language>
+									<AudioFile>Clocks, Tick, Small 01 SND12577 1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="553077303"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Clocks, Tick, Small 01 SND12577 1" ID="{184E44F0-4AAE-4DE5-A73B-E76B1DB60560}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Clocks, Tick, Small 01 SND12577 2" ID="{67CE5FB1-2D49-4B41-8E75-D8F96514D022}" ShortID="269542675">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Clocks, Tick, Small 01 SND12577 2" ID="{E9DAF21D-5EE7-431E-814B-CEE14EA898F0}">
+									<Language>SFX</Language>
+									<AudioFile>Clocks, Tick, Small 01 SND12577 2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="544432092"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Clocks, Tick, Small 01 SND12577 2" ID="{E9DAF21D-5EE7-431E-814B-CEE14EA898F0}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Clocks, Tick, Small 01 SND12577 3" ID="{63EFD873-058F-429E-A0FD-1DB164B7BCD7}" ShortID="393764709">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Clocks, Tick, Small 01 SND12577 3" ID="{399EE597-8518-431D-971F-98007DD7366B}">
+									<Language>SFX</Language>
+									<AudioFile>Clocks, Tick, Small 01 SND12577 3.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="519377606"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Clocks, Tick, Small 01 SND12577 3" ID="{399EE597-8518-431D-971F-98007DD7366B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Clocks, Tick, Small 01 SND12577 5" ID="{A5AD19AC-C974-44D3-8A66-E59C08D3ADDA}" ShortID="785096321">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Clocks, Tick, Small 01 SND12577 5" ID="{167D34CC-A275-4A94-9338-5759810E4DB5}">
+									<Language>SFX</Language>
+									<AudioFile>Clocks, Tick, Small 01 SND12577 5.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="447190628"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Clocks, Tick, Small 01 SND12577 5" ID="{167D34CC-A275-4A94-9338-5759810E4DB5}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Clocks, Tick, Small 01 SND12577 4" ID="{B12F6E6F-E7FD-4541-8B67-2A4E4404CA7F}" ShortID="489657828">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Clocks, Tick, Small 01 SND12577 4" ID="{F9A76B16-C922-48C6-962B-8DBAB51ADCB5}">
+									<Language>SFX</Language>
+									<AudioFile>Clocks, Tick, Small 01 SND12577 4.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="574989335"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Clocks, Tick, Small 01 SND12577 4" ID="{F9A76B16-C922-48C6-962B-8DBAB51ADCB5}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

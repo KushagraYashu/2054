@@ -35,6 +35,7 @@ public class Door : MonoBehaviour
 
     IEnumerator OpenAndCloseDoor()
     {
+        AudioManager.instance.PlaySound(AudioManager.SoundType.DOOROPEN);
         while (transform.localEulerAngles.y < closedRotation.y + rotationAmount)
         {
             transform.localEulerAngles += new Vector3(0, rotationSpeed * Time.deltaTime, 0);
@@ -56,6 +57,7 @@ public class Door : MonoBehaviour
         }
         doorCollider.enabled = true;
         transform.localEulerAngles = closedRotation;
+        AudioManager.instance.PlaySound(AudioManager.SoundType.DOORCLOSE);
     }
 
     private void OnTriggerEnter(Collider other)
