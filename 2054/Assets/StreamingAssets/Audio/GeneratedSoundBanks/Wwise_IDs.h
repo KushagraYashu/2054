@@ -19,6 +19,7 @@ namespace AK
         static const AkUniqueID DOOR_OPEN = 535830432U;
         static const AkUniqueID FOOTSTEPS = 2385628198U;
         static const AkUniqueID START_BUTTON = 2674457354U;
+        static const AkUniqueID TAP_DRIP = 2969906854U;
         static const AkUniqueID TEENPLAYERFOOTSTEP = 450457492U;
         static const AkUniqueID TODDLERPLAYERFOOTSTEP = 969514050U;
         static const AkUniqueID TV_STATIC = 1436086644U;
@@ -46,6 +47,17 @@ namespace AK
 
     namespace SWITCHES
     {
+        namespace ADULT_FOOTSTEPS
+        {
+            static const AkUniqueID GROUP = 1966850591U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID CARPET = 2412606308U;
+                static const AkUniqueID FLOOR = 1088209313U;
+            } // namespace SWITCH
+        } // namespace ADULT_FOOTSTEPS
+
         namespace TEEN_FOOTSTEPS
         {
             static const AkUniqueID GROUP = 2775722229U;

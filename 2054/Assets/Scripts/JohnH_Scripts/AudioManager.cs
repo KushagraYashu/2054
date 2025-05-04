@@ -64,6 +64,89 @@ public class AudioManager : MonoBehaviour
         
     }
 
+
+
+    public enum SoundType
+    {
+        START_BUTTON,
+        BACK_BUTTON,
+        DOOR,
+        VOLCANO_EXPLOSION,
+        CLOCK_TICK,
+        VIAL,
+        PAPER_PICKUP_1, 
+        PAPER_PICKUP_2, 
+        PAPER_PICKUP_3,
+        WOOD_FLOOR_LAND,
+        CARPET_LAND,
+        HEARTBEAT_1,
+
+    };
+
+    public void PlaySound(SoundType soundType, GameObject obj = null)
+    {
+        switch (soundType)
+        {
+            case SoundType.START_BUTTON:
+                if (obj != null) StartButton.Post(obj);
+                else StartButton.Post(this.gameObject);
+                break;
+
+            case SoundType.DOOR:
+                if ((obj != null)) Door.Post(obj);
+                else Door.Post(this.gameObject);
+                break;
+
+            case SoundType.VOLCANO_EXPLOSION:
+                if ((obj != null)) VolcanoExplosion.Post(obj);
+                else VolcanoExplosion.Post(this.gameObject);
+                break;
+
+            case SoundType.CLOCK_TICK:
+                if ((obj != null)) Tick.Post(obj);
+                else Tick.Post(this.gameObject);
+                break;
+
+            case SoundType.VIAL:
+                if ((obj != null)) Vial.Post(obj);
+                else Vial.Post(this.gameObject);
+                break;
+
+            case SoundType.PAPER_PICKUP_1:
+                if ((obj != null)) PaperPickUp1.Post(obj);
+                else PaperPickUp1.Post(this.gameObject);
+                break;
+
+            case SoundType.PAPER_PICKUP_2:
+                if ((obj != null)) PaperPickUp2.Post(obj);
+                else PaperPickUp2.Post(this.gameObject);
+                break;
+
+            case SoundType.PAPER_PICKUP_3:
+                if ((obj != null)) PaperPickUp3.Post(obj);
+                else PaperPickUp3.Post(this.gameObject);
+                break;
+
+            case SoundType.WOOD_FLOOR_LAND:
+                if ((obj != null)) Wood_Floor_land.Post(obj);
+                else Wood_Floor_land.Post(this.gameObject);
+                break;
+
+            case SoundType.CARPET_LAND:
+                if ((obj != null)) Carpet_land.Post(obj);
+                else Carpet_land.Post(this.gameObject);
+                break;
+
+            case SoundType.HEARTBEAT_1:
+                if ((obj != null)) Heartbeat_1.Post(obj);
+                else Heartbeat_1.Post(this.gameObject);
+                break;
+
+        }
+    }
+
+
+
     /// <summary>
     /// Plays the player footstep sound
     /// </summary>
