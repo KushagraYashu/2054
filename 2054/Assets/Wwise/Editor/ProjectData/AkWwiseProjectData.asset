@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 6d591579630d4e4b8339eaf347078ef1
     GuidInternal: 
-    m_lastTime: -8584552198157913432
+    m_lastTime: -8584552117048147156
     List:
     - name: Main
       guid: 7f2daec70d93a24395a594bd9476f066
@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 6b6e736efaef2c4ca991b4d0d692e67d
     GuidInternal: 
-    m_lastTime: -8584552193213047137
+    m_lastTime: -8584552117075510030
     List:
     - name: AdultPlayerFootstep
       guid: 2dd5e36dd50f8c43a9952b2ae8de324e
@@ -133,6 +133,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.59566677
       minDuration: 0.59566677
+    - name: Birds
+      guid: 35a51010c6d9a0499642acc108207ed5
+      id: 352130103
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6b6e736efaef2c4ca991b4d0d692e67d
+      - ElementName: Birds
+        ObjectType: 3
+        guid: 35a51010c6d9a0499642acc108207ed5
+      Path: Events\Default Work Unit\Birds
+      maxAttenuation: 13
+      maxDuration: -1
+      minDuration: -1
     - name: Door_Close
       guid: 53ba13a3010a93469ad8ca8c8a8a1d9c
       id: 128625444
@@ -184,6 +201,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.6470773
       minDuration: 0.17942713
+    - name: Heartbeat
+      guid: f5df2d7f036ab44aafee4acfd14ea94f
+      id: 2179486487
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6b6e736efaef2c4ca991b4d0d692e67d
+      - ElementName: Heartbeat
+        ObjectType: 3
+        guid: f5df2d7f036ab44aafee4acfd14ea94f
+      Path: Events\Default Work Unit\Heartbeat
+      maxAttenuation: 0
+      maxDuration: 67.243835
+      minDuration: 67.243835
     - name: Keyboard
       guid: 30e5c3481ab2044b977529833069ef2d
       id: 1403540682
@@ -201,6 +235,40 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 2.537929
       minDuration: 2.537929
+    - name: Light
+      guid: a44b07f2be933b438fc814df98d4a82e
+      id: 1935470627
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6b6e736efaef2c4ca991b4d0d692e67d
+      - ElementName: Light
+        ObjectType: 3
+        guid: a44b07f2be933b438fc814df98d4a82e
+      Path: Events\Default Work Unit\Light
+      maxAttenuation: 0
+      maxDuration: 0.9689219
+      minDuration: 0.9689219
+    - name: Music_box
+      guid: b3c061523655af49b3e6440ea1a34940
+      id: 2781521992
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6b6e736efaef2c4ca991b4d0d692e67d
+      - ElementName: Music_box
+        ObjectType: 3
+        guid: b3c061523655af49b3e6440ea1a34940
+      Path: Events\Default Work Unit\Music_box
+      maxAttenuation: 0
+      maxDuration: 11.599875
+      minDuration: 11.599875
     - name: Player Footsteps
       guid: 6a7d3b2547369d4aba816dabc1d8b854
       id: 3165549291
@@ -445,6 +513,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 181
       minDuration: 181
+    - name: WeddingBells
+      guid: 3c6780ff0938af458366369b7671ea1b
+      id: 1160236175
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6b6e736efaef2c4ca991b4d0d692e67d
+      - ElementName: WeddingBells
+        ObjectType: 3
+        guid: 3c6780ff0938af458366369b7671ea1b
+      Path: Events\Default Work Unit\WeddingBells
+      maxAttenuation: 0
+      maxDuration: 17
+      minDuration: 17
     - name: Wood_Floor_Jump_land
       guid: 0dc7e4415cb92a4b8c91f7f303082872
       id: 1900150648
@@ -568,7 +653,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 26537b2798b09b4a9d78f1bf3b761d1a
     GuidInternal: 
-    m_lastTime: -8584552199733500441
+    m_lastTime: -8584552117048114438
     List:
     - name: Adult_Footsteps
       guid: 3ffc086b27104643a913589b9cc06416
