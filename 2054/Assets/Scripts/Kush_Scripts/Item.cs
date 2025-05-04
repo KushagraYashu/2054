@@ -14,11 +14,14 @@ public class Item : MonoBehaviour
     float YOffset;
     Vector3 ZOffset;
     Rigidbody rb;
+    float iniY;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        iniY = transform.position.y;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -98,6 +101,7 @@ public class Item : MonoBehaviour
             YOffset += 1f * Time.deltaTime;
 
         Vector3 pos = PlayerBehaviour.instance.transform.position + (ZOffset * 25f) + new Vector3(0, YOffset, 0);
+        pos.y = Mathf.Clamp(pos.y, iniY - .25f, iniY + 2.5f);
         transform.position = pos;
 
         if (Vector3.Distance(this.transform.position, targetPoint.transform.position) <= 1f)

@@ -38,6 +38,7 @@ public class Volcano : MonoBehaviour
     Rigidbody rb;
     float growingTime;
     float eruptingTime = 5f;
+    float iniY;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +51,8 @@ public class Volcano : MonoBehaviour
         IsMixing = false;
 
         rb = GetComponent<Rigidbody>();
+
+        iniY = transform.position.y;
     }
 
     IEnumerator ShowScienceKitImg()
@@ -306,6 +309,7 @@ public class Volcano : MonoBehaviour
         erupting = true;
     }
 
+    Vector3 pos;
     void UpdatePosition()
     {
         UIManager.instance.SetHelperText(UIManager.KeyType.R, UIManager.KeyType.Q, UIManager.HelpType.MOVE_UP_DOWN);
@@ -315,11 +319,16 @@ public class Volcano : MonoBehaviour
         transform.rotation = rot;
 
         if (Input.GetKey(KeyCode.Q))
+        {
             YOffset -= 1f * Time.deltaTime;
+        }
         else if (Input.GetKey(KeyCode.R))
+        {
             YOffset += 1f * Time.deltaTime;
+        }
 
-        Vector3 pos = PlayerBehaviour.instance.transform.position + (ZOffset * 25f) + new Vector3(0, YOffset, 0);
+        pos = PlayerBehaviour.instance.transform.position + (ZOffset * 25f) + new Vector3(0, YOffset, 0);
+        pos.y = Mathf.Clamp(pos.y, iniY - 1.5f, iniY + 2f);
         transform.position = pos;
 
         if (Vector3.Distance(this.transform.position, kitchenSinkTargetPoint.transform.position) <= 1f)

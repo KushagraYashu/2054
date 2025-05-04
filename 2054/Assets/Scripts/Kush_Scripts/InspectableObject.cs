@@ -58,11 +58,14 @@ public class InspectableObject : MonoBehaviour
     Vector3 ZOffset;
     Vector3 pos;
     bool isDragging = false;
+    float iniY;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        iniY = transform.position.y;
     }
 
     // Update is called once per frame
@@ -158,6 +161,7 @@ public class InspectableObject : MonoBehaviour
             YOffset += 1f * Time.deltaTime;
 
         Vector3 pos = PlayerBehaviour.instance.transform.position + (ZOffset * 25f) + new Vector3(0, YOffset, 0);
+        pos.y = Mathf.Clamp(pos.y, iniY - 1.5f, iniY + 2f);
         transform.position = pos;
 
         if (Vector3.Distance(this.transform.position, targetPoint.transform.position) <= 1f)

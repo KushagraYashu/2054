@@ -15,6 +15,7 @@ public class ToycarMesh : MonoBehaviour
     float YOffset = 0f;
     Camera cam;
     Rigidbody rb;
+    float iniY;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -42,6 +43,8 @@ public class ToycarMesh : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        iniY = transform.position.y;
     }
 
     // Update is called once per frame
@@ -98,6 +101,7 @@ public class ToycarMesh : MonoBehaviour
             YOffset += 1f * Time.deltaTime;
 
         Vector3 pos = PlayerBehaviour.instance.transform.position + (ZOffset * 15f) + new Vector3(0, YOffset, 0);
+        pos.y = Mathf.Clamp(pos.y, iniY - 1.5f, iniY + 1f);
         transform.position = pos;
 
         var targetPoint = Toycar.instance.toycarTargetPtTrans;
