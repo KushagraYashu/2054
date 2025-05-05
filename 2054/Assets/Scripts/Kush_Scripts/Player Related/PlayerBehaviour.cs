@@ -33,6 +33,10 @@ public class PlayerBehaviour : MonoBehaviour
     [Header("Audio Switches")]
     public Transform footstepAudioSwitchParent;
 
+    [Header("Player Hand Things")]
+    public GameObject handMesh;
+    public Vector3 handRotation = new(-45, -45, 34.058f);
+
     // Internal Variables
     PlayerMovement movementComponent;
     float[] heights = new float[4];
@@ -117,5 +121,54 @@ public class PlayerBehaviour : MonoBehaviour
 
         //start glitching
         GameManager.instance.StartGlitching();
+    }
+
+    public void ExtendPlayerHand()
+    {
+        StartCoroutine(RotateHand());
+    }
+
+    IEnumerator RotateHand()
+    {
+        float t = 0;
+        Vector3 startRotation = handMesh.transform.localEulerAngles;
+        Vector3 finalRoation = handRotation;
+        while (t < 1)
+        {
+            t += Time.deltaTime * .25f;
+            handMesh.transform.localEulerAngles = Vector3.Lerp(startRotation, finalRoation, t);
+
+            yield return null;
+        }
+
+        handMesh.transform.localEulerAngles = finalRoation;
+
+        EndPhase.instance.ExtendSarahHand();
+
+        //t = 0;
+        //startRotation = handMesh.transform.rotation;
+        //finalRoation = Quaternion.Euler(handMesh.transform.rotation.eulerAngles.x, handRotation.y, 0);
+        //while (t < 1)
+        //{
+        //    t += Time.deltaTime * .25f;
+        //    handMesh.transform.rotation = Quaternion.Lerp(startRotation, finalRoation, t);
+
+        //    yield return null;
+        //}
+
+        //handMesh.transform.rotation = finalRoation;
+
+        //t = 0;
+        //startRotation = handMesh.transform.rotation;
+        //finalRoation = Quaternion.Euler(handMesh.transform.rotation.eulerAngles.x, handMesh.transform.rotation.eulerAngles.x, handRotation.z);
+        //while (t < 1)
+        //{
+        //    t += Time.deltaTime * .25f;
+        //    handMesh.transform.rotation = Quaternion.Lerp(startRotation, finalRoation, t);
+
+        //    yield return null;
+        //}
+
+        //handMesh.transform.rotation = finalRoation;
     }
 }

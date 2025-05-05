@@ -26,12 +26,12 @@ public class PuzzlePiece : MonoBehaviour
     UnityEngine.Color emissionColor;
     float intensity;
     bool firstPickup = true;
-
+    public bool is2054Piece = false;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && !added)
+        if (other.gameObject.CompareTag("Player") && !added )
         {
-            AudioManager.instance.PlaySound(AudioManager.SoundType.PAPER_PICKUP);
+            if(!is2054Piece) AudioManager.instance.PlaySound(AudioManager.SoundType.PAPER_PICKUP);
 
             StopAllCoroutines();
             objectMaterial.SetColor("_EmissionColor", emissionColor * 1f);
@@ -104,7 +104,7 @@ public class PuzzlePiece : MonoBehaviour
             if (Input.GetMouseButton(0) && !isDragging && !PuzzleManager.instance.IsDraggingObject())
             {
                 firstPickup = false;
-                if(firstPickup) AudioManager.instance.PlaySound(AudioManager.SoundType.PAPER_PICKUP);
+                if(firstPickup && !is2054Piece) AudioManager.instance.PlaySound(AudioManager.SoundType.PAPER_PICKUP);
                 Ray ray = cam.ScreenPointToRay(Input.mousePosition);
                 if (Physics.Raycast(ray, out RaycastHit hit))
                 {
