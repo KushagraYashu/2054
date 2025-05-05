@@ -49,7 +49,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{81CF9BCD-9FA2-502B-DC9C-1E9358291D58}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{BE94F752-3C31-B31B-3143-98525312D051}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -133,13 +133,17 @@
 					<ShortName>Toddler_ft_4.wav</ShortName>
 					<CachePath>SFX/Toddler_ft_4_08A5192B.wem</CachePath>
 				</File>
+				<File Id="233865403" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Correct And Incorrect Chime by LaurenPonder Id-639432 1.wav</ShortName>
+					<CachePath>SFX/Correct And Incorrect Chime by LaurenPonder Id-639432 1_818F3B66.wem</CachePath>
+				</File>
 				<File Id="256258947" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footsteps, Human, Carpet On Wooden Floor, Boots, Walking SND17394.wav</ShortName>
 					<CachePath>SFX/Footsteps, Human, Carpet On Wooden Floor, Boots, Walking SND17394_818F3B66.wem</CachePath>
 				</File>
 				<File Id="280246359" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>wedding bells.wav</ShortName>
-					<CachePath>SFX/wedding bells_818F3B66.wem</CachePath>
+					<CachePath>SFX/wedding bells_A4D24D17.wem</CachePath>
 				</File>
 				<File Id="286744342" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footsteps, Human, Carpet On Wooden Floor, Boots, Walking SND17394 3.wav</ShortName>
@@ -205,6 +209,10 @@
 					<ShortName>Doors, Wood, Open, Close, Handling, Squeaky SND4041 1.wav</ShortName>
 					<CachePath>SFX/Doors, Wood, Open, Close, Handling, Squeaky SND4041 1_818F3B66.wem</CachePath>
 				</File>
+				<File Id="458368699" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Crowds, Cheering, Applause, Youth Audience, Big, Clapping, Large Hall SND8557 1.wav</ShortName>
+					<CachePath>SFX/Crowds, Cheering, Applause, Youth Audience, Big, Clapping, Large Hall SND8557 1_6D88F9E6.wem</CachePath>
+				</File>
 				<File Id="463762361" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Volcano_Hiss.wav</ShortName>
 					<CachePath>SFX/Volcano_Hiss_9DF884FC.wem</CachePath>
@@ -263,7 +271,7 @@
 				</File>
 				<File Id="604418086" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Human, Heartbeat, Clicky, 65 BPM SND13581.wav</ShortName>
-					<CachePath>SFX/Human, Heartbeat, Clicky, 65 BPM SND13581_818F3B66.wem</CachePath>
+					<CachePath>SFX/Human, Heartbeat, Clicky, 65 BPM SND13581_11A93380.wem</CachePath>
 				</File>
 				<File Id="610996767" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footsteps, Human, Barefoot, Carpet, Wood, Hollow, Stop, Scuff, Close SND125311.wav</ShortName>
@@ -337,6 +345,10 @@
 					<ShortName>Footsteps, Human, Carpet, Leather Sole, Slow SND1014.wav</ShortName>
 					<CachePath>SFX/Footsteps, Human, Carpet, Leather Sole, Slow SND1014_818F3B66.wem</CachePath>
 				</File>
+				<File Id="814337488" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>copy_7E093552-BB6A-47C7-826A-24D5CA06834F.wav</ShortName>
+					<CachePath>SFX/copy_7E093552-BB6A-47C7-826A-24D5CA06834F_3FE5D033.wem</CachePath>
+				</File>
 				<File Id="854202917" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footsteps, Human, Wood, Sneakers, Medium SND1122 3.wav</ShortName>
 					<CachePath>SFX/Footsteps, Human, Wood, Sneakers, Medium SND1122 3_818F3B66.wem</CachePath>
@@ -371,7 +383,7 @@
 				</File>
 				<File Id="969289453" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Christmas_Muscibox.wav</ShortName>
-					<CachePath>SFX/Christmas_Muscibox_818F3B66.wem</CachePath>
+					<CachePath>SFX/Christmas_Muscibox_F5378A94.wem</CachePath>
 				</File>
 				<File Id="977847262" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footsteps, Human, Boots, Wood, Hollow, Walk, Close SND125872 12.wav</ShortName>
@@ -384,6 +396,10 @@
 				<File Id="1021057404" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881 9.wav</ShortName>
 					<CachePath>SFX/Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881 9_818F3B66.wem</CachePath>
+				</File>
+				<File Id="1041834933" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Clapping.wav</ShortName>
+					<CachePath>SFX/Clapping_9C74B874.wem</CachePath>
 				</File>
 				<File Id="1049221970" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Water_Pour_2.wav</ShortName>
@@ -422,6 +438,17 @@
 						<MediaRef Id="43716454"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="932683636" Name="CFB" DurationType="OneShot" DurationMin="3.4046237" DurationMax="3.4046237">
+					<MediaRefs>
+						<MediaRef Id="1041834933"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3118867224" Name="Cheering" DurationType="OneShot" DurationMin="5.0186076" DurationMax="5.0186076">
+					<MediaRefs>
+						<MediaRef Id="458368699"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="688119423" Name="Correct_Password" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="128625444" Name="Door_Close" DurationType="OneShot" DurationMin="0.37008333" DurationMax="0.37008333">
 					<MediaRefs>
 						<MediaRef Id="452509036"/>
@@ -516,12 +543,12 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="2179486487" Name="Heartbeat" DurationType="OneShot" DurationMin="67.243835" DurationMax="67.243835">
+				<Event Id="2179486487" Name="Heartbeat" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="604418086"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1403540682" Name="Keyboard" DurationType="OneShot" DurationMin="2.537929" DurationMax="2.537929">
+				<Event Id="1403540682" Name="Keyboard" DurationType="OneShot" DurationMin="0.1976867" DurationMax="0.29921204">
 					<MediaRefs>
 						<MediaRef Id="115322293"/>
 						<MediaRef Id="125876295"/>
@@ -535,12 +562,17 @@
 						<MediaRef Id="1073713697"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="4016454680" Name="Laugh" DurationType="OneShot" DurationMin="2.1562629" DurationMax="2.1562629">
+					<MediaRefs>
+						<MediaRef Id="814337488"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1935470627" Name="Light" DurationType="OneShot" DurationMin="0.9689219" DurationMax="0.9689219">
 					<MediaRefs>
 						<MediaRef Id="80004331"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2781521992" Name="Music_box" DurationType="OneShot" DurationMin="11.599875" DurationMax="11.599875">
+				<Event Id="2781521992" Name="Music_box" DurationType="OneShot" DurationMin="5.013586" DurationMax="5.013586">
 					<MediaRefs>
 						<MediaRef Id="969289453"/>
 					</MediaRefs>
@@ -565,6 +597,11 @@
 						<MediaRef Id="544432092"/>
 						<MediaRef Id="553077303"/>
 						<MediaRef Id="574989335"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="519940196" Name="Sarah_Laugh" DurationType="OneShot" DurationMin="2.1562629" DurationMax="2.1562629">
+					<MediaRefs>
+						<MediaRef Id="814337488"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2674457354" Name="Start_Button" DurationType="OneShot" DurationMin="0.56896544" DurationMax="0.56896544">
@@ -623,7 +660,7 @@
 						<MediaRef Id="520861626"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1160236175" Name="WeddingBells" DurationType="OneShot" DurationMin="17" DurationMax="17">
+				<Event Id="1160236175" Name="WeddingBells" DurationType="OneShot" DurationMin="5.037037" DurationMax="5.037037">
 					<MediaRefs>
 						<MediaRef Id="280246359"/>
 					</MediaRefs>
@@ -632,6 +669,11 @@
 					<MediaRefs>
 						<MediaRef Id="740755431"/>
 						<MediaRef Id="885683958"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="493494752" Name="Wrong_Password" DurationType="OneShot" DurationMin="0.9285557" DurationMax="0.9285557">
+					<MediaRefs>
+						<MediaRef Id="233865403"/>
 					</MediaRefs>
 				</Event>
 			</Events>
@@ -649,5 +691,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{4C5A8D67-2402-FF97-1E4C-206CE610BEB7}</FileHash>
+	<FileHash>{4206EF18-2131-22D4-48D0-81AD8F48579B}</FileHash>
 </SoundBanksInfo>

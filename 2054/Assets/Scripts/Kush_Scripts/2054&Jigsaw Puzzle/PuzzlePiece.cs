@@ -152,7 +152,7 @@ public class PuzzlePiece : MonoBehaviour
         }
         if (Vector3.Distance(this.transform.position, targetPoint.transform.position) <= PuzzleManager.instance.solveThreshold)
         {
-            AudioManager.instance.PlaySound(AudioManager.SoundType.PAPER_PICKUP);
+            if(!is2054Piece) AudioManager.instance.PlaySound(AudioManager.SoundType.PAPER_PICKUP);
             targetPoint.GetComponentInChildren<MeshRenderer>().enabled = false;
             transform.position = targetPoint.position;
             issolving = false;
@@ -160,7 +160,7 @@ public class PuzzlePiece : MonoBehaviour
             solved = true;
             PuzzleManager.instance.SetDraggingObject(false);
             PuzzleManager.instance.CheckSolved(true);
-            GetComponent<BoxCollider>().enabled = false;
+            GetComponent<Collider>().enabled = false;
         }
     }
 

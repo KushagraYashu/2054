@@ -21,6 +21,9 @@ public class Laptop : MonoBehaviour
     [SerializeField] GameObject keyboardParent;
     [SerializeField] GameObject inputParent;
     [SerializeField] TextMeshProUGUI[] passcodeTxtFields;
+    [SerializeField] GameObject lockSign;
+
+    public Texture unlockImg;
 
     //internal variables
     string passcode;
@@ -74,12 +77,14 @@ public class Laptop : MonoBehaviour
 
                 if ((code == passcode))
                 {
+                    AudioManager.instance.PlaySound(AudioManager.SoundType.CORRECT_PASSWORD);
                     Debug.Log("Success Memory");
-
+                    lockSign.GetComponent<RawImage>().texture = unlockImg;
                     StartCoroutine(Success(true));
                 }
                 else
                 {
+                    AudioManager.instance.PlaySound(AudioManager.SoundType.WRONG_PASSWORD);
                     Debug.Log("Try again");
 
                     StartCoroutine(Success(false));

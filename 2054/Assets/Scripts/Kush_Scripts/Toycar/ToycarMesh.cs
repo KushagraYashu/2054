@@ -111,6 +111,7 @@ public class ToycarMesh : MonoBehaviour
             inRange = false;
             isDragable = false;
             targetPoint.gameObject.SetActive(false);
+
             transform.position = targetPoint.transform.position;
             transform.rotation = targetPoint.transform.rotation;
             Toycar.instance.SetPlay();

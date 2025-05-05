@@ -140,7 +140,7 @@
 						<Action Name="" ID="{93DDCB29-BB70-44CD-A72B-C13BE9547F00}" ShortID="952661850">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="utomp3_com - TV STATIC 4K 60FPS" ID="{22BAEEA2-0FDC-4F57-A96A-628208CDA7F8}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+									<ObjectRef Name="Tv_Static_2" ID="{22BAEEA2-0FDC-4F57-A96A-628208CDA7F8}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -284,6 +284,62 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Light_Switch" ID="{76C64AF4-2AD7-4F6C-A6FB-DC4FDD767DB5}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Cheering" ID="{653EE0E0-971F-4BB8-ABD4-F0D1E4293E9D}">
+					<ChildrenList>
+						<Action Name="" ID="{540FBA8B-CAD0-44DD-8D1B-594D918572F8}" ShortID="835713285">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Crowds, Cheering, Applause, Youth Audience, Big, Clapping, Large Hall SND8557 1" ID="{A73EC5FE-354E-480D-B687-6216E41B1263}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="CFB" ID="{06011DCF-22E7-453D-8470-1DA3AD8A2CA7}">
+					<ChildrenList>
+						<Action Name="" ID="{CE8B324F-9C5A-4A3F-8DEB-EC03D3772099}" ShortID="45674822">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Clapping" ID="{53EE4075-BF99-4E5D-925D-2EDEBFE7D751}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Correct_Password" ID="{CAEBB484-F3B8-47E2-BA96-A6A957350DD2}"/>
+				<Event Name="Wrong_Password" ID="{32FC0B1B-D179-4D42-8FF9-1E0560B5EDC7}">
+					<ChildrenList>
+						<Action Name="" ID="{EA5D2B25-0FA9-446A-8808-779E55369711}" ShortID="304403652">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Wrong" ID="{5726F833-92FF-41EA-A033-3C90E85EADB5}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Sarah_Laugh" ID="{C1E25105-125D-4A99-80F2-E60E0E025B6C}">
+					<ChildrenList>
+						<Action Name="" ID="{B8365A8E-CAE1-4CB2-801A-4F8A45EAB842}" ShortID="46447086">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Baby_Laugh" ID="{B36EFB90-AA76-430F-AA27-852048E18089}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Laugh" ID="{D434E2A9-C772-4F7A-B9C9-E587AE9E4A1D}">
+					<ChildrenList>
+						<Action Name="" ID="{636CCDA4-D463-4F1B-B3E3-248C72BFB3D0}" ShortID="698735845">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Baby_Laugh" ID="{B36EFB90-AA76-430F-AA27-852048E18089}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

@@ -121,6 +121,8 @@ public class UIEffects : MonoBehaviour
 
         if (quit)
         {
+            AudioManager.instance.StopHeartSound(AudioManager.SoundType.HEARTBEAT_1);
+
             yield return new WaitForSeconds(2f);
             yearTextScreenQuitButton.SetActive(true);
             MouseLookAround.instance.SetMouseLock(false);

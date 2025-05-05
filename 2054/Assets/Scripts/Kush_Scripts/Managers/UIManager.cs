@@ -287,7 +287,7 @@ public class UIManager : MonoBehaviour
 
     IEnumerator QuitButton()
     {
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSecondsRealtime(0.4f);
         Application.Quit();
     }
 
@@ -435,9 +435,23 @@ public class UIManager : MonoBehaviour
             AudioManager.instance.PlaySound(AudioManager.SoundType.MUSICBOX);
         }
 
+        if (memType == MemoryType.ADULT_GRADUATION)
+        {
+            AudioManager.instance.PlaySound(AudioManager.SoundType.CELEBRATION);
+        }
         if (memType == MemoryType.ADULT_WEDDING)
         {
             AudioManager.instance.PlaySound(AudioManager.SoundType.WEDDINGBELLS);
+        }
+
+        if (memType == MemoryType.CHILD_VOLCANO_SUCCESS)
+        {
+            AudioManager.instance.PlaySound(AudioManager.SoundType.CLAPPING);
+        }
+
+        if (memType == MemoryType.TODDLER_2054)
+        {
+            AudioManager.instance.PlaySound(AudioManager.SoundType.LAUGH);
         }
         StartCoroutine(ShowMemoryImg(memoryTextures[(int)memType], time));
     }

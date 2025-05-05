@@ -128,7 +128,7 @@ public class UISpriteAnimation : MonoBehaviour
         }
     }
 
-    IEnumerator KeyAnim(List<Texture> tex)
+    IEnumerator KeyAnim(List<Texture> tex = null)
     {
         //UIManager.instance.SetHelperText();
 

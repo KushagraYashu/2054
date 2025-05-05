@@ -2032,16 +2032,7 @@
 						</Sound>
 						<Sound Name="Heartbeat_65" ID="{ED685B21-C085-4D6C-A800-8D942CD0DB2C}" ShortID="377849030">
 							<PropertyList>
-								<Property Name="Pitch" Type="int32">
-									<ValueList>
-										<Value>-200</Value>
-									</ValueList>
-								</Property>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-12</Value>
-									</ValueList>
-								</Property>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -2053,6 +2044,9 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="Human, Heartbeat, Clicky, 65 BPM SND13581" ID="{174F1EBE-D576-4ED6-8DBE-A24AB8AC6FCD}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>Human, Heartbeat, Clicky, 65 BPM SND13581.wav</AudioFile>
 									<MediaIDList>
@@ -2262,7 +2256,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-16</Value>
+								<Value>-3</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -2495,7 +2489,6 @@
 								<Value>200</Value>
 							</ValueList>
 						</Property>
-						<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -2739,6 +2732,11 @@
 					</ReferenceList>
 					<ChildrenList>
 						<AudioFileSource Name="wedding bells" ID="{C9978EAC-DF63-4E41-9C94-DBD71944EE4B}">
+							<PropertyList>
+								<Property Name="FadeOutDuration" Type="Real64" Value="2.03703703703704"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="5.03703703703704"/>
+							</PropertyList>
 							<Language>SFX</Language>
 							<AudioFile>wedding bells.wav</AudioFile>
 							<MediaIDList>
@@ -2761,6 +2759,12 @@
 					</ReferenceList>
 					<ChildrenList>
 						<AudioFileSource Name="Christmas_Muscibox" ID="{1950D6BD-F725-41FC-BEA2-ACDE404EA7C6}">
+							<PropertyList>
+								<Property Name="FadeOutDuration" Type="Real64" Value="2.54491916598192"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="0.00953153245686167"/>
+								<Property Name="TrimEnd" Type="Real64" Value="5.02311760476582"/>
+							</PropertyList>
 							<Language>SFX</Language>
 							<AudioFile>Christmas_Muscibox.wav</AudioFile>
 							<MediaIDList>
@@ -2776,7 +2780,7 @@
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-9</Value>
+								<Value>-19</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -2791,9 +2795,9 @@
 					<ChildrenList>
 						<AudioFileSource Name="Crowds, Cheering, Applause, Youth Audience, Big, Clapping, Large Hall SND8557 1" ID="{C4A47521-A7BC-4945-A7B8-108733C7AAB4}">
 							<PropertyList>
-								<Property Name="FadeOutDuration" Type="Real64" Value="2.2279797567175"/>
-								<Property Name="LoopBegin" Type="Real64" Value="0"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="2.934989137709"/>
 								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="5.0186075732676"/>
 							</PropertyList>
 							<Language>SFX</Language>
 							<AudioFile>Crowds, Cheering, Applause, Youth Audience, Big, Clapping, Large Hall SND8557 1.wav</AudioFile>
@@ -2874,7 +2878,7 @@
 						<ActiveSource Name="Ambience, Birdsong, Singing Birds, Early Morning SND11282" ID="{C2E05483-314E-4FBB-AEAF-7D590BB27FE9}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="utomp3_com - TV STATIC 4K 60FPS" ID="{22BAEEA2-0FDC-4F57-A96A-628208CDA7F8}" ShortID="980959134">
+				<Sound Name="Tv_Static_2" ID="{22BAEEA2-0FDC-4F57-A96A-628208CDA7F8}" ShortID="980959134">
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="2"/>
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
@@ -3188,6 +3192,148 @@
 						</Sound>
 					</ChildrenList>
 				</RandomSequenceContainer>
+				<Sound Name="Clapping" ID="{53EE4075-BF99-4E5D-925D-2EDEBFE7D751}" ShortID="23713073">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>680</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-15</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Clapping" ID="{CD0B7ABC-ED1C-45B5-ADA0-3E3BD1337BD2}">
+							<PropertyList>
+								<Property Name="FadeOutDuration" Type="Real64" Value="1.95343193645576"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="5.04258011503698"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>Clapping.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="1041834933"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Clapping" ID="{CD0B7ABC-ED1C-45B5-ADA0-3E3BD1337BD2}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Correct" ID="{0FA871B0-D040-4397-A2C6-2B50CD5D3B39}" ShortID="647852201">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>10</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>3</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Correct And Incorrect Chime by LaurenPonder Id-639432" ID="{633FD910-5E59-42DC-832E-946F9A78CDAF}">
+							<Language>SFX</Language>
+							<AudioFile>Correct And Incorrect Chime by LaurenPonder Id-639432.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="931479905"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Correct And Incorrect Chime by LaurenPonder Id-639432" ID="{633FD910-5E59-42DC-832E-946F9A78CDAF}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Wrong" ID="{5726F833-92FF-41EA-A033-3C90E85EADB5}" ShortID="963360714">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>-130</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Correct And Incorrect Chime by LaurenPonder Id-639432 1" ID="{19861D76-43D5-4C6B-9D09-ED0738C9DE97}">
+							<Language>SFX</Language>
+							<AudioFile>Correct And Incorrect Chime by LaurenPonder Id-639432 1.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="233865403"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Correct And Incorrect Chime by LaurenPonder Id-639432 1" ID="{19861D76-43D5-4C6B-9D09-ED0738C9DE97}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="Baby_Laugh" ID="{B36EFB90-AA76-430F-AA27-852048E18089}" ShortID="664125275">
+					<PropertyList>
+						<Property Name="Pitch" Type="int32">
+							<ValueList>
+								<Value>350</Value>
+							</ValueList>
+						</Property>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-5</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{696521AD-9470-4032-A756-6CC095212A78}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B6B85E97-C347-4643-97B2-AEF874490A0C}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="copy_7E093552-BB6A-47C7-826A-24D5CA06834F" ID="{6D70280C-A00D-4DD9-AA96-EBAE1230383B}">
+							<PropertyList>
+								<Property Name="FadeInDuration" Type="Real64" Value="1.17328116431758"/>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.479340509866498"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimEnd" Type="Real64" Value="2.63938121750758"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>copy_7E093552-BB6A-47C7-826A-24D5CA06834F.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="814337488"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="copy_7E093552-BB6A-47C7-826A-24D5CA06834F" ID="{6D70280C-A00D-4DD9-AA96-EBAE1230383B}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

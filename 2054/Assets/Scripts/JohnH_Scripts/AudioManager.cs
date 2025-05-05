@@ -52,7 +52,16 @@ public class AudioManager : MonoBehaviour
     private AK.Wwise.Event Weddingbells;
     [SerializeField]
     private AK.Wwise.Event Light;
-   
+    [SerializeField]
+    private AK.Wwise.Event Celebration;
+    [SerializeField]
+    private AK.Wwise.Event Clapping;
+    [SerializeField]
+    private AK.Wwise.Event Correct;
+    [SerializeField]
+    private AK.Wwise.Event Wrong;
+    [SerializeField]
+    private AK.Wwise.Event Laugh;
 
     //I would recommend creating similar events and then their appropriate methods (make them public, so i can call them from other scripts using the singleton instance).
 
@@ -60,6 +69,7 @@ public class AudioManager : MonoBehaviour
 
     //internal variables
     float timer = 0f; //timer for player footsteps
+    uint heartbeatID;
 
     // Start is called before the first frame update
     void Start()
@@ -93,7 +103,12 @@ public class AudioManager : MonoBehaviour
         MUSICBOX,
         WEDDINGBELLS,
         LIGHTSWITCH,
-     
+        CELEBRATION,
+        CLAPPING,
+        CORRECT_PASSWORD,
+        WRONG_PASSWORD,
+        LAUGH,
+
 
 
     };
@@ -160,7 +175,7 @@ public class AudioManager : MonoBehaviour
                 break;
 
             case SoundType.HEARTBEAT_1:
-                if ((obj != null)) Heartbeat_1.Post(obj);
+                if ((obj != null)) heartbeatID = Heartbeat_1.Post(obj);
                 else Heartbeat_1.Post(this.gameObject);
                 break;
 
@@ -185,10 +200,47 @@ public class AudioManager : MonoBehaviour
                 if ((obj != null)) Light.Post(obj);
                 else Light.Post(this.gameObject);
                 break;
+
+            case SoundType.CELEBRATION:
+
+                if ((obj != null)) Celebration.Post(obj);
+                else Celebration.Post(this.gameObject);
+                break;
+
+            case SoundType.CLAPPING:
+
+                if ((obj != null)) Clapping.Post(obj);
+                else Clapping.Post(this.gameObject);
+                break;
+
+            case SoundType.CORRECT_PASSWORD:
+
+                if ((obj != null)) Correct.Post(obj);
+                else Correct.Post(this.gameObject);
+                break;
+
+            case SoundType.WRONG_PASSWORD:
+
+                if ((obj != null)) Wrong.Post(obj);
+                else Wrong.Post(this.gameObject);
+                break;
+
+            case SoundType.LAUGH:
+
+                if ((obj != null)) Laugh.Post(obj);
+                else Laugh.Post(this.gameObject);
+                break;
         }
     }
 
+    public void StopHeartSound(SoundType type, GameObject obj = null)
+    {
+        if(type == SoundType.HEARTBEAT_1)
+        {
+            Heartbeat_1.Stop(this.gameObject);
+        }
 
+    }
 
     /// <summary>
     /// Plays the player footstep sound

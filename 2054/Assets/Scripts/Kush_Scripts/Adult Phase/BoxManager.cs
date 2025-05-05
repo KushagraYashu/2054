@@ -236,7 +236,7 @@ public class BoxManager : MonoBehaviour
 
         //fade out
         StartCoroutine(UIEffects.instance.Fade(1, 0, 2));
-        yield return new WaitForSeconds(2f);
+        //yield return new WaitForSeconds(2f);
 
         Debug.Log("Unfreeze now");
         //unfreeze player

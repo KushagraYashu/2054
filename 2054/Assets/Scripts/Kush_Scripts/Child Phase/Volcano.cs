@@ -230,11 +230,14 @@ public class Volcano : MonoBehaviour
         //}
 
         UIManager.instance.SetHelperText();
+        kitchenSinkTargetPoint.gameObject.SetActive(false);
         StartCoroutine(SuccessMemory());
     }
 
     IEnumerator SuccessMemory()
     {
+        MouseLookAround.instance.SetMouseLock(true);
+
         BoxManager.instance.VolcanoSuccess = true;
 
         //freeze player

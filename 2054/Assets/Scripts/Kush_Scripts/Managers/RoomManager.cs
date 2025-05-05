@@ -51,10 +51,10 @@ public class RoomManager : MonoBehaviour
 
     void SpawnJerry()
     {
-        if(currentRoomType != Room.Adult)
-        {
-            if (jerryGO != null) Destroy(jerryGO);
+        if (jerryGO != null) Destroy(jerryGO);
 
+        if (currentRoomType != Room.Adult)
+        {
             jerrySpawnPoint = FindAnyObjectByType<JerrySpawnPoint>().transform;
             jerryGO = Instantiate(jerryPrefab, jerrySpawnPoint.position, jerryPrefab.transform.rotation);
         }
@@ -109,6 +109,8 @@ public class RoomManager : MonoBehaviour
     public void EndPhase()
     {
         GameManager.instance.StopGlitching();
+
+        AudioManager.instance.PlaySound(AudioManager.SoundType.HEARTBEAT_1);
 
         var pos = endPhaseRoom.transform.GetChild(0).position;
         pos.y = PlayerBehaviour.instance.transform.position.y;

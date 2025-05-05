@@ -72,8 +72,8 @@ public class GameManager : MonoBehaviour
         // Comment for build
         //PlayerPrefs.DeleteAll();
         //PlayerPrefs.Save();
-        PlayerPrefs.SetInt("PlayerAge", 3);
-        PlayerPrefs.Save();
+        //PlayerPrefs.SetInt("PlayerAge", 3);
+        //PlayerPrefs.Save();
 
         CheckSave();
 
@@ -130,12 +130,12 @@ public class GameManager : MonoBehaviour
 
             StartCoroutine(UIEffects.instance.Fade(1, 0, .5f));
             PuzzleManager.instance.FreezePlayer();
-
+            AudioManager.instance.PlaySound(AudioManager.SoundType.HEARTBEAT_1);
             glitchCamera.gameObject.SetActive(true);
             MouseLookAround.instance.GetCam().gameObject.SetActive(false);
 
             yield return new WaitForSeconds(glitchTime);
-
+            AudioManager.instance.StopHeartSound(AudioManager.SoundType.HEARTBEAT_1);
             glitchCamera.gameObject.SetActive(false);
             MouseLookAround.instance.GetCam().gameObject.SetActive(true);
 

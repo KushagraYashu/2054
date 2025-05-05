@@ -16,16 +16,21 @@ namespace AK
         static const AkUniqueID ADULTPLAYERFOOTSTEP = 3061740098U;
         static const AkUniqueID BACK_BUTTON = 2886972203U;
         static const AkUniqueID BIRDS = 352130103U;
+        static const AkUniqueID CFB = 932683636U;
+        static const AkUniqueID CHEERING = 3118867224U;
+        static const AkUniqueID CORRECT_PASSWORD = 688119423U;
         static const AkUniqueID DOOR_CLOSE = 128625444U;
         static const AkUniqueID DOOR_OPEN = 535830432U;
         static const AkUniqueID FOOTSTEPS = 2385628198U;
         static const AkUniqueID HEARTBEAT = 2179486487U;
         static const AkUniqueID KEYBOARD = 1403540682U;
+        static const AkUniqueID LAUGH = 4016454680U;
         static const AkUniqueID LIGHT = 1935470627U;
         static const AkUniqueID MUSIC_BOX = 2781521992U;
         static const AkUniqueID PP1 = 997675398U;
         static const AkUniqueID QUIT = 3930794392U;
         static const AkUniqueID RANDOM_TICK = 1073037076U;
+        static const AkUniqueID SARAH_LAUGH = 519940196U;
         static const AkUniqueID START_BUTTON = 2674457354U;
         static const AkUniqueID TAP_DRIP = 2969906854U;
         static const AkUniqueID TEENPLAYERFOOTSTEP = 450457492U;
@@ -38,6 +43,7 @@ namespace AK
         static const AkUniqueID WEATHER = 317282339U;
         static const AkUniqueID WEDDINGBELLS = 1160236175U;
         static const AkUniqueID WOOD_FLOOR_JUMP_LAND = 1900150648U;
+        static const AkUniqueID WRONG_PASSWORD = 493494752U;
     } // namespace EVENTS
 
     namespace STATES

@@ -66,7 +66,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 6d591579630d4e4b8339eaf347078ef1
     GuidInternal: 
-    m_lastTime: -8584552117048147156
+    m_lastTime: -8584551350943229413
     List:
     - name: Main
       guid: 7f2daec70d93a24395a594bd9476f066
@@ -94,7 +94,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 6b6e736efaef2c4ca991b4d0d692e67d
     GuidInternal: 
-    m_lastTime: -8584552117075510030
+    m_lastTime: -8584551350943345243
     List:
     - name: AdultPlayerFootstep
       guid: 2dd5e36dd50f8c43a9952b2ae8de324e
@@ -150,6 +150,57 @@ MonoBehaviour:
       maxAttenuation: 13
       maxDuration: -1
       minDuration: -1
+    - name: CFB
+      guid: cf1d0106e7223d4584701da3ad8a2ca7
+      id: 932683636
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6b6e736efaef2c4ca991b4d0d692e67d
+      - ElementName: CFB
+        ObjectType: 3
+        guid: cf1d0106e7223d4584701da3ad8a2ca7
+      Path: Events\Default Work Unit\CFB
+      maxAttenuation: 0
+      maxDuration: 3.4046237
+      minDuration: 3.4046237
+    - name: Cheering
+      guid: e0e03e651f97b84babd4f0d1e4293e9d
+      id: 3118867224
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6b6e736efaef2c4ca991b4d0d692e67d
+      - ElementName: Cheering
+        ObjectType: 3
+        guid: e0e03e651f97b84babd4f0d1e4293e9d
+      Path: Events\Default Work Unit\Cheering
+      maxAttenuation: 0
+      maxDuration: 5.0186076
+      minDuration: 5.0186076
+    - name: Correct_Password
+      guid: 84b4ebcab8f3e247ba96a6a957350dd2
+      id: 688119423
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6b6e736efaef2c4ca991b4d0d692e67d
+      - ElementName: Correct_Password
+        ObjectType: 3
+        guid: 84b4ebcab8f3e247ba96a6a957350dd2
+      Path: Events\Default Work Unit\Correct_Password
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
     - name: Door_Close
       guid: 53ba13a3010a93469ad8ca8c8a8a1d9c
       id: 128625444
@@ -216,8 +267,8 @@ MonoBehaviour:
         guid: f5df2d7f036ab44aafee4acfd14ea94f
       Path: Events\Default Work Unit\Heartbeat
       maxAttenuation: 0
-      maxDuration: 67.243835
-      minDuration: 67.243835
+      maxDuration: 5.003164
+      minDuration: 5.003164
     - name: Keyboard
       guid: 30e5c3481ab2044b977529833069ef2d
       id: 1403540682
@@ -233,8 +284,25 @@ MonoBehaviour:
         guid: 30e5c3481ab2044b977529833069ef2d
       Path: Events\Default Work Unit\Keyboard
       maxAttenuation: 0
-      maxDuration: 2.537929
-      minDuration: 2.537929
+      maxDuration: 0.29921204
+      minDuration: 0.1976867
+    - name: Laugh
+      guid: a9e234d472c77a4fb9c9e587ae9e4a1d
+      id: 4016454680
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6b6e736efaef2c4ca991b4d0d692e67d
+      - ElementName: Laugh
+        ObjectType: 3
+        guid: a9e234d472c77a4fb9c9e587ae9e4a1d
+      Path: Events\Default Work Unit\Laugh
+      maxAttenuation: 0
+      maxDuration: 2.1562629
+      minDuration: 2.1562629
     - name: Light
       guid: a44b07f2be933b438fc814df98d4a82e
       id: 1935470627
@@ -267,8 +335,8 @@ MonoBehaviour:
         guid: b3c061523655af49b3e6440ea1a34940
       Path: Events\Default Work Unit\Music_box
       maxAttenuation: 0
-      maxDuration: 11.599875
-      minDuration: 11.599875
+      maxDuration: 5.013586
+      minDuration: 5.013586
     - name: Player Footsteps
       guid: 6a7d3b2547369d4aba816dabc1d8b854
       id: 3165549291
@@ -337,6 +405,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.23958333
       minDuration: 0.15625
+    - name: Sarah_Laugh
+      guid: 0551e2c15d12994a80f2e60e0e025b6c
+      id: 519940196
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6b6e736efaef2c4ca991b4d0d692e67d
+      - ElementName: Sarah_Laugh
+        ObjectType: 3
+        guid: 0551e2c15d12994a80f2e60e0e025b6c
+      Path: Events\Default Work Unit\Sarah_Laugh
+      maxAttenuation: 0
+      maxDuration: 2.1562629
+      minDuration: 2.1562629
     - name: Start_Button
       guid: 7f68b18c70b67740ae169c65a2e131c9
       id: 2674457354
@@ -528,8 +613,8 @@ MonoBehaviour:
         guid: 3c6780ff0938af458366369b7671ea1b
       Path: Events\Default Work Unit\WeddingBells
       maxAttenuation: 0
-      maxDuration: 17
-      minDuration: 17
+      maxDuration: 5.037037
+      minDuration: 5.037037
     - name: Wood_Floor_Jump_land
       guid: 0dc7e4415cb92a4b8c91f7f303082872
       id: 1900150648
@@ -547,6 +632,23 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.19735417
       minDuration: 0.14778094
+    - name: Wrong_Password
+      guid: 1b0bfc3279d1424d8ff91e0560b5edc7
+      id: 493494752
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 6b6e736efaef2c4ca991b4d0d692e67d
+      - ElementName: Wrong_Password
+        ObjectType: 3
+        guid: 1b0bfc3279d1424d8ff91e0560b5edc7
+      Path: Events\Default Work Unit\Wrong_Password
+      maxAttenuation: 0
+      maxDuration: 0.9285557
+      minDuration: 0.9285557
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
