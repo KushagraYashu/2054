@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ToddlerRoomParent
   - Jerry
+  - PuzzleSolvePoint
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - Post-Process
   - 
   - 
   - 

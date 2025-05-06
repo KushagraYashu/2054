@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{2BEAA068-C943-42FE-8D49-E2950A66B608}" SchemaVersion="119">
+	<States>
+		<WorkUnit Name="Default Work Unit" ID="{2BEAA068-C943-42FE-8D49-E2950A66B608}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="Weather" ID="{7A41617E-02CE-43C4-B783-17930554403E}">
+					<PropertyList>
+						<Property Name="DefaultTransitionTime" Type="Real64" Value="0"/>
+					</PropertyList>
+					<ChildrenList>
+						<State Name="None" ID="{2B54BBB2-4A4B-4FE6-B6C7-0830B054506D}"/>
+						<State Name="Indoor_Rain" ID="{773A5E3F-6B9A-4133-867F-06D6A0A2E290}"/>
+						<State Name="Indoors" ID="{C39A5C1B-F212-471F-B771-11C55E11482E}"/>
+					</ChildrenList>
+					<TransitionList>
+						<Transition>
+							<StartState Name="Indoor_Rain" ID="{773A5E3F-6B9A-4133-867F-06D6A0A2E290}"/>
+							<EndState Name="Indoors" ID="{C39A5C1B-F212-471F-B771-11C55E11482E}"/>
+							<Time>5</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+						<Transition>
+							<StartState Name="Indoors" ID="{C39A5C1B-F212-471F-B771-11C55E11482E}"/>
+							<EndState Name="Indoor_Rain" ID="{773A5E3F-6B9A-4133-867F-06D6A0A2E290}"/>
+							<Time>1</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+					</TransitionList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
+	</States>
+</WwiseDocument>

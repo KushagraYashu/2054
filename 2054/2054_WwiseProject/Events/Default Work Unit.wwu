@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" SchemaVersion="119">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Weather" ID="{D1316BA2-11CE-45A0-AAAB-AC9BF4549E69}">
+					<ChildrenList>
+						<Action Name="" ID="{C830CF50-6DD1-4616-A712-F8BA0B2F14D2}" ShortID="426935001">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Indoor_Rain" ID="{30EECB60-7E60-47A2-8E23-A91CD0181CD3}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{46A24A7F-815C-42B6-890C-A2F7F69D43D0}" ShortID="257990802">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Inside house" ID="{312CF63D-B04D-4D72-8AE3-BC8607C5E131}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Folder Name="Player Footsteps" ID="{253B7D6A-3647-4A9D-BA81-6DABC1D8B854}" ShortID="86684880">
+					<ChildrenList>
+						<Event Name="ToddlerPlayerFootstep" ID="{893AA716-3DA0-4C36-B625-8B998E505CA7}">
+							<ChildrenList>
+								<Action Name="" ID="{BD58EA1F-EED4-462A-9BD0-9AE5C0275925}" ShortID="650319593">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881" ID="{1C83316E-9580-431F-818D-0506C021679E}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="TeenPlayerFootstep" ID="{EE322A69-C10A-4DCE-95C6-124B4FBE5883}">
+							<ChildrenList>
+								<Action Name="" ID="{F047DA66-C196-40A1-932F-382D463DEA13}" ShortID="128774842">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Footsteps, Human, Sneakers, Carpet, Wood, Walk, Close SND127881" ID="{1C83316E-9580-431F-818D-0506C021679E}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="AdultPlayerFootstep" ID="{6DE3D52D-0FD5-438C-A995-2B2AE8DE324E}">
+							<ChildrenList>
+								<Action Name="" ID="{A1C4A091-0681-49A2-B370-A42CB08CF1AD}" ShortID="568137541">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Footsteps, Human, Carpet, Leather Sole, Slow SND1014" ID="{87EF5ED3-B535-4592-83FD-BB1BE17E4554}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Event Name="Start_Button" ID="{8CB1687F-B670-4077-AE16-9C65A2E131C9}">
+					<ChildrenList>
+						<Action Name="" ID="{F4165699-4A93-42F3-95D2-EB66ACB84840}" ShortID="344438128">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Start Button" ID="{9132F117-D50D-48CD-B12D-BFD8EB2E6EF2}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Back_Button" ID="{5B18FE6F-FE2C-4284-9757-467E25A5579C}">
+					<ChildrenList>
+						<Action Name="" ID="{79618CBE-D4A3-416A-AF6B-07ECB9615506}" ShortID="223756888">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Back Button" ID="{3ED1CEC1-79C5-4002-8A3D-4F8634E86782}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Volcano_Hiss" ID="{FD1ACE77-E064-4584-B1FD-4174B32C1FFD}">
+					<ChildrenList>
+						<Action Name="" ID="{943BE08A-D11A-4137-B567-3E1D40889542}" ShortID="390192881">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Volcano_Hiss" ID="{0144EB83-0567-4CE1-B0D1-D4901E4FB230}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Volcano_Explosion" ID="{63C91B31-D45A-41EA-8B4B-A1451493DBBA}">
+					<ChildrenList>
+						<Action Name="" ID="{A073D6F1-D54D-4E20-B6AF-C7724D8A3231}" ShortID="483169522">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Volcano_Explosion" ID="{EBA219A6-FD7D-4E85-BE7F-317A7B6760CE}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Door_Open" ID="{1D45E6AE-51CE-481E-9544-C4AD6ECB73B4}">
+					<ChildrenList>
+						<Action Name="" ID="{E5FCC2D5-5B74-4374-8D81-AD10013DD698}" ShortID="686907463">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Door" ID="{8D8DDBE9-4944-46A5-8C50-523BEEAD4B3F}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Footsteps" ID="{81D6C086-5A94-4F9F-8DAD-8304DD96B8D2}">
+					<ChildrenList>
+						<Action Name="" ID="{33B67B12-F0A9-4ED6-AE03-64093F9AED5E}" ShortID="379962421">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Footsteps" ID="{6C3A3DFE-A5B3-4EAC-B732-EBB80542FDE8}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Wood_Floor_Jump_land" ID="{41E4C70D-B95C-4B2A-8C91-F7F303082872}">
+					<ChildrenList>
+						<Action Name="" ID="{3338A403-A936-4073-8348-E0DD218A5D84}" ShortID="97162813">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Wood_Floor_land" ID="{51F507CB-FC79-4765-984D-A3EC51D7C9D9}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Tv_Static" ID="{1D82C48D-01B7-497F-8F9E-A1DAE2ADA8FB}">
+					<ChildrenList>
+						<Action Name="" ID="{93DDCB29-BB70-44CD-A72B-C13BE9547F00}" ShortID="952661850">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Tv_Static_2" ID="{22BAEEA2-0FDC-4F57-A96A-628208CDA7F8}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Tap_Drip" ID="{CAF1FC35-1D2E-4668-A38F-0EFBBEEF7A87}">
+					<ChildrenList>
+						<Action Name="" ID="{F201542C-EB35-45D1-ACB7-053EB16E31C4}" ShortID="490919194">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Water, Drip, Drop, Faucet SND10888 1" ID="{2EEF3E94-FEA0-4E25-A836-55A0022AE7F8}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Door_Close" ID="{A313BA53-0A01-4693-9AD8-CA8C8A8A1D9C}">
+					<ChildrenList>
+						<Action Name="" ID="{4E59820D-1AE8-4BBC-AFA6-9FDE7F0486A8}" ShortID="205363884">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Doors, Wood, Open, Close, Handling, Squeaky SND4041 1" ID="{BD71EDB6-31A7-4722-B1A1-15FDE7696646}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Quit" ID="{3C0DAF0A-3435-4593-839B-FDDE5987479B}">
+					<ChildrenList>
+						<Action Name="" ID="{9A819D5F-3916-4FBD-BD07-4C85190617A8}" ShortID="149806153">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="On Off Button by Fission9 Id-693859 1" ID="{59C38867-BC13-42A7-8F13-10D29A78907D}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Tick" ID="{F51D9586-945E-44D6-A6C1-9767F711A9DB}">
+					<ChildrenList>
+						<Action Name="" ID="{0E4C7A3C-8109-4952-92CB-E79C0FCEBFC1}" ShortID="293394848">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Random_Tick" ID="{E4C7B7FC-1750-40CF-9912-205921697960}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Random_tick" ID="{6DF7E983-1FEF-4F94-9E15-0BAEA1B0E0F6}">
+					<ChildrenList>
+						<Action Name="" ID="{03D937CD-4173-4066-B4AC-F9A597C53164}" ShortID="25975646">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Random_Tick" ID="{E4C7B7FC-1750-40CF-9912-205921697960}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Vial" ID="{FAA94166-804A-4503-92B9-FACBD6BC5007}">
+					<ChildrenList>
+						<Action Name="" ID="{6F133CB2-0180-45C5-8F5F-EE1616ECD369}" ShortID="167109258">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Vial" ID="{60C24189-7152-4F0C-A858-55E198D3943A}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Pp1" ID="{983FFFAD-C51B-4D00-B3F1-31306BEFE274}">
+					<ChildrenList>
+						<Action Name="" ID="{EB9A9007-40C3-4C95-8395-E71398B3DC7B}" ShortID="261060841">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Paper_Pick_Up" ID="{9BB41E0B-E4A6-4D56-9A72-42F32619E2F0}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Keyboard" ID="{48C3E530-B21A-4B04-9775-29833069EF2D}">
+					<ChildrenList>
+						<Action Name="" ID="{FE4FFB5F-BD06-4755-8645-55E181CFF72E}" ShortID="161649104">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Keyboard" ID="{77451A15-682D-4B63-B9AE-54380AD5E266}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Birds" ID="{1010A535-D9C6-49A0-9642-ACC108207ED5}">
+					<ChildrenList>
+						<Action Name="" ID="{44CF7884-5A07-435E-961A-D649152CA37D}" ShortID="951682005">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Bird_attenuation" ID="{7F3DEC9A-0C9C-48FD-A1BF-97E4F2C6CEBC}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Music_box" ID="{5261C0B3-5536-49AF-B3E6-440EA1A34940}">
+					<ChildrenList>
+						<Action Name="" ID="{6FDF4842-73F9-4325-B882-692ABB09659D}" ShortID="1073501124">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Christmas_Muscibox" ID="{7F53D48E-E41F-4B42-B0A5-6B963FB60DE8}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="WeddingBells" ID="{FF80673C-3809-45AF-8366-369B7671EA1B}">
+					<ChildrenList>
+						<Action Name="" ID="{187C9EA3-D592-4D10-AD1E-64F6D30B14C9}" ShortID="619154170">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="wedding bells" ID="{961BDC81-5257-49FB-9732-FB0421B40114}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Heartbeat" ID="{7F2DDFF5-6A03-4AB4-AFEE-4ACFD14EA94F}">
+					<ChildrenList>
+						<Action Name="" ID="{339B26AD-94CC-4A61-B600-5A2284F8C7E9}" ShortID="934801850">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Heartbeat_65" ID="{ED685B21-C085-4D6C-A800-8D942CD0DB2C}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Light" ID="{F2074BA4-93BE-433B-8FC8-14DF98D4A82E}">
+					<ChildrenList>
+						<Action Name="" ID="{EF39EBE4-3487-4C0F-9B01-38AC4A299353}" ShortID="973720951">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Light_Switch" ID="{76C64AF4-2AD7-4F6C-A6FB-DC4FDD767DB5}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Cheering" ID="{653EE0E0-971F-4BB8-ABD4-F0D1E4293E9D}">
+					<ChildrenList>
+						<Action Name="" ID="{540FBA8B-CAD0-44DD-8D1B-594D918572F8}" ShortID="835713285">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Crowds, Cheering, Applause, Youth Audience, Big, Clapping, Large Hall SND8557 1" ID="{A73EC5FE-354E-480D-B687-6216E41B1263}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="CFB" ID="{06011DCF-22E7-453D-8470-1DA3AD8A2CA7}">
+					<ChildrenList>
+						<Action Name="" ID="{CE8B324F-9C5A-4A3F-8DEB-EC03D3772099}" ShortID="45674822">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Clapping" ID="{53EE4075-BF99-4E5D-925D-2EDEBFE7D751}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Correct_Password" ID="{CAEBB484-F3B8-47E2-BA96-A6A957350DD2}"/>
+				<Event Name="Wrong_Password" ID="{32FC0B1B-D179-4D42-8FF9-1E0560B5EDC7}">
+					<ChildrenList>
+						<Action Name="" ID="{EA5D2B25-0FA9-446A-8808-779E55369711}" ShortID="304403652">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Wrong" ID="{5726F833-92FF-41EA-A033-3C90E85EADB5}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Sarah_Laugh" ID="{C1E25105-125D-4A99-80F2-E60E0E025B6C}">
+					<ChildrenList>
+						<Action Name="" ID="{B8365A8E-CAE1-4CB2-801A-4F8A45EAB842}" ShortID="46447086">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Baby_Laugh" ID="{B36EFB90-AA76-430F-AA27-852048E18089}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Laugh" ID="{D434E2A9-C772-4F7A-B9C9-E587AE9E4A1D}">
+					<ChildrenList>
+						<Action Name="" ID="{636CCDA4-D463-4F1B-B3E3-248C72BFB3D0}" ShortID="698735845">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Baby_Laugh" ID="{B36EFB90-AA76-430F-AA27-852048E18089}" WorkUnitID="{DF593598-CB41-48ED-B129-E327D76112FE}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

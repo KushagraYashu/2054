@@ -6,9 +6,10 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Character Controller")]
     //no need to pass anything, will be setup in start.
-    public CharacterController characterController; 
+    public CharacterController characterController;
 
     [Header("Movement Variables")]
+    [SerializeField] public float maxSpeed = 7f;
     [SerializeField] public float speed = 10f;
     [SerializeField] private bool isGround = true;
     [SerializeField] private float gravity = -9.81f;
@@ -22,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     //internal variables
     Vector3 velocity;
+    float footstepSoundThreshold = 0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +50,8 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
 
         characterController.Move(speed * Time.deltaTime * move);
+
+        AudioManager.instance.PlayPlayerFootstep(move, footstepSoundThreshold, isGround, PlayerBehaviour.instance.playerAge, this.gameObject);
 
         if (Input.GetButtonDown("Jump") && isGround)
         {

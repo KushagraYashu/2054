@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a14f12d4d956eb40a64c801e2d2c605, type: 3}
+  m_Name: 781A61D8-385D-41A1-BED1-1ED134C307C7
+  m_EditorClassIdentifier: 
+  objectName: Adult_Carpet
+  id: 2720435227
+  guid: 781A61D8-385D-41A1-BED1-1ED134C307C7
+  WwiseSwitchGroupReference: {fileID: 11400000, guid: 0363a8aa492fd1a469aad7844c667ecd, type: 2}

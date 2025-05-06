@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{7915596D-0D63-4B4E-8339-EAF347078EF1}" SchemaVersion="119">
+	<SoundBanks>
+		<WorkUnit Name="Default Work Unit" ID="{7915596D-0D63-4B4E-8339-EAF347078EF1}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="Main" ID="{C7AE2D7F-930D-43A2-95A5-94BD9476F066}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Start_Button" ID="{8CB1687F-B670-4077-AE16-9C65A2E131C9}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Volcano_Explosion" ID="{63C91B31-D45A-41EA-8B4B-A1451493DBBA}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Back_Button" ID="{5B18FE6F-FE2C-4284-9757-467E25A5579C}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Light" ID="{F2074BA4-93BE-433B-8FC8-14DF98D4A82E}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="AdultPlayerFootstep" ID="{6DE3D52D-0FD5-438C-A995-2B2AE8DE324E}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Tick" ID="{F51D9586-945E-44D6-A6C1-9767F711A9DB}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Vial" ID="{FAA94166-804A-4503-92B9-FACBD6BC5007}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="CFB" ID="{06011DCF-22E7-453D-8470-1DA3AD8A2CA7}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Volcano_Hiss" ID="{FD1ACE77-E064-4584-B1FD-4174B32C1FFD}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Quit" ID="{3C0DAF0A-3435-4593-839B-FDDE5987479B}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Weather" ID="{D1316BA2-11CE-45A0-AAAB-AC9BF4549E69}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="WeddingBells" ID="{FF80673C-3809-45AF-8366-369B7671EA1B}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Tap_Drip" ID="{CAF1FC35-1D2E-4668-A38F-0EFBBEEF7A87}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Door_Close" ID="{A313BA53-0A01-4693-9AD8-CA8C8A8A1D9C}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Correct_Password" ID="{CAEBB484-F3B8-47E2-BA96-A6A957350DD2}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Door_Open" ID="{1D45E6AE-51CE-481E-9544-C4AD6ECB73B4}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Tv_Static" ID="{1D82C48D-01B7-497F-8F9E-A1DAE2ADA8FB}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Birds" ID="{1010A535-D9C6-49A0-9642-ACC108207ED5}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Music_box" ID="{5261C0B3-5536-49AF-B3E6-440EA1A34940}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Sarah_Laugh" ID="{C1E25105-125D-4A99-80F2-E60E0E025B6C}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Heartbeat" ID="{7F2DDFF5-6A03-4AB4-AFEE-4ACFD14EA94F}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Keyboard" ID="{48C3E530-B21A-4B04-9775-29833069EF2D}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Wood_Floor_Jump_land" ID="{41E4C70D-B95C-4B2A-8C91-F7F303082872}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Cheering" ID="{653EE0E0-971F-4BB8-ABD4-F0D1E4293E9D}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="ToddlerPlayerFootstep" ID="{893AA716-3DA0-4C36-B625-8B998E505CA7}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Pp1" ID="{983FFFAD-C51B-4D00-B3F1-31306BEFE274}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Wrong_Password" ID="{32FC0B1B-D179-4D42-8FF9-1E0560B5EDC7}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="TeenPlayerFootstep" ID="{EE322A69-C10A-4DCE-95C6-124B4FBE5883}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Laugh" ID="{D434E2A9-C772-4F7A-B9C9-E587AE9E4A1D}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Random_tick" ID="{6DF7E983-1FEF-4F94-9E15-0BAEA1B0E0F6}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Footsteps" ID="{81D6C086-5A94-4F9F-8DAD-8304DD96B8D2}" WorkUnitID="{6E736E6B-EFFA-4C2C-A991-B4D0D692E67D}" Origin="Manual" Filter="7"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

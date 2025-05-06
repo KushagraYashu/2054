@@ -25,11 +25,14 @@ public class PuzzlePiece : MonoBehaviour
     Material objectMaterial;
     UnityEngine.Color emissionColor;
     float intensity;
-
+    bool firstPickup = true;
+    public bool is2054Piece = false;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && !added)
+        if (other.gameObject.CompareTag("Player") && !added )
         {
+            if(!is2054Piece) AudioManager.instance.PlaySound(AudioManager.SoundType.PAPER_PICKUP);
+
             StopAllCoroutines();
             objectMaterial.SetColor("_EmissionColor", emissionColor * 1f);
 
@@ -42,8 +45,6 @@ public class PuzzlePiece : MonoBehaviour
     void Start()
     {
         objectMaterial = meshRenderer.material;
-
-        offset = -transform.forward * 0.1f;
 
         StartCoroutine(Flash());
     }
@@ -87,7 +88,9 @@ public class PuzzlePiece : MonoBehaviour
     {
         if (issolving)
         {
-            if(cam == null) cam = MouseLookAround.instance.GetCam();
+            offset = PlayerBehaviour.instance.transform.forward * 0.1f;
+
+            if (cam == null) cam = MouseLookAround.instance.GetCam();
             if (targetPoint == null)
                 foreach (GameObject t in PuzzleManager.instance.GetTargetPoints())
                 {
@@ -100,14 +103,20 @@ public class PuzzlePiece : MonoBehaviour
 
             if (Input.GetMouseButton(0) && !isDragging && !PuzzleManager.instance.IsDraggingObject())
             {
+                firstPickup = false;
+                if(firstPickup && !is2054Piece) AudioManager.instance.PlaySound(AudioManager.SoundType.PAPER_PICKUP);
                 Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(ray, out RaycastHit hit) && hit.transform.gameObject.GetComponent<PuzzlePiece>() == this)
+                if (Physics.Raycast(ray, out RaycastHit hit))
                 {
-                    isDragging = true;
-                    PuzzleManager.instance.SetDraggingObject(isDragging);
+                    if (hit.transform.gameObject.GetComponent<PuzzlePiece>() == this)
+                    {
+                        isDragging = true;
+                        PuzzleManager.instance.SetDraggingObject(isDragging);
+                    }
                 }
             }
             else if (Input.GetMouseButtonUp(0)) { 
+                UIManager.instance.SetHelperText();
                 isDragging = false;
                 PuzzleManager.instance.SetDraggingObject(isDragging);
             }
@@ -117,10 +126,18 @@ public class PuzzlePiece : MonoBehaviour
                 UpdatePosition();
             }
         }
+
+        //Comment this later, its a dev shortcut
+        //if(Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.F))
+        //{
+        //    UIManager.instance.SetHelperText(UIManager.KeyType.R, UIManager.KeyType.Q, UIManager.HelpType.MOVE_CLOSE_FAR);
+        //}
     }
 
     void UpdatePosition()
     {
+        UIManager.instance.SetHelperText(UIManager.KeyType.R, UIManager.KeyType.Q, UIManager.HelpType.MOVE_CLOSE_FAR);
+
         if (Input.GetKey(KeyCode.Q))
         {
             transform.position = GetMouseWorldPosition() - offset;
@@ -135,6 +152,7 @@ public class PuzzlePiece : MonoBehaviour
         }
         if (Vector3.Distance(this.transform.position, targetPoint.transform.position) <= PuzzleManager.instance.solveThreshold)
         {
+            if(!is2054Piece) AudioManager.instance.PlaySound(AudioManager.SoundType.PAPER_PICKUP);
             targetPoint.GetComponentInChildren<MeshRenderer>().enabled = false;
             transform.position = targetPoint.position;
             issolving = false;
@@ -142,12 +160,14 @@ public class PuzzlePiece : MonoBehaviour
             solved = true;
             PuzzleManager.instance.SetDraggingObject(false);
             PuzzleManager.instance.CheckSolved(true);
-            GetComponent<BoxCollider>().enabled = false;
+            GetComponent<Collider>().enabled = false;
         }
     }
 
     private Vector3 GetMouseWorldPosition()
     {
+        if (cam == null) cam = MouseLookAround.instance.GetCam();
+
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = cam.WorldToScreenPoint(transform.position).z;
         return cam.ScreenToWorldPoint(mousePos);
