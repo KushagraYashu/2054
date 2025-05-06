@@ -47,6 +47,10 @@ public class RoomManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //PlayerBehaviour.instance.AgePlayer();
+        //PlayerBehaviour.instance.AgePlayer();
+        //PlayerBehaviour.instance.AgePlayer();
+        //EndPhase();
     }
 
     void SpawnJerry()
